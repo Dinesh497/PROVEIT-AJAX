@@ -21,6 +21,8 @@
 		1BFD10A018E09B7500AF08A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD108218E09B7500AF08A6 /* UIKit.framework */; };
 		1BFD10A818E09B7500AF08A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD10A618E09B7500AF08A6 /* InfoPlist.strings */; };
 		1BFD10AA18E09B7500AF08A6 /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */; };
+		D4BB836818E0AA3200808342 /* background1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836718E0AA3200808342 /* background1136.png */; };
+		D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836B18E0AA5E00808342 /* loginScreen1136.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		1BFD10A518E09B7500AF08A6 /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BFD10A718E09B7500AF08A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		D4BB836718E0AA3200808342 /* background1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1136.png; sourceTree = "<group>"; };
+		D4BB836B18E0AA5E00808342 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		1BFD108518E09B7500AF08A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4BB836B18E0AA5E00808342 /* loginScreen1136.png */,
+				D4BB836718E0AA3200808342 /* background1136.png */,
 				1BFD108618E09B7500AF08A6 /* AjaxAgendaApp-Info.plist */,
 				1BFD108718E09B7500AF08A6 /* InfoPlist.strings */,
 				1BFD108A18E09B7500AF08A6 /* main.m */,
@@ -229,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFD109718E09B7500AF08A6 /* Images.xcassets in Resources */,
+				D4BB836818E0AA3200808342 /* background1136.png in Resources */,
+				D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */,
 				1BFD108918E09B7500AF08A6 /* InfoPlist.strings in Resources */,
 				1BFD109218E09B7500AF08A6 /* Main.storyboard in Resources */,
 			);
@@ -376,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
@@ -389,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
@@ -456,6 +466,7 @@
 				1BFD10AF18E09B7500AF08A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BFD10B018E09B7500AF08A6 /* Build configuration list for PBXNativeTarget "AjaxAgendaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +475,7 @@
 				1BFD10B218E09B7500AF08A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

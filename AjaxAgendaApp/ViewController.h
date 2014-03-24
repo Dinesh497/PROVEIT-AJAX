@@ -11,7 +11,3 @@
 @interface ViewController : UIViewController
 
 @end
-
-
-//test
-//nog een test
