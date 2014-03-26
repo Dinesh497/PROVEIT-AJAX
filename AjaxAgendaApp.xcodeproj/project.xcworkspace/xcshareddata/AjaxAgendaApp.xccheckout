@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>0E1109E5-3620-453D-82FD-F0112DEDC229</string>
+=======
+	<string>5453950B-456A-42F4-A1E7-BA5F549DE939</string>
+>>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectName</key>
 	<string>AjaxAgendaApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
