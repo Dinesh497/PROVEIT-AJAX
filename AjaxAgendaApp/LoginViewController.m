@@ -42,9 +42,22 @@
 }
 
 - (IBAction)WachtwoordTextDidExit:(id)sender {
+    
     // Return button on keyboard pressed
     [sender resignFirstResponder];
-    [self GotoNavigationView];
+    
+    NSString *Trainer = _TrainerTextField.text;
+    NSString *ingevoerdeWachtwoord = _WachtwoordTextField.text;
+    NSString *correcteWachtwoord = [self PasswordfromDatabase:Trainer];
+    
+    if ([ingevoerdeWachtwoord isEqualToString:correcteWachtwoord]) {
+        // If the password is correct
+        [self GotoNavigationView];
+    } else {
+        // If the password is incorrect
+        UIAlertView *wrongPassword = [[UIAlertView alloc] initWithTitle:@"Verkeerd wachtwoord" message:@"Wachtwoord komt niet overeen met trainer" delegate:self cancelButtonTitle:@"Opnieuw" otherButtonTitles:nil];
+        [wrongPassword show];
+    }
 }
 
 - (void)GotoNavigationView{
@@ -52,6 +65,12 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"NavigationView"];
     [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (NSString*) PasswordfromDatabase:(NSString*)Trainername{
+    // Get password from database from the using Trainer
+    NSString *Password = Trainername;
+    return Password;
 }
 
 /*
