@@ -11,5 +11,7 @@
 @interface LoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *TrainerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *WachtwoordTextField;
+- (IBAction)TrainerTextDidExit:(id)sender;
+- (IBAction)WachtwoordTextDidExit:(id)sender;
 
 @end
