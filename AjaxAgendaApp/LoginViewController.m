@@ -34,6 +34,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)TrainerTextDidExit:(id)sender {
+    // Return button on keyboard pressed
+    [sender resignFirstResponder];
+}
+
+- (IBAction)WachtwoordTextDidExit:(id)sender {
+    // Return button on keyboard pressed
+    [sender resignFirstResponder];
+}
 
 //:LOLOLOLOL
 
