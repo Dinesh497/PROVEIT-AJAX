@@ -44,7 +44,7 @@
     [sender resignFirstResponder];
 }
 
-//:LOLOLOLOL
+
 
 /*
 #pragma mark - Navigation
