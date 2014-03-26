@@ -25,8 +25,6 @@
 
 - (void)viewDidLoad
 {
-
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -46,9 +44,15 @@
 - (IBAction)WachtwoordTextDidExit:(id)sender {
     // Return button on keyboard pressed
     [sender resignFirstResponder];
+    [self GotoNavigationView];
 }
 
-
+- (void)GotoNavigationView{
+    // Go to navigation view in storyboard
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"NavigationView"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation
