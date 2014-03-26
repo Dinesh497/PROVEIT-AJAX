@@ -1,18 +1,18 @@
 //
-//  LoginViewController.m
+//  MenuViewController.m
 //  AjaxAgendaApp
 //
-//  Created by Ralph Oud on 24-03-14.
+//  Created by Ralph Oud on 26-03-14.
 //  Copyright (c) 2014 Prove IT. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "MenuViewController.h"
 
-@interface LoginViewController ()
+@interface MenuViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation MenuViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,8 +25,6 @@
 
 - (void)viewDidLoad
 {
-
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -36,19 +34,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-- (IBAction)TrainerTextDidExit:(id)sender {
-    // Return button on keyboard pressed
-    [sender resignFirstResponder];
-}
-
-- (IBAction)WachtwoordTextDidExit:(id)sender {
-    // Return button on keyboard pressed
-    [sender resignFirstResponder];
-}
-
-
 
 /*
 #pragma mark - Navigation

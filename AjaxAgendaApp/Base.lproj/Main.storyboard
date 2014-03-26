@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trainer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7d-qY-pYD">
-                                <rect key="frame" x="20" y="255" width="280" height="30"/>
+                                <rect key="frame" x="20" y="269" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wachtwoord" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptY-NV-mjq">
-                                <rect key="frame" x="20" y="293" width="280" height="30"/>
+                                <rect key="frame" x="20" y="307" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -42,6 +42,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="Background" destination="X74-cC-NfW" id="Ixl-KZ-RRJ"/>
                         <outlet property="TrainerTextField" destination="Y7d-qY-pYD" id="0Lq-XB-1ie"/>
                         <outlet property="WachtwoordTextField" destination="ptY-NV-mjq" id="Bwi-pQ-M5w"/>
                     </connections>
@@ -50,8 +51,50 @@
             </objects>
             <point key="canvasLocation" x="204" y="-7"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uPx-He-Axi">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationView" definesPresentationContext="YES" id="VXC-R1-Kxx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9I-nY-Rwh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="McT-NN-Cv9" kind="relationship" relationship="rootViewController" id="2rP-s5-5KA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lrl-zc-rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="-7"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n7m-fG-GnD">
+            <objects>
+                <viewController id="McT-NN-Cv9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o1V-Cs-MyZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="svj-pE-0ui"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y5J-ZW-QPV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1008.png" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-hk-00L">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="n8p-R9-CdX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNV-vY-gLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="-7"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="background1008.png" width="640" height="1008"/>
         <image name="loginScreen1136.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
