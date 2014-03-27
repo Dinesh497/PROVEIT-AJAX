@@ -8,7 +8,9 @@
 
 #import "TrainingInfoViewController.h"
 
-@interface TrainingInfoViewController ()
+@interface TrainingInfoViewController (){
+    UIView *VeldView;
+}
 
 @end
 
@@ -30,21 +32,34 @@
 }
 
 - (IBAction)SelectVeld:(id)sender {
+    // Select the field position for the training
     
-    UIView *frame = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 280.0, 464.0)];
-    frame.backgroundColor = [UIColor whiteColor];
+    // Create view to select field
+    VeldView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 280.0, 464.0)];
+    VeldView.backgroundColor = [UIColor whiteColor];
+    VeldView.layer.cornerRadius = 10;
+    VeldView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    VeldView.layer.shadowOpacity = 1;
+    VeldView.layer.shadowRadius = 10;
+    VeldView.layer.shadowOffset = CGSizeMake(0, 0);
+    VeldView.center=  CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
     
+    // Add select button to subView
+    UIButton *Selecteer = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    Selecteer.frame = CGRectMake(80, 400, 120, 40);
+    [Selecteer setTitle:@"Selecteer" forState:UIControlStateNormal];
+    [Selecteer addTarget:self action:@selector(getVeld) forControlEvents:UIControlEventTouchUpInside];
+    [VeldView addSubview:Selecteer];
     
-    frame.layer.cornerRadius = 10;
-    frame.layer.shadowColor = [[UIColor blackColor] CGColor];
-    frame.layer.shadowOpacity = 1;
-    frame.layer.shadowRadius = 10;
-    frame.layer.shadowOffset = CGSizeMake(0, 0);
-    frame.center=  CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
-    
-    [self.view addSubview:frame];
+    // Add the subView to the viewController
+    [self.view addSubview:VeldView];
     
 }
+
+- (void) getVeld{
+    [VeldView removeFromSuperview];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
