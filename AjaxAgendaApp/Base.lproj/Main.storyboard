@@ -62,9 +62,14 @@
         <scene sceneID="uPx-He-Axi">
             <objects>
                 <navigationController storyboardIdentifier="NavigationView" definesPresentationContext="YES" id="VXC-R1-Kxx" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9I-nY-Rwh">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="deF-EC-259">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="McT-NN-Cv9" kind="relationship" relationship="rootViewController" id="2rP-s5-5KA"/>
                     </connections>
