@@ -195,7 +195,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ABG-55-6bq" kind="push" id="zPn-5c-3df"/>
+                                    <action selector="SelectVeld:" destination="b7B-u8-KMS" eventType="touchUpInside" id="TDS-oa-9sh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -310,39 +310,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlx-P2-koz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2791" y="-7"/>
-        </scene>
-        <!--View Controller - Training-->
-        <scene sceneID="a9A-77-sJu">
-            <objects>
-                <viewController id="ABG-55-6bq" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Odk-aT-uBg"/>
-                        <viewControllerLayoutGuide type="bottom" id="qEt-5I-CGU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R9b-Vm-0LH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1008.png" translatesAutoresizingMaskIntoConstraints="NO" id="h3T-IH-kHD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Veld kiezen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHA-xf-ey7">
-                                <rect key="frame" x="117" y="241" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Training" id="Pjx-FT-ab8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHX-TZ-Voq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1600" y="763"/>
         </scene>
         <!--View Controller - Training-->
         <scene sceneID="Umh-aN-bgJ">

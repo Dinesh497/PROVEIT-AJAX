@@ -29,6 +29,23 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)SelectVeld:(id)sender {
+    
+    UIView *frame = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 280.0, 464.0)];
+    frame.backgroundColor = [UIColor whiteColor];
+    
+    
+    frame.layer.cornerRadius = 10;
+    frame.layer.shadowColor = [[UIColor blackColor] CGColor];
+    frame.layer.shadowOpacity = 1;
+    frame.layer.shadowRadius = 10;
+    frame.layer.shadowOffset = CGSizeMake(0, 0);
+    frame.center=  CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+    
+    [self.view addSubview:frame];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -45,5 +62,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end
