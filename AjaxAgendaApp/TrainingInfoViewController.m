@@ -44,10 +44,17 @@
     VeldView.layer.shadowOffset = CGSizeMake(0, 0);
     VeldView.center=  CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
     
+    // Add Veld 1 button to subview
+    UIButton *Veld1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    Veld1.frame = CGRectMake(80, 100, 120, 40);
+    [Veld1 setTitle:@"Veld 1" forState:UIControlStateNormal];
+    [Veld1 addTarget:self action:@selector(getVeld) forControlEvents:UIControlEventTouchUpInside];
+    [VeldView addSubview:Veld1];
+    
     // Add selecteer button to subView
     UIButton *Selecteer = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     Selecteer.frame = CGRectMake(80, 400, 120, 40);
-    [Selecteer setTitle:@"Selecteer" forState:UIControlStateNormal];
+    [Selecteer setTitle:@"Terug" forState:UIControlStateNormal];
     [Selecteer addTarget:self action:@selector(getVeld) forControlEvents:UIControlEventTouchUpInside];
     [VeldView addSubview:Selecteer];
     
@@ -59,7 +66,6 @@
     // When Selecteer button is pressed in the SelectVeld subview
     [VeldView removeFromSuperview];
 }
-
 
 - (void)didReceiveMemoryWarning
 {

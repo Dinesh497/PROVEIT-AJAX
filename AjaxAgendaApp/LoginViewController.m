@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad
 {
+    _TextView.layer.cornerRadius = 10;
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
