@@ -11,7 +11,6 @@
 @interface TrainingInfoViewController (){
     UIView *VeldView;
 }
-
 @end
 
 @implementation TrainingInfoViewController
@@ -34,6 +33,9 @@
 - (IBAction)SelectVeld:(id)sender {
     // Select the field position for the training
     
+    // Make menu button unselectable
+    // ??
+    
     // Create view to select field
     VeldView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 280.0, 464.0)];
     VeldView.backgroundColor = [UIColor whiteColor];
@@ -48,7 +50,7 @@
     UIButton *Veld1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     Veld1.frame = CGRectMake(80, 100, 120, 40);
     [Veld1 setTitle:@"Veld 1" forState:UIControlStateNormal];
-    [Veld1 addTarget:self action:@selector(getVeld) forControlEvents:UIControlEventTouchUpInside];
+    [Veld1 addTarget:self action:@selector(setVeld) forControlEvents:UIControlEventTouchUpInside];
     [VeldView addSubview:Veld1];
     
     // Add selecteer button to subView
@@ -60,6 +62,10 @@
     
     // Add the subView to the viewController
     [self.view addSubview:VeldView];
+}
+- (void) setVeld{
+    // When a field button is pressed in the SelectVeld subview
+    [VeldView removeFromSuperview];
 }
 
 - (void) getVeld{
