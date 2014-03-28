@@ -20,6 +20,7 @@
 		1BFD10A018E09B7500AF08A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD108218E09B7500AF08A6 /* UIKit.framework */; };
 		1BFD10A818E09B7500AF08A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD10A618E09B7500AF08A6 /* InfoPlist.strings */; };
 		1BFD10AA18E09B7500AF08A6 /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */; };
+		D40B922E18E56D0B000F13E8 /* LoginView.png in Resources */ = {isa = PBXBuildFile; fileRef = D40B922D18E56D0B000F13E8 /* LoginView.png */; };
 		D4349E9918E0B2D5002FF7F5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */; };
 		D4BB836818E0AA3200808342 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836718E0AA3200808342 /* background1008.png */; };
 		D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836B18E0AA5E00808342 /* loginScreen1136.png */; };
@@ -57,6 +58,7 @@
 		1BFD10A518E09B7500AF08A6 /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BFD10A718E09B7500AF08A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		D40B922D18E56D0B000F13E8 /* LoginView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginView.png; sourceTree = "<group>"; };
 		D4349E9718E0B2D5002FF7F5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D4BB836718E0AA3200808342 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		1BFD108518E09B7500AF08A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D40B922D18E56D0B000F13E8 /* LoginView.png */,
 				D4BB836B18E0AA5E00808342 /* loginScreen1136.png */,
 				D4BB836718E0AA3200808342 /* background1008.png */,
 				1BFD108618E09B7500AF08A6 /* AjaxAgendaApp-Info.plist */,
@@ -256,6 +259,7 @@
 			files = (
 				1BFD109718E09B7500AF08A6 /* Images.xcassets in Resources */,
 				D4BB836818E0AA3200808342 /* background1008.png in Resources */,
+				D40B922E18E56D0B000F13E8 /* LoginView.png in Resources */,
 				D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */,
 				1BFD108918E09B7500AF08A6 /* InfoPlist.strings in Resources */,
 				1BFD109218E09B7500AF08A6 /* Main.storyboard in Resources */,
