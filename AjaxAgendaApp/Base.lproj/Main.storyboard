@@ -24,6 +24,10 @@
                                 <rect key="frame" x="20" y="239" width="280" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoginView.png" translatesAutoresizingMaskIntoConstraints="NO" id="LJg-JQ-Ubb">
+                                        <rect key="frame" x="10" y="22" width="260" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trainer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7d-qY-pYD">
                                         <rect key="frame" x="20" y="12" width="260" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -400,6 +404,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginView.png" width="280" height="90"/>
         <image name="background1008.png" width="640" height="1008"/>
         <image name="loginScreen1136.png" width="640" height="1136"/>
     </resources>
