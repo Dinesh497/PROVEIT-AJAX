@@ -50,7 +50,7 @@
 		1BFD108C18E09B7500AF08A6 /* AjaxAgendaApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AjaxAgendaApp-Prefix.pch"; sourceTree = "<group>"; };
 		1BFD108D18E09B7500AF08A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BFD108E18E09B7500AF08A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1BFD109118E09B7500AF08A6 /* Base */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BFD109118E09B7500AF08A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BFD109618E09B7500AF08A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BFD109C18E09B7500AF08A6 /* AjaxAgendaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjaxAgendaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFD109D18E09B7500AF08A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
