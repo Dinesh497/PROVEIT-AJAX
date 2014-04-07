@@ -25,7 +25,6 @@
 		D4BB836818E0AA3200808342 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836718E0AA3200808342 /* background1008.png */; };
 		D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836B18E0AA5E00808342 /* loginScreen1136.png */; };
 		D4E75E6C18E425F3009735DB /* TrainingOverzichtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E75E6B18E425F3009735DB /* TrainingOverzichtViewController.m */; };
-		D4E75E6F18E4282B009735DB /* TrainingInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E75E6E18E4282B009735DB /* TrainingInfoViewController.m */; };
 		D4E75E7218E42879009735DB /* SelectTrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E75E7118E42879009735DB /* SelectTrainingViewController.m */; };
 		D4EC762018E2E6C300045E20 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC761F18E2E6C300045E20 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
@@ -65,8 +64,6 @@
 		D4BB836B18E0AA5E00808342 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
 		D4E75E6A18E425F3009735DB /* TrainingOverzichtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingOverzichtViewController.h; sourceTree = "<group>"; };
 		D4E75E6B18E425F3009735DB /* TrainingOverzichtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingOverzichtViewController.m; sourceTree = "<group>"; };
-		D4E75E6D18E4282B009735DB /* TrainingInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingInfoViewController.h; sourceTree = "<group>"; };
-		D4E75E6E18E4282B009735DB /* TrainingInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingInfoViewController.m; sourceTree = "<group>"; };
 		D4E75E7018E42879009735DB /* SelectTrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTrainingViewController.h; sourceTree = "<group>"; };
 		D4E75E7118E42879009735DB /* SelectTrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTrainingViewController.m; sourceTree = "<group>"; };
 		D4EC761E18E2E6C300045E20 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -137,8 +134,6 @@
 				D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */,
 				D4EC761E18E2E6C300045E20 /* MenuViewController.h */,
 				D4EC761F18E2E6C300045E20 /* MenuViewController.m */,
-				D4E75E6D18E4282B009735DB /* TrainingInfoViewController.h */,
-				D4E75E6E18E4282B009735DB /* TrainingInfoViewController.m */,
 				D4E75E7018E42879009735DB /* SelectTrainingViewController.h */,
 				D4E75E7118E42879009735DB /* SelectTrainingViewController.m */,
 				D4E75E6A18E425F3009735DB /* TrainingOverzichtViewController.h */,
@@ -283,7 +278,6 @@
 			files = (
 				1BFD108F18E09B7500AF08A6 /* AppDelegate.m in Sources */,
 				1BFD108B18E09B7500AF08A6 /* main.m in Sources */,
-				D4E75E6F18E4282B009735DB /* TrainingInfoViewController.m in Sources */,
 				D4E75E6C18E425F3009735DB /* TrainingOverzichtViewController.m in Sources */,
 				D4349E9918E0B2D5002FF7F5 /* LoginViewController.m in Sources */,
 				D4EC762018E2E6C300045E20 /* MenuViewController.m in Sources */,
