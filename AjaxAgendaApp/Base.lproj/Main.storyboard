@@ -101,21 +101,7 @@
                                 <state key="normal" title="Training">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-=======
->>>>>>> parent of c3e9eff... jgf
-                                <connections>
-                                    <segue destination="b7B-u8-KMS" kind="push" id="wVJ-NM-QDg"/>
-                                </connections>
->>>>>>> FETCH_HEAD
+
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-Wt-T71">
                                 <rect key="frame" x="95" y="252" width="130" height="30"/>
