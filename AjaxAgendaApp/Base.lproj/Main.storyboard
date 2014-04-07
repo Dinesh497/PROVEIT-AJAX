@@ -105,18 +105,18 @@
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Training">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+</state>
 <<<<<<< HEAD
 =======
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="b7B-u8-KMS" kind="push" id="wVJ-NM-QDg"/>
-                                </connections>
+<userDefinedRuntimeAttributes>
+<userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+<integer key="value" value="10"/>
+</userDefinedRuntimeAttribute>
+<userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+</userDefinedRuntimeAttributes>
+<connections>
+<segue destination="b7B-u8-KMS" kind="push" id="wVJ-NM-QDg"/>
+</connections>
 >>>>>>> FETCH_HEAD
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-Wt-T71">
