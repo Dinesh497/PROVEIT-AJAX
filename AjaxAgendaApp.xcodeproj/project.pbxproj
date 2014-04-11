@@ -14,13 +14,19 @@
 		1BFD108B18E09B7500AF08A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD108A18E09B7500AF08A6 /* main.m */; };
 		1BFD108F18E09B7500AF08A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD108E18E09B7500AF08A6 /* AppDelegate.m */; };
 		1BFD109218E09B7500AF08A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD109018E09B7500AF08A6 /* Main.storyboard */; };
-		1BFD109518E09B7500AF08A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD109418E09B7500AF08A6 /* ViewController.m */; };
 		1BFD109718E09B7500AF08A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD109618E09B7500AF08A6 /* Images.xcassets */; };
 		1BFD109E18E09B7500AF08A6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD109D18E09B7500AF08A6 /* XCTest.framework */; };
 		1BFD109F18E09B7500AF08A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD107E18E09B7500AF08A6 /* Foundation.framework */; };
 		1BFD10A018E09B7500AF08A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD108218E09B7500AF08A6 /* UIKit.framework */; };
 		1BFD10A818E09B7500AF08A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD10A618E09B7500AF08A6 /* InfoPlist.strings */; };
 		1BFD10AA18E09B7500AF08A6 /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */; };
+		D40B922E18E56D0B000F13E8 /* LoginView.png in Resources */ = {isa = PBXBuildFile; fileRef = D40B922D18E56D0B000F13E8 /* LoginView.png */; };
+		D4349E9918E0B2D5002FF7F5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */; };
+		D4BB836818E0AA3200808342 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836718E0AA3200808342 /* background1008.png */; };
+		D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB836B18E0AA5E00808342 /* loginScreen1136.png */; };
+		D4E75E6C18E425F3009735DB /* TrainingOverzichtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E75E6B18E425F3009735DB /* TrainingOverzichtViewController.m */; };
+		D4E75E7218E42879009735DB /* SelectTrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E75E7118E42879009735DB /* SelectTrainingViewController.m */; };
+		D4EC762018E2E6C300045E20 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC761F18E2E6C300045E20 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +51,23 @@
 		1BFD108D18E09B7500AF08A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BFD108E18E09B7500AF08A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1BFD109118E09B7500AF08A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1BFD109318E09B7500AF08A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1BFD109418E09B7500AF08A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1BFD109618E09B7500AF08A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BFD109C18E09B7500AF08A6 /* AjaxAgendaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjaxAgendaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFD109D18E09B7500AF08A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1BFD10A518E09B7500AF08A6 /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BFD10A718E09B7500AF08A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BFD10A918E09B7500AF08A6 /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		D40B922D18E56D0B000F13E8 /* LoginView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginView.png; sourceTree = "<group>"; };
+		D4349E9718E0B2D5002FF7F5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D4BB836718E0AA3200808342 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
+		D4BB836B18E0AA5E00808342 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
+		D4E75E6A18E425F3009735DB /* TrainingOverzichtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingOverzichtViewController.h; sourceTree = "<group>"; };
+		D4E75E6B18E425F3009735DB /* TrainingOverzichtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingOverzichtViewController.m; sourceTree = "<group>"; };
+		D4E75E7018E42879009735DB /* SelectTrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTrainingViewController.h; sourceTree = "<group>"; };
+		D4E75E7118E42879009735DB /* SelectTrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTrainingViewController.m; sourceTree = "<group>"; };
+		D4EC761E18E2E6C300045E20 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		D4EC761F18E2E6C300045E20 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +130,14 @@
 				1BFD108D18E09B7500AF08A6 /* AppDelegate.h */,
 				1BFD108E18E09B7500AF08A6 /* AppDelegate.m */,
 				1BFD109018E09B7500AF08A6 /* Main.storyboard */,
-				1BFD109318E09B7500AF08A6 /* ViewController.h */,
-				1BFD109418E09B7500AF08A6 /* ViewController.m */,
+				D4349E9718E0B2D5002FF7F5 /* LoginViewController.h */,
+				D4349E9818E0B2D5002FF7F5 /* LoginViewController.m */,
+				D4EC761E18E2E6C300045E20 /* MenuViewController.h */,
+				D4EC761F18E2E6C300045E20 /* MenuViewController.m */,
+				D4E75E7018E42879009735DB /* SelectTrainingViewController.h */,
+				D4E75E7118E42879009735DB /* SelectTrainingViewController.m */,
+				D4E75E6A18E425F3009735DB /* TrainingOverzichtViewController.h */,
+				D4E75E6B18E425F3009735DB /* TrainingOverzichtViewController.m */,
 				1BFD109618E09B7500AF08A6 /* Images.xcassets */,
 				1BFD108518E09B7500AF08A6 /* Supporting Files */,
 			);
@@ -126,6 +147,9 @@
 		1BFD108518E09B7500AF08A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D40B922D18E56D0B000F13E8 /* LoginView.png */,
+				D4BB836B18E0AA5E00808342 /* loginScreen1136.png */,
+				D4BB836718E0AA3200808342 /* background1008.png */,
 				1BFD108618E09B7500AF08A6 /* AjaxAgendaApp-Info.plist */,
 				1BFD108718E09B7500AF08A6 /* InfoPlist.strings */,
 				1BFD108A18E09B7500AF08A6 /* main.m */,
@@ -229,6 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFD109718E09B7500AF08A6 /* Images.xcassets in Resources */,
+				D4BB836818E0AA3200808342 /* background1008.png in Resources */,
+				D40B922E18E56D0B000F13E8 /* LoginView.png in Resources */,
+				D4BB836C18E0AA5E00808342 /* loginScreen1136.png in Resources */,
 				1BFD108918E09B7500AF08A6 /* InfoPlist.strings in Resources */,
 				1BFD109218E09B7500AF08A6 /* Main.storyboard in Resources */,
 			);
@@ -249,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFD109518E09B7500AF08A6 /* ViewController.m in Sources */,
 				1BFD108F18E09B7500AF08A6 /* AppDelegate.m in Sources */,
 				1BFD108B18E09B7500AF08A6 /* main.m in Sources */,
+				D4E75E6C18E425F3009735DB /* TrainingOverzichtViewController.m in Sources */,
+				D4349E9918E0B2D5002FF7F5 /* LoginViewController.m in Sources */,
+				D4EC762018E2E6C300045E20 /* MenuViewController.m in Sources */,
+				D4E75E7218E42879009735DB /* SelectTrainingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
@@ -389,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
@@ -456,6 +488,7 @@
 				1BFD10AF18E09B7500AF08A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BFD10B018E09B7500AF08A6 /* Build configuration list for PBXNativeTarget "AjaxAgendaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +497,7 @@
 				1BFD10B218E09B7500AF08A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
