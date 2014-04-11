@@ -1,4 +1,0 @@
-PROVEIT-AJAX
-============
-
-AFC Ajax
