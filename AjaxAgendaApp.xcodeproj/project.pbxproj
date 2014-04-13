@@ -21,6 +21,7 @@
 		1BC0D86A18F835B300789C6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84C18F835B300789C6C /* UIKit.framework */; };
 		1BC0D87218F835B300789C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D87018F835B300789C6C /* InfoPlist.strings */; };
 		1BC0D87418F835B300789C6C /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */; };
+		D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */; };
 		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
 		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
@@ -56,6 +57,8 @@
 		1BC0D86F18F835B300789C6C /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BC0D87118F835B300789C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingInfoViewController.h; sourceTree = "<group>"; };
+		D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingInfoViewController.m; sourceTree = "<group>"; };
 		D491866A18FA9BFB00B70233 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		D491866B18FA9BFB00B70233 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		D491866D18FB0D9B00B70233 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				1BC0D85E18F835B300789C6C /* LoginViewController.m */,
 				D491866A18FA9BFB00B70233 /* MenuViewController.h */,
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
+				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
+				D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */,
 				1BC0D86018F835B300789C6C /* Images.xcassets */,
 				1BC0D84F18F835B300789C6C /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 			files = (
 				1BC0D85F18F835B300789C6C /* LoginViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
+				D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
 				D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */,
 			);
