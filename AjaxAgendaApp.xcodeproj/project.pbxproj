@@ -14,13 +14,16 @@
 		1BC0D85518F835B300789C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D85418F835B300789C6C /* main.m */; };
 		1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D85818F835B300789C6C /* AppDelegate.m */; };
 		1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D85A18F835B300789C6C /* Main.storyboard */; };
-		1BC0D85F18F835B300789C6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D85E18F835B300789C6C /* ViewController.m */; };
+		1BC0D85F18F835B300789C6C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D85E18F835B300789C6C /* LoginViewController.m */; };
 		1BC0D86118F835B300789C6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D86018F835B300789C6C /* Images.xcassets */; };
 		1BC0D86818F835B300789C6C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D86718F835B300789C6C /* XCTest.framework */; };
 		1BC0D86918F835B300789C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84818F835B300789C6C /* Foundation.framework */; };
 		1BC0D86A18F835B300789C6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84C18F835B300789C6C /* UIKit.framework */; };
 		1BC0D87218F835B300789C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D87018F835B300789C6C /* InfoPlist.strings */; };
 		1BC0D87418F835B300789C6C /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */; };
+		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
+		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
+		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +48,18 @@
 		1BC0D85718F835B300789C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BC0D85818F835B300789C6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1BC0D85B18F835B300789C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1BC0D85D18F835B300789C6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1BC0D85E18F835B300789C6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1BC0D85D18F835B300789C6C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1BC0D85E18F835B300789C6C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1BC0D86018F835B300789C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BC0D86618F835B300789C6C /* AjaxAgendaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjaxAgendaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC0D86718F835B300789C6C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1BC0D86F18F835B300789C6C /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BC0D87118F835B300789C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		D491866A18FA9BFB00B70233 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		D491866B18FA9BFB00B70233 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		D491866D18FB0D9B00B70233 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
+		D491866E18FB0D9B00B70233 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +122,10 @@
 				1BC0D85718F835B300789C6C /* AppDelegate.h */,
 				1BC0D85818F835B300789C6C /* AppDelegate.m */,
 				1BC0D85A18F835B300789C6C /* Main.storyboard */,
-				1BC0D85D18F835B300789C6C /* ViewController.h */,
-				1BC0D85E18F835B300789C6C /* ViewController.m */,
+				1BC0D85D18F835B300789C6C /* LoginViewController.h */,
+				1BC0D85E18F835B300789C6C /* LoginViewController.m */,
+				D491866A18FA9BFB00B70233 /* MenuViewController.h */,
+				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
 				1BC0D86018F835B300789C6C /* Images.xcassets */,
 				1BC0D84F18F835B300789C6C /* Supporting Files */,
 			);
@@ -126,6 +135,8 @@
 		1BC0D84F18F835B300789C6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
+				D491866E18FB0D9B00B70233 /* background1008.png */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,
 				1BC0D85118F835B300789C6C /* InfoPlist.strings */,
 				1BC0D85418F835B300789C6C /* main.m */,
@@ -230,6 +241,8 @@
 			files = (
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
+				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
+				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC0D85F18F835B300789C6C /* ViewController.m in Sources */,
+				1BC0D85F18F835B300789C6C /* LoginViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
+				D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +470,7 @@
 				1BC0D87918F835B300789C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BC0D87A18F835B300789C6C /* Build configuration list for PBXNativeTarget "AjaxAgendaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				1BC0D87C18F835B300789C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
