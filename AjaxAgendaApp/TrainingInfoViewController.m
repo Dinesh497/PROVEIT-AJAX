@@ -127,14 +127,12 @@
             if (_ActiveDatePickerNumber == 2) {
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
-                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
                 NSDate *BeginDate = [_timeFormatter dateFromString:[_DetailsSectionOne objectAtIndex:indexPath.row]];
                 [_DatePicker setDate:BeginDate];
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
-                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
             }
         } else{
             cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
@@ -222,8 +220,10 @@
         
     }
     if (_ActiveDatePickerNumber == 2) {
-        // NSDate *selectedTime = [_DatePicker date];
-        NSString *selectedTimeString = @"12:00"; // [_timeFormatter stringFromDate:selectedTime];
+        UITableViewCell *timeCell = [_TrainingTableView dequeueReusableHeaderFooterViewWithIdentifier:@"TimePickerCell"];
+        UIDatePicker *targetedDatepicker = (UIDatePicker *)[timeCell viewWithTag:TagTimeDatePicker];
+        NSDate *selectedTime = [targetedDatepicker date];
+        NSString *selectedTimeString = [_timeFormatter stringFromDate:selectedTime];
         [_DetailsSectionOne replaceObjectAtIndex:1 withObject:selectedTimeString];
     
     }
