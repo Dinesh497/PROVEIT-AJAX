@@ -8,6 +8,9 @@
 
 #import "TrainingInfoViewController.h"
 
+#define TagDateDatePicker           21
+#define TagTimeDatePicker           22
+
 @interface TrainingInfoViewController ()
 
 @property NSArray *HeadersSectionOne;
@@ -18,6 +21,9 @@
 @property NSDate *Date;
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
+
+@property BOOL *DatePickerActive;
+@property int ActiveDatePickerNumber;
 
 @end
 
@@ -48,6 +54,9 @@
     // Maak Titels en start details voor locatie
     _HeadersSectionTwo = [[NSArray alloc] initWithObjects:@"Veld",  nil];
     _DetailsSectionTwo = [[NSArray alloc] initWithObjects:@"1",     nil];
+    
+    // De Datepicker is nog niet actief
+    _ActiveLocation = 0;
     
     // Do any additional setup after loading the view.
 }
@@ -97,6 +106,20 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Als er een rij wordt geselecteerd
     [_TrainingTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        if (_DatePickerActive) {
+            if(_ActiveDatePickerNumber == indexPath.row){
+                // Verwijder de picker cell van de tableview
+            } else{
+                // Verplaats de picker cell naar de nieuwe geselecteerde positie
+            }
+        } else{
+            // Voeg de picker cell toe aan de tableview
+        }
+    } else {
+        // Ga naar het veld selecteer menu
+    }
 }
 
 - (void)didReceiveMemoryWarning
