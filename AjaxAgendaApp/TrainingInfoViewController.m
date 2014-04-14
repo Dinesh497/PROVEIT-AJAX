@@ -22,8 +22,10 @@
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
 
-@property BOOL *DatePickerActive;
-@property int ActiveDatePickerNumber;
+@property BOOL DatePickerActive;
+
+// Geeft aan welke rij in de datepicker aanwezig is, als de waarde 5 is is de datepicker niet aanwezig
+@property NSInteger ActiveDatePickerNumber;
 
 @end
 
@@ -56,7 +58,8 @@
     _DetailsSectionTwo = [[NSArray alloc] initWithObjects:@"1",     nil];
     
     // De Datepicker is nog niet actief
-    _ActiveLocation = 0;
+    _ActiveDatePickerNumber = 5;
+    _DatePickerActive = NO;
     
     // Do any additional setup after loading the view.
 }
@@ -78,9 +81,15 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     if(section == 0){
-        // De eerste sectie heeft drie rijen nodig voor begin tijd, eind tijd en datum
-        return [_HeadersSectionOne count];
+        if (!_DatePickerActive) {
+            // De eerste sectie heeft drie rijen nodig voor begin tijd, eind tijd en datum
+            return [_HeadersSectionOne count];
+        } else{
+            // Er komt een extra cell bij
+            return 4;
+        }
     } else{
         // De tweede sectie heeft een rij nodig voor het veld
         return [_HeadersSectionTwo count];
@@ -88,14 +97,31 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
+    UITableViewCell *cell;
     
     if (indexPath.section == 0) {
         // Sectie 1: Tijd
-        cell.textLabel.text = [_HeadersSectionOne objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [_DetailsSectionOne objectAtIndex:indexPath.row];
+        if (_DatePickerActive){
+            if (_ActiveDatePickerNumber == 1) {
+                // De datepicker heeft positie 1
+                cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+            }
+            if (_ActiveDatePickerNumber == 2) {
+                // De datepicker heeft positie 2
+                cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+            }
+            if (_ActiveDatePickerNumber == 3) {
+                // De datepicker heeft positie 3
+                cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+            }
+        } else{
+            cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
+            cell.textLabel.text = [_HeadersSectionOne objectAtIndex:indexPath.row];
+            cell.detailTextLabel.text = [_DetailsSectionOne objectAtIndex:indexPath.row];
+        }
     } else{
         // Sectie 2: Locatie
+        cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
         cell.textLabel.text = [_HeadersSectionTwo objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [_DetailsSectionTwo objectAtIndex:indexPath.row];
     }
@@ -107,18 +133,47 @@
     // Als er een rij wordt geselecteerd
     [_TrainingTableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [_TrainingTableView beginUpdates];
+    
+    NSArray *indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+    
     if (indexPath.section == 0) {
         if (_DatePickerActive) {
-            if(_ActiveDatePickerNumber == indexPath.row){
+            if(_ActiveDatePickerNumber == indexPath.row + 1){
                 // Verwijder de picker cell van de tableview
+                _DatePickerActive = NO;
+                _ActiveDatePickerNumber = 5;
+                [_TrainingTableView deleteRowsAtIndexPaths:indexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
             } else{
                 // Verplaats de picker cell naar de nieuwe geselecteerde positie
+                
+                
             }
         } else{
             // Voeg de picker cell toe aan de tableview
+            _DatePickerActive = YES;
+            _ActiveDatePickerNumber = indexPath.row + 1;
+            [_TrainingTableView insertRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:UITableViewRowAnimationFade];
         }
     } else {
         // Ga naar het veld selecteer menu
+    }
+    
+    [_TrainingTableView endUpdates];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_DatePickerActive){
+        if (_ActiveDatePickerNumber == indexPath.row) {
+            return 162;
+        } else{
+            return 44;
+        }
+    } else {
+        return 44;
     }
 }
 
