@@ -68,7 +68,7 @@
     
     // Maak Titels en start details voor tijd
     _HeadersSectionOne = [[NSMutableArray alloc] initWithObjects:@"Datum",     @"Begin",   @"Eind",    nil];
-    _DetailsSectionOne = [[NSMutableArray alloc] initWithObjects:vandaag,   @"12:00",   @"13:00",   nil];
+    _DetailsSectionOne = [[NSMutableArray alloc] initWithObjects:vandaag,      @"Geen",    @"Geen",    nil];
     
     // Maak Titels en start details voor locatie
     _HeadersSectionTwo = [[NSMutableArray alloc] initWithObjects:@"Veld",  nil];
@@ -128,7 +128,8 @@
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
                 _DatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
-
+                NSDate *BeginDate = [_timeFormatter dateFromString:[_DetailsSectionOne objectAtIndex:indexPath.row]];
+                [_DatePicker setDate:BeginDate];
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
@@ -211,6 +212,28 @@
     } else {
         return 44;
     }
+}
+
+- (IBAction)DatepickerChangedValue:(id)sender {
+    
+    [_TrainingTableView beginUpdates];
+    
+    if (_ActiveDatePickerNumber == 1) {
+        
+    }
+    if (_ActiveDatePickerNumber == 2) {
+        // NSDate *selectedTime = [_DatePicker date];
+        NSString *selectedTimeString = @"12:00"; // [_timeFormatter stringFromDate:selectedTime];
+        [_DetailsSectionOne replaceObjectAtIndex:1 withObject:selectedTimeString];
+    
+    }
+    if (_ActiveDatePickerNumber == 3) {
+        // NSDate *selectedTime = [_DatePicker date];
+        NSString *selectedTimeString = @"13:00"; // [_timeFormatter stringFromDate:selectedTime];
+        [_DetailsSectionOne replaceObjectAtIndex:2 withObject:selectedTimeString];
+    }
+    
+    [_TrainingTableView endUpdates];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,5 +10,6 @@
 
 @interface TrainingInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TrainingTableView;
+- (IBAction)DatepickerChangedValue:(id)sender;
 
 @end

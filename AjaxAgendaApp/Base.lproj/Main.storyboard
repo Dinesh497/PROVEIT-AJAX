@@ -222,6 +222,9 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                                     </timeZone>
+                                                    <connections>
+                                                        <action selector="DatepickerChangedValue:" destination="W4d-al-rvd" eventType="valueChanged" id="VhF-8I-B8P"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -332,6 +335,9 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                     </timeZone>
+                    <connections>
+                        <action selector="DatepickerChangedValue:" destination="W4d-al-rvd" eventType="valueChanged" id="You-4I-TSh"/>
+                    </connections>
                 </datePicker>
             </objects>
             <point key="canvasLocation" x="1455" y="411"/>
