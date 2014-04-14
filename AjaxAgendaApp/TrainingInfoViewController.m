@@ -22,8 +22,8 @@
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
 
-@property (nonatomic, strong) IBOutlet UIDatePicker *DateDatePicker;
-@property (nonatomic, strong) IBOutlet UIDatePicker *TimeDatePicker;
+@property (nonatomic, strong) IBOutlet UIDatePicker *DatePicker;
+
 
 @property NSDateFormatter *timeFormatter;
 @property NSDateFormatter *dateFormatter;
@@ -122,19 +122,18 @@
             if (_ActiveDatePickerNumber == 1) {
                 // De datepicker heeft positie 1
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"DatePickerCell"];
-                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagDateDatePicker];
+                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagDateDatePicker];
             }
             if (_ActiveDatePickerNumber == 2) {
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
-                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
-                
+                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
+
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
-                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
-                
+                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
             }
         } else{
             cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
