@@ -13,14 +13,20 @@
 
 @interface TrainingInfoViewController ()
 
-@property NSArray *HeadersSectionOne;
-@property NSArray *HeadersSectionTwo;
-@property NSArray *DetailsSectionOne;
-@property NSArray *DetailsSectionTwo;
+@property NSMutableArray *HeadersSectionOne;
+@property NSMutableArray *HeadersSectionTwo;
+@property NSMutableArray *DetailsSectionOne;
+@property NSMutableArray *DetailsSectionTwo;
 
 @property NSDate *Date;
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
+
+@property (nonatomic, strong) IBOutlet UIDatePicker *DateDatePicker;
+@property (nonatomic, strong) IBOutlet UIDatePicker *TimeDatePicker;
+
+@property NSDateFormatter *timeFormatter;
+@property NSDateFormatter *dateFormatter;
 
 @property BOOL DatePickerActive;
 
@@ -49,13 +55,24 @@
     _TrainingTableView.dataSource =          self;
     _TrainingTableView.layer.cornerRadius =    10;
     
+    // Zet de formatten
+    _timeFormatter = [[NSDateFormatter alloc] init];
+    [_timeFormatter setDateStyle:NSDateFormatterShortStyle];
+    [_timeFormatter setDateFormat:@"HH:mm"];
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    
+    // Zet de datum van vandaag
+    NSDate *DatumVandaag = [NSDate date];
+    NSString *vandaag = [_dateFormatter stringFromDate:DatumVandaag];
+    
     // Maak Titels en start details voor tijd
-    _HeadersSectionOne = [[NSArray alloc] initWithObjects:@"Datum",     @"Begin",   @"Eind",    nil];
-    _DetailsSectionOne = [[NSArray alloc] initWithObjects:@"Vandaag",   @"12:00",   @"13:00",   nil];
+    _HeadersSectionOne = [[NSMutableArray alloc] initWithObjects:@"Datum",     @"Begin",   @"Eind",    nil];
+    _DetailsSectionOne = [[NSMutableArray alloc] initWithObjects:vandaag,   @"12:00",   @"13:00",   nil];
     
     // Maak Titels en start details voor locatie
-    _HeadersSectionTwo = [[NSArray alloc] initWithObjects:@"Veld",  nil];
-    _DetailsSectionTwo = [[NSArray alloc] initWithObjects:@"1",     nil];
+    _HeadersSectionTwo = [[NSMutableArray alloc] initWithObjects:@"Veld",  nil];
+    _DetailsSectionTwo = [[NSMutableArray alloc] initWithObjects:@"1",     nil];
     
     // De Datepicker is nog niet actief
     _ActiveDatePickerNumber = 5;
@@ -104,15 +121,20 @@
         if (_DatePickerActive){
             if (_ActiveDatePickerNumber == 1) {
                 // De datepicker heeft positie 1
-                cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+                cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"DatePickerCell"];
+                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagDateDatePicker];
             }
             if (_ActiveDatePickerNumber == 2) {
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
+                
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+                _DateDatePicker = (UIDatePicker *)[cell viewWithTag:TagTimeDatePicker];
+                
             }
         } else{
             cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
@@ -135,23 +157,38 @@
     
     [_TrainingTableView beginUpdates];
     
-    NSArray *indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+    NSArray *indexPaths;
+    NSArray *deleteIndexPaths = @[[NSIndexPath indexPathForRow:_ActiveDatePickerNumber inSection:0]];
     
     if (indexPath.section == 0) {
         if (_DatePickerActive) {
             if(_ActiveDatePickerNumber == indexPath.row + 1){
                 // Verwijder de picker cell van de tableview
+                indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                
                 _DatePickerActive = NO;
                 _ActiveDatePickerNumber = 5;
                 [_TrainingTableView deleteRowsAtIndexPaths:indexPaths
                                           withRowAnimation:UITableViewRowAnimationFade];
             } else{
                 // Verplaats de picker cell naar de nieuwe geselecteerde positie
+                if(indexPath.row > _ActiveDatePickerNumber){
+                    indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+                    _ActiveDatePickerNumber = indexPath.row;
+                } else{
+                    indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                    _ActiveDatePickerNumber = indexPath.row + 1;
+                }
                 
-                
+                [_TrainingTableView deleteRowsAtIndexPaths:deleteIndexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
+                [_TrainingTableView insertRowsAtIndexPaths:indexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
             }
         } else{
             // Voeg de picker cell toe aan de tableview
+            indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+            
             _DatePickerActive = YES;
             _ActiveDatePickerNumber = indexPath.row + 1;
             [_TrainingTableView insertRowsAtIndexPaths:indexPaths
