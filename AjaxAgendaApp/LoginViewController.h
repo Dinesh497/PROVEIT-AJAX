@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *LoginFrame;
 @property (weak, nonatomic) IBOutlet UITextField *TrainerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *WachtwoordTextField;
 - (IBAction)TrainerTextDidExit:(id)sender;

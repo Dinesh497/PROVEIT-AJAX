@@ -17,7 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    _LoginFrame.layer.cornerRadius = 15;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +46,7 @@
         [self GotoNavigationView];
     } else {
         // If the password is incorrect
-        UIAlertView *wrongPassword = [[UIAlertView alloc] initWithTitle:@"Verkeerd wachtwoord" message:@"Wachtwoord komt niet overeen met trainer" delegate:self cancelButtonTitle:@"Opnieuw" otherButtonTitles:nil];
+        UIAlertView *wrongPassword = [[UIAlertView alloc] initWithTitle:@"Verkeerd wachtwoord" message:@"Wachtwoord of trainer is verkeerd ingevuld" delegate:self cancelButtonTitle:@"Opnieuw" otherButtonTitles:nil];
         [wrongPassword show];
     }
 }
