@@ -25,6 +25,7 @@
 		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
 		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
+		D4DF639718FE8DDF00D7CD6E /* GrassBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D491866B18FA9BFB00B70233 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		D491866D18FB0D9B00B70233 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
 		D491866E18FB0D9B00B70233 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
+		D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrassBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		1BC0D84F18F835B300789C6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */,
 				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
 				D491866E18FB0D9B00B70233 /* background1008.png */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,
@@ -246,6 +249,7 @@
 			files = (
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
+				D4DF639718FE8DDF00D7CD6E /* GrassBackground.png in Resources */,
 				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
 				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,

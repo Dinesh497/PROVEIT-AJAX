@@ -127,8 +127,6 @@
             if (_ActiveDatePickerNumber == 2) {
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
-                NSDate *BeginDate = [_timeFormatter dateFromString:[_DetailsSectionOne objectAtIndex:indexPath.row]];
-                [_DatePicker setDate:BeginDate];
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
@@ -141,7 +139,7 @@
         }
     } else{
         // Sectie 2: Locatie
-        cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
+        cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"FieldDetailCell"];
         cell.textLabel.text = [_HeadersSectionTwo objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [_DetailsSectionTwo objectAtIndex:indexPath.row];
     }
@@ -194,6 +192,9 @@
         }
     } else {
         // Ga naar het veld selecteer menu
+        _SelectFieldFrame.layer.cornerRadius = 10;
+        [_SelectFieldFrame setFrame:CGRectMake(30, 79, 260, 405)];
+        [self.view addSubview:_SelectFieldFrame];
     }
     
     [_TrainingTableView endUpdates];
@@ -212,7 +213,7 @@
     }
 }
 
-- (IBAction)DatepickerChangedValue:(id)sender {
+- (IBAction)DatePickerValueChanged:(id)sender {
     
     [_TrainingTableView beginUpdates];
     
@@ -252,5 +253,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)BackButtonPressedVeld:(id)sender {
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)SelectVeld:(id)sender {
+    [_SelectFieldFrame removeFromSuperview];
+}
 
 @end
