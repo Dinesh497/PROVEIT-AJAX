@@ -8,9 +8,6 @@
 
 #import "TrainingInfoViewController.h"
 
-#define TagDateDatePicker           21
-#define TagTimeDatePicker           22
-
 @interface TrainingInfoViewController ()
 
 @property NSMutableArray *HeadersSectionOne;
@@ -22,12 +19,10 @@
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
 
-@property (nonatomic, strong) IBOutlet UIDatePicker *DatePicker;
-
-
 @property NSDateFormatter *timeFormatter;
 @property NSDateFormatter *dateFormatter;
 
+@property UIDatePicker *datePicker;
 @property BOOL DatePickerActive;
 
 // Geeft aan welke rij in de datepicker aanwezig is, als de waarde 5 is is de datepicker niet aanwezig
@@ -81,6 +76,8 @@
     // Do any additional setup after loading the view.
 }
 
+// Tableview
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if(section == 0){
         // De eerste sectie is van de tijden
@@ -122,15 +119,30 @@
             if (_ActiveDatePickerNumber == 1) {
                 // De datepicker heeft positie 1
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"DatePickerCell"];
-                _DatePicker = (UIDatePicker *)[cell viewWithTag:TagDateDatePicker];
+                
+                _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
+            
+                _datePicker.datePickerMode = UIDatePickerModeDate;
+                [_datePicker addTarget:self action:@selector(datePicker1ValueChanged) forControlEvents:UIControlEventValueChanged];
+                [cell.contentView addSubview:_datePicker];
             }
             if (_ActiveDatePickerNumber == 2) {
                 // De datepicker heeft positie 2
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+                
+                _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
+                _datePicker.datePickerMode = UIDatePickerModeTime;
+                [_datePicker addTarget:self action:@selector(datePicker2ValueChanged) forControlEvents:UIControlEventValueChanged];
+                [cell.contentView addSubview:_datePicker];
             }
             if (_ActiveDatePickerNumber == 3) {
                 // De datepicker heeft positie 3
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+                
+                _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
+                _datePicker.datePickerMode = UIDatePickerModeTime;
+                [_datePicker addTarget:self action:@selector(datePicker3ValueChanged) forControlEvents:UIControlEventValueChanged];
+                [cell.contentView addSubview:_datePicker];
             }
         } else{
             cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
@@ -213,46 +225,11 @@
     }
 }
 
-- (IBAction)DatePickerValueChanged:(id)sender {
-    
-    [_TrainingTableView beginUpdates];
-    
-    if (_ActiveDatePickerNumber == 1) {
-        
-    }
-    if (_ActiveDatePickerNumber == 2) {
-        UITableViewCell *timeCell = [_TrainingTableView dequeueReusableHeaderFooterViewWithIdentifier:@"TimePickerCell"];
-        UIDatePicker *targetedDatepicker = (UIDatePicker *)[timeCell viewWithTag:TagTimeDatePicker];
-        NSDate *selectedTime = [targetedDatepicker date];
-        NSString *selectedTimeString = [_timeFormatter stringFromDate:selectedTime];
-        [_DetailsSectionOne replaceObjectAtIndex:1 withObject:selectedTimeString];
-    
-    }
-    if (_ActiveDatePickerNumber == 3) {
-        // NSDate *selectedTime = [_DatePicker date];
-        NSString *selectedTimeString = @"13:00"; // [_timeFormatter stringFromDate:selectedTime];
-        [_DetailsSectionOne replaceObjectAtIndex:2 withObject:selectedTimeString];
-    }
-    
-    [_TrainingTableView endUpdates];
-}
+// Tijd en datum selecteren
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+// Veld Selecteren
 
 - (IBAction)BackButtonPressedVeld:(id)sender {
     [_SelectFieldFrame removeFromSuperview];
@@ -403,4 +380,21 @@
     [_SelectFieldFrame removeFromSuperview];
 }
 
-    @end
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+@end
