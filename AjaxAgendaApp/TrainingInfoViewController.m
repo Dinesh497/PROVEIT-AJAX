@@ -55,14 +55,18 @@
     [_timeFormatter setDateFormat:@"HH:mm"];
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateFormat:@"MM/dd/YYYY"];
-    
+
     // Zet de datum van vandaag
     NSDate *DatumVandaag = [NSDate date];
+    _BeginTime = DatumVandaag;
+    _EndTime = [DatumVandaag addTimeInterval:60*60];
     NSString *vandaag = [_dateFormatter stringFromDate:DatumVandaag];
+    NSString *BeginTijdString = [_timeFormatter stringFromDate:_BeginTime];
+    NSString *EindTijdString = [_timeFormatter stringFromDate:_EndTime];
     
     // Maak Titels en start details voor tijd
-    _HeadersSectionOne = [[NSMutableArray alloc] initWithObjects:@"Datum",     @"Begin",   @"Eind",    nil];
-    _DetailsSectionOne = [[NSMutableArray alloc] initWithObjects:vandaag,      @"Geen",    @"Geen",    nil];
+    _HeadersSectionOne = [[NSMutableArray alloc] initWithObjects:@"Datum",     @"Begin",            @"Eind",            nil];
+    _DetailsSectionOne = [[NSMutableArray alloc] initWithObjects:vandaag,      BeginTijdString,     EindTijdString,     nil];
     
     // Maak Titels en start details voor locatie
     _HeadersSectionTwo = [[NSMutableArray alloc] initWithObjects:@"Veld",  nil];
@@ -114,6 +118,10 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell;
     
+    // Haal PM en AM weg uit de datePicker
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"da_DK"];
+    [_datePicker setLocale:locale];
+    
     if (indexPath.section == 0) {
         // Sectie 1: Tijd
         if (_DatePickerActive){
@@ -122,8 +130,15 @@
                 cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"DatePickerCell"];
                 
                 _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
-            
                 _datePicker.datePickerMode = UIDatePickerModeDate;
+                
+                // Geef datePicker de juiste waarde
+                NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:0 inSection:0];
+                UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
+                NSString *TimeString = cellDetail.detailTextLabel.text;
+                NSDate *datePickerTime = [_dateFormatter dateFromString:TimeString];
+                [_datePicker setDate:datePickerTime animated:YES];
+                
                 [_datePicker addTarget:self action:@selector(datePicker1ValueChanged) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:_datePicker];
             }
@@ -133,6 +148,14 @@
                 
                 _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
                 _datePicker.datePickerMode = UIDatePickerModeTime;
+                
+                // Geef datePicker de juiste waarde
+                NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:1 inSection:0];
+                UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
+                NSString *TimeString = cellDetail.detailTextLabel.text;
+                NSDate *datePickerTime = [_timeFormatter dateFromString:TimeString];
+                [_datePicker setDate:datePickerTime animated:YES];
+                
                 [_datePicker addTarget:self action:@selector(datePicker2ValueChanged) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:_datePicker];
             }
@@ -142,6 +165,14 @@
                 
                 _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
                 _datePicker.datePickerMode = UIDatePickerModeTime;
+                
+                // Geef datePicker de juiste waarde
+                NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
+                NSString *TimeString = cellDetail.detailTextLabel.text;
+                NSDate *datePickerTime = [_timeFormatter dateFromString:TimeString];
+                [_datePicker setDate:datePickerTime animated:YES];
+                
                 [_datePicker addTarget:self action:@selector(datePicker3ValueChanged) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:_datePicker];
             }
