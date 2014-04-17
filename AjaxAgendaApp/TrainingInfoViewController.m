@@ -180,8 +180,11 @@
                 _ActiveDatePickerNumber = 5;
                 [_TrainingTableView deleteRowsAtIndexPaths:indexPaths
                                           withRowAnimation:UITableViewRowAnimationFade];
+                [_datePicker removeFromSuperview];
             } else{
                 // Verplaats de picker cell naar de nieuwe geselecteerde positie
+                [_datePicker removeFromSuperview];
+                
                 if(indexPath.row > _ActiveDatePickerNumber){
                     indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
                     _ActiveDatePickerNumber = indexPath.row;
