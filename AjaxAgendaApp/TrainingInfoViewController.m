@@ -262,7 +262,9 @@
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    // Zet Veld 11 in UITableview cell en in de array
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"11";
+    
     [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"11"];
     
     [_TrainingTableView endUpdates];
@@ -273,6 +275,7 @@
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    // Zet Veld 10 in UITableview cell en in de array
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"10";
     [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"10"];
     
@@ -281,6 +284,7 @@
 }
 
 - (IBAction)Veld2Geselecteerd:(id)sender {
+    // Zet Veld 2 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -292,6 +296,7 @@
 }
 
 - (IBAction)Veld9Geselecteerd:(id)sender {
+    // Zet Veld 9 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -303,6 +308,7 @@
 }
 
 - (IBAction)HoofdVeldGeselecteerd:(id)sender {
+    // Zet Veld Hoofd in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -314,6 +320,7 @@
 }
 
 - (IBAction)Veld1Geselecteerd:(id)sender {
+    // Zet Veld 1 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -325,6 +332,7 @@
 }
 
 - (IBAction)Veld7Geselecteerd:(id)sender {
+    // Zet Veld 7 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -336,6 +344,7 @@
 }
 
 - (IBAction)Veld8Geselecteerd:(id)sender {
+    // Zet Veld 8 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -347,6 +356,7 @@
 }
 
 - (IBAction)Veld3Geselecteerd:(id)sender {
+    // Zet Veld 3 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -358,6 +368,7 @@
 }
 
 - (IBAction)Veld4Geselecteerd:(id)sender {
+    // Zet Veld 4 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -369,6 +380,7 @@
 }
 
 - (IBAction)Veld5Geselecteerd:(id)sender {
+    // Zet Veld 5 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -380,6 +392,7 @@
 }
 
 - (IBAction)Veld6Geselecteerd:(id)sender {
+    // Zet Veld 6 in UITableview cell en in de array
     [_TrainingTableView beginUpdates];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
