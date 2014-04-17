@@ -10,7 +10,6 @@
 
 @interface TrainingInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TrainingTableView;
-- (IBAction)DatePickerValueChanged:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *SelectFieldFrame;
 - (IBAction)BackButtonPressedVeld:(id)sender;
 - (IBAction)Veld11Geselecteerd:(id)sender;

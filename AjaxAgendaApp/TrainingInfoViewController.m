@@ -52,7 +52,6 @@
     
     // Zet de formatten
     _timeFormatter = [[NSDateFormatter alloc] init];
-    [_timeFormatter setDateStyle:NSDateFormatterShortStyle];
     [_timeFormatter setDateFormat:@"HH:mm"];
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateFormat:@"MM/dd/YYYY"];
@@ -76,7 +75,9 @@
     // Do any additional setup after loading the view.
 }
 
+//----------------------------------------------------------------------------------------------------------
 // Tableview
+//----------------------------------------------------------------------------------------------------------
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if(section == 0){
@@ -145,6 +146,7 @@
                 [cell.contentView addSubview:_datePicker];
             }
         } else{
+            // Anders is het een Menu cell met een header en detail
             cell = [_TrainingTableView dequeueReusableCellWithIdentifier:@"NormalCell"];
             cell.textLabel.text = [_HeadersSectionOne objectAtIndex:indexPath.row];
             cell.detailTextLabel.text = [_DetailsSectionOne objectAtIndex:indexPath.row];
@@ -225,11 +227,49 @@
     }
 }
 
+//----------------------------------------------------------------------------------------------------------
 // Tijd en datum selecteren
+//----------------------------------------------------------------------------------------------------------
 
+-(void)datePicker1ValueChanged{
+    [_TrainingTableView beginUpdates];
+    
+    NSDate *date = _datePicker.date;
+    NSString *dateString = [_dateFormatter stringFromDate:date];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    [_TrainingTableView endUpdates];
+}
 
+-(void)datePicker2ValueChanged{
+    [_TrainingTableView beginUpdates];
+    
+    NSDate *date = _datePicker.date;
+    NSString *dateString = [_timeFormatter stringFromDate:date];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    [_TrainingTableView endUpdates];
+}
 
+-(void)datePicker3ValueChanged{
+    [_TrainingTableView beginUpdates];
+    
+    NSDate *date = _datePicker.date;
+    NSString *dateString = [_timeFormatter stringFromDate:date];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    [_TrainingTableView endUpdates];
+}
+
+//----------------------------------------------------------------------------------------------------------
 // Veld Selecteren
+//----------------------------------------------------------------------------------------------------------
 
 - (IBAction)BackButtonPressedVeld:(id)sender {
     [_SelectFieldFrame removeFromSuperview];
