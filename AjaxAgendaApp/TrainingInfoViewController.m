@@ -258,8 +258,136 @@
     [_SelectFieldFrame removeFromSuperview];
 }
 
-- (IBAction)SelectVeld:(id)sender {
+- (IBAction)Veld11Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"11";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"11"];
+    
+    [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
 }
 
-@end
+- (IBAction)Veld10Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"10";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"10"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld2Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"2";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"2"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld9Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"9";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"9"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)HoofdVeldGeselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"Hoofd";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"hoofd"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld1Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"1";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"1"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld7Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"7";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"7"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld8Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"8";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"8"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld3Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"3";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"3"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld4Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"4";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"4"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld5Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"5";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"5"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+- (IBAction)Veld6Geselecteerd:(id)sender {
+    [_TrainingTableView beginUpdates];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"6";
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"6"];
+    
+    [_TrainingTableView endUpdates];
+    [_SelectFieldFrame removeFromSuperview];
+}
+
+    @end

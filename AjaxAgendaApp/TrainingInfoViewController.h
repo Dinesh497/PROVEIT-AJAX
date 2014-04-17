@@ -13,7 +13,18 @@
 - (IBAction)DatePickerValueChanged:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *SelectFieldFrame;
 - (IBAction)BackButtonPressedVeld:(id)sender;
-- (IBAction)SelectVeld:(id)sender;
+- (IBAction)Veld11Geselecteerd:(id)sender;
+- (IBAction)Veld10Geselecteerd:(id)sender;
+- (IBAction)Veld2Geselecteerd:(id)sender;
+- (IBAction)Veld9Geselecteerd:(id)sender;
+- (IBAction)HoofdVeldGeselecteerd:(id)sender;
+- (IBAction)Veld1Geselecteerd:(id)sender;
+- (IBAction)Veld7Geselecteerd:(id)sender;
+- (IBAction)Veld8Geselecteerd:(id)sender;
+- (IBAction)Veld3Geselecteerd:(id)sender;
+- (IBAction)Veld4Geselecteerd:(id)sender;
+- (IBAction)Veld5Geselecteerd:(id)sender;
+- (IBAction)Veld6Geselecteerd:(id)sender;
 
 
 
