@@ -9,6 +9,8 @@
 #import "SelectPlayersViewController.h"
 
 @interface SelectPlayersViewController ()
+@property NSMutableArray *Players;
+@property NSMutableArray *Teams;
 
 @end
 
@@ -27,7 +29,60 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _SelectPlayerTable.delegate = self;
+    _SelectPlayerTable.dataSource = self;
+    _SelectPlayerTable.layer.cornerRadius = 10;
+    
+    _SelectPlayersFrame.layer.cornerRadius = 10;
+    
+    _Players = [[NSMutableArray alloc] initWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
+    _Teams = [[NSMutableArray alloc] initWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
 }
+
+//----------------------------------------------------------------------------------------------------------
+// Tableview
+//----------------------------------------------------------------------------------------------------------
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (_SegmentController.selectedSegmentIndex == 0) {
+        return [_Players count];
+    } else{
+        return [_Teams count];
+    }
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell;
+    
+    if (_SegmentController.selectedSegmentIndex == 0) {
+        cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+    } else{
+        cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
+    }
+    
+    return cell;
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Segment Controller
+//----------------------------------------------------------------------------------------------------------
+
+- (IBAction)SelectedSegmentChanged:(id)sender {
+    
+    if (_SegmentController.selectedSegmentIndex == 0) {
+        self.navigationController.title = @"Speler";
+    } else{
+        self.navigationController.title = @"Teams";
+    }
+    
+    [_SelectPlayerTable reloadData];
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Xcode
+//----------------------------------------------------------------------------------------------------------
 
 - (void)didReceiveMemoryWarning
 {

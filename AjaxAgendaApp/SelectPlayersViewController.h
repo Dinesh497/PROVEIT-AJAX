@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectPlayersViewController : UIViewController
+@interface SelectPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *SelectPlayerTable;
+@property (weak, nonatomic) IBOutlet UIView *SelectPlayersFrame;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentController;
+- (IBAction)SelectedSegmentChanged:(id)sender;
 
 @end
