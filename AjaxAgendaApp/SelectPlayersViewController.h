@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Team.h"
 
-@interface SelectPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SelectPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *SelectPlayerTable;
 @property (weak, nonatomic) IBOutlet UIView *SelectPlayersFrame;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentController;

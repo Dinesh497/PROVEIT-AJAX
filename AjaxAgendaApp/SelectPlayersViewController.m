@@ -70,6 +70,29 @@
 }
 
 //----------------------------------------------------------------------------------------------------------
+// SearchBar Controller
+//----------------------------------------------------------------------------------------------------------
+
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    searchBar.showsCancelButton = YES;
+    
+}
+
+- (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    _SearchBar.showsCancelButton = NO;
+    [_SearchBar resignFirstResponder];
+}
+
+- (void) searchBarResultsListButtonClicked:(UISearchBar *)searchBar{
+    
+}
+
+- (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+}
+
+//----------------------------------------------------------------------------------------------------------
 // Segment Controller
 //----------------------------------------------------------------------------------------------------------
 
@@ -84,7 +107,6 @@
         self.navigationItem.title = @"Teams";
         _SearchBar.placeholder = @"Zoek team";
     }
-    
     
     [_SelectPlayerTable reloadData];
 }
