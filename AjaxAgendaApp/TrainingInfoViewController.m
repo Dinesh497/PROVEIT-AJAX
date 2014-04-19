@@ -158,8 +158,6 @@
                 // Geef datePicker de juiste waarde
                 NSIndexPath *indexPathDetailCell;
                 
-                NSLog(@"%ld > %ld",(long)indexPath.row, (long)_OldActiveDatePickerNumber);
-                
                 if(indexPath.row > _OldActiveDatePickerNumber ){
                     indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
                 } else{
@@ -184,8 +182,6 @@
                 
                 // Geef datePicker de juiste waarde
                 NSIndexPath *indexPathDetailCell;
-                
-                NSLog(@"%ld > %ld",(long)indexPath.row, (long)_OldActiveDatePickerNumber);
                 
                 if(indexPath.row > _OldActiveDatePickerNumber){
                     indexPathDetailCell = [NSIndexPath indexPathForRow:3 inSection:0];
