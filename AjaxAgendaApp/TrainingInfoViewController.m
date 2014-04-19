@@ -62,7 +62,7 @@
     
     // IOS 7 oplossing --->
     _EndTime = [DatumVandaag addTimeInterval:60*60];
-        
+    
     NSString *vandaag = [_dateFormatter stringFromDate:DatumVandaag];
     NSString *BeginTijdString = [_timeFormatter stringFromDate:_BeginTime];
     NSString *EindTijdString = [_timeFormatter stringFromDate:_EndTime];
@@ -284,6 +284,7 @@
     [_TrainingTableView beginUpdates];
     
     NSDate *date = _datePicker.date;
+    _BeginTime = date;
     NSString *dateString = [_timeFormatter stringFromDate:date];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
@@ -296,7 +297,9 @@
     [_TrainingTableView beginUpdates];
     
     NSDate *date = _datePicker.date;
+    _EndTime = date;
     NSString *dateString = [_timeFormatter stringFromDate:date];
+ 
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
