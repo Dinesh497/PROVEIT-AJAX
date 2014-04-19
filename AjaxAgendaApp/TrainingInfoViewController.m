@@ -60,13 +60,13 @@
     [_dateFormatter setLocale:[NSLocale currentLocale]];
 
     // Zet de datum van vandaag
-    NSDate *DatumVandaag = [NSDate date];
-    _BeginTime = DatumVandaag;
+    NSDate *CurrentDate = [NSDate date];
+    _BeginTime = CurrentDate;
     
     // IOS 7 oplossing --->
-    _EndTime = [DatumVandaag addTimeInterval:60*60];
+    _EndTime = [CurrentDate addTimeInterval:60*60];
     
-    NSString *vandaag = [_dateFormatter stringFromDate:DatumVandaag];
+    NSString *vandaag = [_dateFormatter stringFromDate:CurrentDate];
     NSString *BeginTijdString = [_timeFormatter stringFromDate:_BeginTime];
     NSString *EindTijdString = [_timeFormatter stringFromDate:_EndTime];
     
