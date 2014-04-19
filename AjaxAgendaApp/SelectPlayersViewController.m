@@ -36,8 +36,8 @@
     
     _SelectPlayersFrame.layer.cornerRadius = 10;
     
-    _Players = [[NSMutableArray alloc] initWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
-    _Teams = [[NSMutableArray alloc] initWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
+    _Players = [[NSMutableArray alloc] initWithObjects:@"Jan", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -57,9 +57,13 @@
     UITableViewCell *cell;
     
     if (_SegmentController.selectedSegmentIndex == 0) {
+        // Als er naar Spelers wordt gezocht
         cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+        cell.textLabel.text = [_Players objectAtIndex:indexPath.row];
     } else{
+        // Als er naar Teams wordt gezocht
         cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
+        cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
     }
     
     return cell;
@@ -71,11 +75,16 @@
 
 - (IBAction)SelectedSegmentChanged:(id)sender {
     
+    // Als er een keuze in team of speler wordt gemaakt
+    
     if (_SegmentController.selectedSegmentIndex == 0) {
-        self.navigationController.title = @"Speler";
+        self.navigationItem.title = @"Speler";
+        _SearchBar.placeholder = @"Zoek speler";
     } else{
-        self.navigationController.title = @"Teams";
+        self.navigationItem.title = @"Teams";
+        _SearchBar.placeholder = @"Zoek team";
     }
+    
     
     [_SelectPlayerTable reloadData];
 }

@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *SelectPlayerTable;
 @property (weak, nonatomic) IBOutlet UIView *SelectPlayersFrame;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentController;
+@property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 - (IBAction)SelectedSegmentChanged:(id)sender;
+
 
 @end
