@@ -154,11 +154,15 @@
                 [_datePicker setLocale:[NSLocale currentLocale]];
                 
                 // Geef datePicker de juiste waarde
-                NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:1 inSection:0];
+                NSIndexPath *indexPathDetailCell;
+                
+                indexPathDetailCell = [NSIndexPath indexPathForRow:1 inSection:0];
+                indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                
                 UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
                 NSString *TimeString = cellDetail.detailTextLabel.text;
                 NSDate *datePickerTime = [_timeFormatter dateFromString:TimeString];
-                [_datePicker setDate:datePickerTime animated:YES];
+                [_datePicker setDate:datePickerTime animated:NO];
                 
                 [_datePicker addTarget:self action:@selector(datePicker2ValueChanged) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:_datePicker];
@@ -172,7 +176,14 @@
                 [_datePicker setLocale:[NSLocale currentLocale]];
                 
                 // Geef datePicker de juiste waarde
-                NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                NSIndexPath *indexPathDetailCell;
+                
+                
+                    indexPathDetailCell = [NSIndexPath indexPathForRow:3 inSection:0];
+                
+                    indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                
+                
                 UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
                 NSString *TimeString = cellDetail.detailTextLabel.text;
                 NSDate *datePickerTime = [_timeFormatter dateFromString:TimeString];
