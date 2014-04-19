@@ -27,6 +27,7 @@
 
 // Geeft aan welke rij in de datepicker aanwezig is, als de waarde 5 is is de datepicker niet aanwezig
 @property NSInteger ActiveDatePickerNumber;
+@property NSInteger OldActiveDatePickerNumber;
 
 @end
 
@@ -79,6 +80,7 @@
     
     // De Datepicker is nog niet actief
     _ActiveDatePickerNumber = 5;
+    _OldActiveDatePickerNumber = _ActiveDatePickerNumber;
     _DatePickerActive = NO;
     
     // Do any additional setup after loading the view.
@@ -156,8 +158,13 @@
                 // Geef datePicker de juiste waarde
                 NSIndexPath *indexPathDetailCell;
                 
-                indexPathDetailCell = [NSIndexPath indexPathForRow:1 inSection:0];
-                indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                NSLog(@"%ld > %ld",(long)indexPath.row, (long)_OldActiveDatePickerNumber);
+                
+                if(indexPath.row > _OldActiveDatePickerNumber ){
+                    indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
+                } else{
+                    indexPathDetailCell = [NSIndexPath indexPathForRow:1 inSection:0];
+                }
                 
                 UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
                 NSString *TimeString = cellDetail.detailTextLabel.text;
@@ -178,17 +185,17 @@
                 // Geef datePicker de juiste waarde
                 NSIndexPath *indexPathDetailCell;
                 
+                NSLog(@"%ld > %ld",(long)indexPath.row, (long)_OldActiveDatePickerNumber);
                 
+                if(indexPath.row > _OldActiveDatePickerNumber){
                     indexPathDetailCell = [NSIndexPath indexPathForRow:3 inSection:0];
-                
+                } else{
                     indexPathDetailCell = [NSIndexPath indexPathForRow:2 inSection:0];
-                
+                }
                 
                 UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
                 NSString *TimeString = cellDetail.detailTextLabel.text;
                 NSDate *datePickerTime = [_timeFormatter dateFromString:TimeString];
-                
-                // Veroorzaakt error ----->
                 [_datePicker setDate:datePickerTime animated:NO];
                 
                 [_datePicker addTarget:self action:@selector(datePicker3ValueChanged) forControlEvents:UIControlEventValueChanged];
@@ -206,6 +213,8 @@
         cell.textLabel.text = [_HeadersSectionTwo objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [_DetailsSectionTwo objectAtIndex:indexPath.row];
     }
+    
+    _OldActiveDatePickerNumber = _ActiveDatePickerNumber;
     
     return cell;
 }
@@ -228,6 +237,7 @@
                 
                 _DatePickerActive = NO;
                 _ActiveDatePickerNumber = 5;
+                _OldActiveDatePickerNumber = _ActiveDatePickerNumber;
                 [_TrainingTableView deleteRowsAtIndexPaths:indexPaths
                                           withRowAnimation:UITableViewRowAnimationFade];
                 [_datePicker removeFromSuperview];
