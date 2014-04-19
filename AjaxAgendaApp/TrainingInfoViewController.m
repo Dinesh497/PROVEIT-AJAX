@@ -121,6 +121,7 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     UITableViewCell *cell;
     
     if (indexPath.section == 0) {
@@ -210,6 +211,7 @@
     if (indexPath.section == 0) {
         if (_DatePickerActive) {
             if(_ActiveDatePickerNumber == indexPath.row + 1){
+                
                 // Verwijder de picker cell van de tableview
                 indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
                 
@@ -218,10 +220,12 @@
                 [_TrainingTableView deleteRowsAtIndexPaths:indexPaths
                                           withRowAnimation:UITableViewRowAnimationFade];
                 [_datePicker removeFromSuperview];
+                
             } else{
-                // Verplaats de picker cell naar de nieuwe geselecteerde positie
+                
                 [_datePicker removeFromSuperview];
                 
+                // Verplaats de picker cell naar de nieuwe geselecteerde positie
                 if(indexPath.row > _ActiveDatePickerNumber){
                     indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
                     _ActiveDatePickerNumber = indexPath.row;
