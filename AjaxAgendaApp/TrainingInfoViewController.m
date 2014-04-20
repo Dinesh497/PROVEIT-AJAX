@@ -308,11 +308,18 @@
     [_TrainingTableView beginUpdates];
     
     NSDate *date = _datePicker.date;
+    
     _BeginTime = date;
     NSString *dateString = [_timeFormatter stringFromDate:date];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    if(date > _EndTime){
+        _EndTime = date;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+        [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    }
     
     [_TrainingTableView endUpdates];
 }

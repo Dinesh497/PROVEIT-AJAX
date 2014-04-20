@@ -74,9 +74,7 @@
 //----------------------------------------------------------------------------------------------------------
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    
     searchBar.showsCancelButton = YES;
-    
 }
 
 - (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar{
