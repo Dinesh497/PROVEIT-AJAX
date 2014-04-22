@@ -720,7 +720,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="background1008.png" width="640" height="1008"/>
         <image name="loginScreen1136.png" width="640" height="1136"/>
         <image name="spelerButton.png" width="512" height="512"/>
-        <image name="teamButton.png" width="512" height="512"/>
+        <image name="teamButton.png" width="535" height="140"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
