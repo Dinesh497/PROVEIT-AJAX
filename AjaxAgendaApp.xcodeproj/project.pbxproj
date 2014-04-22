@@ -29,7 +29,8 @@
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
 		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
-		D4DF639718FE8DDF00D7CD6E /* GrassBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */; };
+		D4BBCBA019064CB7008EFAEB /* spelerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BBCB9E19064CB7008EFAEB /* spelerButton.png */; };
+		D4BBCBA119064CB7008EFAEB /* teamButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BBCB9F19064CB7008EFAEB /* teamButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,8 @@
 		D491866E18FB0D9B00B70233 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
-		D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrassBackground.png; sourceTree = "<group>"; };
+		D4BBCB9E19064CB7008EFAEB /* spelerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spelerButton.png; sourceTree = "<group>"; };
+		D4BBCB9F19064CB7008EFAEB /* teamButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teamButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +164,8 @@
 		1BC0D84F18F835B300789C6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4DF639618FE8DDF00D7CD6E /* GrassBackground.png */,
+				D4BBCB9E19064CB7008EFAEB /* spelerButton.png */,
+				D4BBCB9F19064CB7008EFAEB /* teamButton.png */,
 				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
 				D491866E18FB0D9B00B70233 /* background1008.png */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,
@@ -267,9 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BBCBA019064CB7008EFAEB /* spelerButton.png in Resources */,
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
-				D4DF639718FE8DDF00D7CD6E /* GrassBackground.png in Resources */,
+				D4BBCBA119064CB7008EFAEB /* teamButton.png in Resources */,
 				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
 				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,
