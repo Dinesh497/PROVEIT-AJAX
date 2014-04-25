@@ -669,8 +669,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="69" y="367" width="107" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
-                                            <segment title="" image="spelerButton.png"/>
-                                            <segment title="" image="teamButton.png" width="53"/>
+                                            <segment title="Speler"/>
+                                            <segment title="Team" width="53"/>
                                         </segments>
                                         <connections>
                                             <action selector="SelectedSegmentChanged:" destination="ZpX-NW-krg" eventType="valueChanged" id="6OP-Vv-HDt"/>
@@ -719,8 +719,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="background1008.png" width="640" height="1008"/>
         <image name="loginScreen1136.png" width="640" height="1136"/>
-        <image name="spelerButton.png" width="512" height="512"/>
-        <image name="teamButton.png" width="535" height="140"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
