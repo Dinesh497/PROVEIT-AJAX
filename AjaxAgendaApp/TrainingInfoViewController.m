@@ -62,9 +62,7 @@
     // Zet de datum van vandaag
     NSDate *CurrentDate = [NSDate date];
     _BeginTime = CurrentDate;
-    
-    // IOS 7 oplossing --->
-    _EndTime = [CurrentDate addTimeInterval:60*60];
+    _EndTime = [CurrentDate dateByAddingTimeInterval:60*60];
     
     NSString *vandaag = [_dateFormatter stringFromDate:CurrentDate];
     NSString *BeginTijdString = [_timeFormatter stringFromDate:_BeginTime];
