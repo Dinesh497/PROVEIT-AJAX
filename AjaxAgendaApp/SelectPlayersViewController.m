@@ -49,10 +49,6 @@
     _Players = [[NSMutableArray alloc] initWithObjects:@"Jan", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
     
-    // TEST
-    _SearchResultPlayers = [[NSMutableArray alloc] initWithObjects:@"Jan", @"Dirk", @"Henk", nil];
-    _SearchResultTeams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", nil];
-    
     // Set the searchbar invisible at start
     [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
@@ -147,6 +143,15 @@
         // Nothing typed yet
         
     } else{
+        
+        if (_SegmentController.selectedSegmentIndex == 0) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@",searchText];
+            _SearchResultPlayers = [NSMutableArray arrayWithArray:[_Players filteredArrayUsingPredicate:predicate]];
+        } else{
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@",searchText];
+            _SearchResultTeams = [NSMutableArray arrayWithArray:[_Teams filteredArrayUsingPredicate:predicate]];
+        }
+        
         _isSearching = YES;
         [_SelectPlayerTable reloadData];
     }
