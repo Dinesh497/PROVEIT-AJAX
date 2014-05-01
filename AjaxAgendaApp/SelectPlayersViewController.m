@@ -16,6 +16,9 @@
 @property NSMutableArray *SearchResultPlayers;
 @property NSMutableArray *SearchResultTeams;
 
+// contains the selected players
+@property NSMutableArray *SelectedPlayers;
+
 // Shows when the searchbar is being used
 @property BOOL isSearching;
 
@@ -48,6 +51,12 @@
     // Fill the arrays
     _Players = [[NSMutableArray alloc] initWithObjects:@"Jan", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
+    
+    // make arrays alphabetic
+    
+    
+    // define selectedplayers array
+    _SelectedPlayers = [[NSMutableArray alloc] init];
     
     // Set the searchbar invisible at start
     [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -105,15 +114,30 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(_SegmentController.selectedSegmentIndex == 0){
+        
         // Selecting a player
         if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+            // The player is already selected
             [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+            
+            NSString *selectingPlayer = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
+            
+            NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
+            [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
+            
+            // test: NSLog(@"SelectedPlayers bevat: %@", _SelectedPlayers);
+            
         }else{
+            // The player is not selected
             [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+            
+            NSString *selectingPlayer = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
+            [_SelectedPlayers addObject:selectingPlayer];
+            
         }
-    } else{
-        // Selecting a team
-    }
+        } else{
+            // Selecting a team
+        }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -123,10 +147,12 @@
 //----------------------------------------------------------------------------------------------------------
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    // SearchBar selected
     searchBar.showsCancelButton = YES;
 }
 
 - (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    // Stop searching
     _isSearching = NO;
     [_SelectPlayerTable reloadData];
     _SearchBar.showsCancelButton = NO;
@@ -141,6 +167,8 @@
 - (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if([searchText  isEqual: @""]){
         // Nothing typed yet
+        _isSearching = NO;
+        [_SelectPlayerTable reloadData];
         
     } else{
         
