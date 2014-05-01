@@ -12,6 +12,9 @@
 @property NSMutableArray *Players;
 @property NSMutableArray *Teams;
 
+// Search results from search bar
+@property NSMutableArray *SearchResultPlayers;
+
 @end
 
 @implementation SelectPlayersViewController
@@ -36,9 +39,11 @@
     
     _SelectPlayersFrame.layer.cornerRadius = 10;
     
+    // Fill the arrays
     _Players = [[NSMutableArray alloc] initWithObjects:@"Jan", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
     
+    // Set the searchbar invisible
     [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
@@ -59,11 +64,11 @@
     UITableViewCell *cell;
     
     if (_SegmentController.selectedSegmentIndex == 0) {
-        // Als er naar Spelers wordt gezocht
+        // Searching for a player
         cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
         cell.textLabel.text = [_Players objectAtIndex:indexPath.row];
     } else{
-        // Als er naar Teams wordt gezocht
+        // Searching for a team
         cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
         cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
     }
@@ -73,14 +78,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(_SegmentController.selectedSegmentIndex == 0){
-        // Een Speler wordt geselecteerd
+        // Selecting a player
         if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
             [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
         }else{
             [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
         }
     } else{
-        // Een Team wordt gekozen
+        // Selecting a team
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -96,11 +101,12 @@
 
 - (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     _SearchBar.showsCancelButton = NO;
+    [_SearchBar setText:@""];
     [_SearchBar resignFirstResponder];
 }
 
-- (void) searchBarResultsListButtonClicked:(UISearchBar *)searchBar{
-    
+- (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [_SearchBar resignFirstResponder];
 }
 
 - (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
