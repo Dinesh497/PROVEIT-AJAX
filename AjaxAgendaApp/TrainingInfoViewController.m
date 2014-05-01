@@ -62,6 +62,8 @@
     // Zet de datum van vandaag
     NSDate *CurrentDate = [NSDate date];
     _BeginTime = CurrentDate;
+    
+    // voegt een uur toe aan de begindatum wat de standaard einddatum maakt
     _EndTime = [CurrentDate dateByAddingTimeInterval:60*60];
     
     NSString *vandaag = [_dateFormatter stringFromDate:CurrentDate];
