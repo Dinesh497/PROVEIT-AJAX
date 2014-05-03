@@ -505,7 +505,6 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:_BeginTime forKey:@"BeginTime"];
     [userDefaults setObject:_EndTime forKey:@"EndTime"];
-    //[userDefaults synchronize];
 }
 
 //----------------------------------------------------------------------------------------------------------

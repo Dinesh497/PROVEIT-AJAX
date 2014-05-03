@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentController;
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 - (IBAction)SelectedSegmentChanged:(id)sender;
+- (IBAction)GereedButtonPressed:(id)sender;
 
 
 @end

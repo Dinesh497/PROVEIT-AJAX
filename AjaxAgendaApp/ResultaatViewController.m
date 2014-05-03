@@ -28,8 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // test Time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // test Time
     NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
     NSDate *endTime     = [defaults objectForKey:@"EndTime"];
     
@@ -44,6 +45,12 @@
     
     [_BeginTime setText:beginTimeString];
     [_endTime setText:endTimeString];
+    
+    // Test players
+    NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
+    NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
+    
+    [_spelers setText:PlayersString];
 }
 
 - (void)didReceiveMemoryWarning
