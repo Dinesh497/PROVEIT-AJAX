@@ -301,6 +301,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
     
+    
     [_TrainingTableView endUpdates];
 }
 
@@ -315,12 +316,14 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
     
-    if(date > _EndTime){
+    /*
+    if(date < _EndTime){
         _EndTime = date;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
         [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
     }
-    
+    */
+     
     [_TrainingTableView endUpdates];
 }
 
