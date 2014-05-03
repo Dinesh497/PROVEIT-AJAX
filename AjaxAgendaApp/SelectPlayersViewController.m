@@ -109,6 +109,13 @@
         }
     }
     
+    // Show if player is already selected or not
+    if([_SelectedPlayers containsObject:cell.textLabel.text]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
