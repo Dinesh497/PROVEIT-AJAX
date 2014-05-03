@@ -46,12 +46,12 @@
 {
     [super viewDidLoad];
     
-    // De tableview installeren
+    // Set tableview
     _TrainingTableView.delegate =            self;
     _TrainingTableView.dataSource =          self;
     _TrainingTableView.layer.cornerRadius =    10;
     
-    // Zet de formatten
+    // Set formats
     _timeFormatter = [[NSDateFormatter alloc] init];
     [_timeFormatter setDateFormat:@"HH:mm"];
     [_timeFormatter setLocale:[NSLocale currentLocale]];
@@ -59,11 +59,11 @@
     [_dateFormatter setDateFormat:@"MM/dd/YYYY"];
     [_dateFormatter setLocale:[NSLocale currentLocale]];
 
-    // Zet de datum van vandaag
+    // Set date
     NSDate *CurrentDate = [NSDate date];
     _BeginTime = CurrentDate;
     
-    // voegt een uur toe aan de begindatum wat de standaard einddatum maakt
+    // Set endDate
     _EndTime = [CurrentDate dateByAddingTimeInterval:60*60];
     
     NSString *vandaag = [_dateFormatter stringFromDate:CurrentDate];

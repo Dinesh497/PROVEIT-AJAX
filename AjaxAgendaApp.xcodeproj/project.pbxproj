@@ -29,6 +29,7 @@
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
 		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
+		D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		D491866E18FB0D9B00B70233 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
+		D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultaatViewController.h; sourceTree = "<group>"; };
+		D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultaatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				D4B8754E19004044009FF0C2 /* OefeningenViewController.m */,
 				D42856D21902CFB300077467 /* SelectPlayersViewController.h */,
 				D42856D31902CFB300077467 /* SelectPlayersViewController.m */,
+				D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */,
+				D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */,
 				D42856D51902EA8200077467 /* Player.h */,
 				D42856D61902EA8200077467 /* Player.m */,
 				D42856DB1902EC4E00077467 /* Team.h */,
@@ -295,6 +300,7 @@
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
 				D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
+				D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */,
 				D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
