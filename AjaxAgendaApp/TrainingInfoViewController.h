@@ -24,6 +24,7 @@
 - (IBAction)Veld4Geselecteerd:(id)sender;
 - (IBAction)Veld5Geselecteerd:(id)sender;
 - (IBAction)Veld6Geselecteerd:(id)sender;
+- (IBAction)GereedButtonPressed:(id)sender;
 
 
 

@@ -335,6 +335,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="GereedButtonPressed:" destination="W4d-al-rvd" eventType="touchUpInside" id="wB8-hF-6m8"/>
                                     <segue destination="dYD-2U-kqn" kind="push" id="7iu-za-can"/>
                                 </connections>
                             </button>

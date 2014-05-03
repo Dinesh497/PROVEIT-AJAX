@@ -83,7 +83,10 @@
     _OldActiveDatePickerNumber = _ActiveDatePickerNumber;
     _DatePickerActive = NO;
     
+    
     // Do any additional setup after loading the view.
+    
+    
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -493,6 +496,21 @@
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
 }
+
+//----------------------------------------------------------------------------------------------------------
+// Save Data
+//----------------------------------------------------------------------------------------------------------
+
+- (IBAction)GereedButtonPressed:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_BeginTime forKey:@"BeginTime"];
+    [userDefaults setObject:_EndTime forKey:@"EndTime"];
+    //[userDefaults synchronize];
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Xcode
+//----------------------------------------------------------------------------------------------------------
 
 - (void)didReceiveMemoryWarning
 {

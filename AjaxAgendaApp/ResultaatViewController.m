@@ -27,6 +27,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // test Time
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
+    NSDate *endTime     = [defaults objectForKey:@"EndTime"];
+    
+    NSDateFormatter *timeFormatter;
+    
+    timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setLocale:[NSLocale currentLocale]];
+    
+    NSString *beginTimeString   = [timeFormatter stringFromDate:beginTime];
+    NSString *endTimeString     = [timeFormatter stringFromDate:endTime];
+    
+    [_BeginTime setText:beginTimeString];
+    [_endTime setText:endTimeString];
 }
 
 - (void)didReceiveMemoryWarning
