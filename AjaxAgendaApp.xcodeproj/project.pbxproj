@@ -21,6 +21,8 @@
 		1BC0D86A18F835B300789C6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84C18F835B300789C6C /* UIKit.framework */; };
 		1BC0D87218F835B300789C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D87018F835B300789C6C /* InfoPlist.strings */; };
 		1BC0D87418F835B300789C6C /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */; };
+		1BE3D264191A3D0200A024DB /* ajaxtraining.db in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3D263191A3D0200A024DB /* ajaxtraining.db */; };
+		1BE3D266191A554B00A024DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE3D265191A554B00A024DB /* libsqlite3.dylib */; };
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D42856D71902EA8200077467 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D61902EA8200077467 /* Player.m */; };
 		D42856DD1902EC4E00077467 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856DC1902EC4E00077467 /* Team.m */; };
@@ -62,6 +64,8 @@
 		1BC0D86F18F835B300789C6C /* AjaxAgendaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjaxAgendaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BC0D87118F835B300789C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
+		1BE3D263191A3D0200A024DB /* ajaxtraining.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = ajaxtraining.db; path = ../../../../../../../ajaxtraining.db; sourceTree = "<group>"; };
+		1BE3D265191A554B00A024DB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D42856D21902CFB300077467 /* SelectPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayersViewController.h; sourceTree = "<group>"; };
 		D42856D31902CFB300077467 /* SelectPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayersViewController.m; sourceTree = "<group>"; };
 		D42856D51902EA8200077467 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE3D266191A554B00A024DB /* libsqlite3.dylib in Frameworks */,
 				1BC0D84B18F835B300789C6C /* CoreGraphics.framework in Frameworks */,
 				1BC0D84D18F835B300789C6C /* UIKit.framework in Frameworks */,
 				1BC0D84918F835B300789C6C /* Foundation.framework in Frameworks */,
@@ -107,6 +112,7 @@
 		1B06E98719191956007402C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3D263191A3D0200A024DB /* ajaxtraining.db */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -133,6 +139,7 @@
 		1BC0D84718F835B300789C6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3D265191A554B00A024DB /* libsqlite3.dylib */,
 				1BC0D84818F835B300789C6C /* Foundation.framework */,
 				1BC0D84A18F835B300789C6C /* CoreGraphics.framework */,
 				1BC0D84C18F835B300789C6C /* UIKit.framework */,
@@ -280,6 +287,7 @@
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
 				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
+				1BE3D264191A3D0200A024DB /* ajaxtraining.db in Resources */,
 				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,
 			);
