@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
 @interface LoginViewController : UIViewController
+
+
 @property (weak, nonatomic) IBOutlet UIView *LoginFrame;
 @property (weak, nonatomic) IBOutlet UITextField *TrainerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *WachtwoordTextField;
 - (IBAction)TrainerTextDidExit:(id)sender;
 - (IBAction)WachtwoordTextDidExit:(id)sender;
+
 
 @end
