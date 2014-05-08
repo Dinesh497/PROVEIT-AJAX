@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 #import "Team.h"
 
 @interface SelectPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
@@ -14,8 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIView *SelectPlayersFrame;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentController;
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
+@property (strong, nonatomic) IBOutlet UILabel *status;
+
 - (IBAction)SelectedSegmentChanged:(id)sender;
 - (IBAction)GereedButtonPressed:(id)sender;
 
-
+@property (strong, nonatomic) NSString *databasePath;
+@property (nonatomic) sqlite3 *ajaxtrainingDB;
 @end

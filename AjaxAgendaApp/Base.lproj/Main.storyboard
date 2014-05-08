@@ -677,6 +677,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <action selector="SelectedSegmentChanged:" destination="ZpX-NW-krg" eventType="valueChanged" id="6OP-Vv-HDt"/>
                                         </connections>
                                     </segmentedControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnq-nb-kWP">
+                                        <rect key="frame" x="7" y="338" width="247" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
@@ -706,6 +713,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="SelectPlayerTable" destination="TRa-XB-hZW" id="HBZ-bt-JEa"/>
                         <outlet property="SelectPlayersFrame" destination="MCc-gS-JCl" id="4z9-ri-G7P"/>
                         <outlet property="searchDisplayController" destination="4j5-Z7-pL9" id="HwF-rU-jpq"/>
+                        <outlet property="status" destination="Hnq-nb-kWP" id="7AI-Jz-5Eg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQM-AW-m2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
