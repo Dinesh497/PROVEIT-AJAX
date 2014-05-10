@@ -109,14 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B06E98719191956007402C4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1B297A29191BDB1E00C10129 /* ajaxtraining.db */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		1BC0D83C18F835B300789C6C = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +143,6 @@
 		1BC0D84E18F835B300789C6C /* AjaxAgendaApp */ = {
 			isa = PBXGroup;
 			children = (
-				1B06E98719191956007402C4 /* Resources */,
 				1BC0D85718F835B300789C6C /* AppDelegate.h */,
 				1BC0D85818F835B300789C6C /* AppDelegate.m */,
 				1BC0D85A18F835B300789C6C /* Main.storyboard */,
@@ -180,6 +171,7 @@
 		1BC0D84F18F835B300789C6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B297A29191BDB1E00C10129 /* ajaxtraining.db */,
 				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
 				D491866E18FB0D9B00B70233 /* background1008.png */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,

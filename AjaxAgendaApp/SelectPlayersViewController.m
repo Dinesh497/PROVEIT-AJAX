@@ -94,28 +94,28 @@
     
     const char *dbpath = [_databasePath UTF8String];
     sqlite3_stmt *statement;
-    NSMutableArray *Playersa1 = [[NSMutableArray alloc] init];
+    _Players = [[NSMutableArray alloc] init];
     int index = 0;
     
     
     if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
-        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"SELECT name FROM players WHERE team = 'A1'"];
+        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where id = '1'"];
         
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
         
         if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
-            if (sqlite3_step(statement) == SQLITE_ROW)
+            while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSMutableArray *Players = [[NSMutableArray alloc] init];
+                NSMutableArray *Playersa1 = [[NSMutableArray alloc] init];
                 const char *a1  = (char *)sqlite3_column_text(statement, index);
                 while (a1) {
-                    [Players addObject:[NSString stringWithUTF8String:a1]];
+                    [Playersa1 addObject:[NSString stringWithUTF8String:a1]];
                     index++;
                     a1 = (char *)sqlite3_column_text(statement, index);
                 }
-                [Playersa1 addObject:Players];
+                [_Players addObject:Playersa1];
                 }
             }
         sqlite3_finalize(statement);
@@ -128,10 +128,7 @@
     
 
     //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-    //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
-
-
-    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    
     //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
 
     _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
@@ -140,10 +137,10 @@
     
     
     // define selectedplayers array
-    _SelectedPlayers = [[NSMutableArray alloc] init];
+   // _SelectedPlayers = [[NSMutableArray alloc] init];
     
     // Set the searchbar invisible at start
-    [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    //[_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 //----------------------------------------------------------------------------------------------------------
