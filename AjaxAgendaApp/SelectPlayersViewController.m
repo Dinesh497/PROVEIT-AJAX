@@ -50,8 +50,6 @@
 
     
     //Database
-    _Players = [ [NSMutableArray alloc]init];
-    _Teams = [ [NSMutableArray alloc]init];
     
     NSString *docsDir;
     NSArray *dirPaths;
@@ -84,10 +82,12 @@
          _status.text = @"Failed to open/create database";
         }
     }
-    
+
+   NSString *selectplayers_sql = [NSString stringWithFormat:@"SELECT name FROM players WHERE team = 'A1'"];
     
     // Fill the arrays
-    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+   //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    _Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
     _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
     
     // make arrays alphabetic
