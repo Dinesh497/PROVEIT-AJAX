@@ -9,8 +9,8 @@
 #import "SelectPlayersViewController.h"
 
 @interface SelectPlayersViewController ()
-@property NSMutableArray *Players;
-@property NSMutableArray *Teams;
+@property (readwrite, nonatomic) NSMutableArray *Players;
+@property (readwrite, nonatomic) NSMutableArray *Teams;
 
 // Search results from search bar
 @property NSMutableArray *SearchResultPlayers;
@@ -47,21 +47,12 @@
     _SelectPlayerTable.layer.cornerRadius = 10;
     
     _SelectPlayersFrame.layer.cornerRadius = 10;
-    
-    // Fill the arrays
-    _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-    _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
-    
-    // make arrays alphabetic
-    
-    
-    // define selectedplayers array
-    _SelectedPlayers = [[NSMutableArray alloc] init];
-    
-    // Set the searchbar invisible at start
-    [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+
     
     //Database
+    _Players = [ [NSMutableArray alloc]init];
+    _Teams = [ [NSMutableArray alloc]init];
+    
     NSString *docsDir;
     NSArray *dirPaths;
     
@@ -93,6 +84,20 @@
          _status.text = @"Failed to open/create database";
         }
     }
+    
+    
+    // Fill the arrays
+    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
+    
+    // make arrays alphabetic
+    
+    
+    // define selectedplayers array
+    _SelectedPlayers = [[NSMutableArray alloc] init];
+    
+    // Set the searchbar invisible at start
+    [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 //----------------------------------------------------------------------------------------------------------
