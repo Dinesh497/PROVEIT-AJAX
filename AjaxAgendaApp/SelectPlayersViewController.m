@@ -87,6 +87,7 @@
     
     // Fill the arrays
 
+
    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     
     
@@ -125,6 +126,10 @@
     
    // _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
     
+
+    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
+
 
     //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
