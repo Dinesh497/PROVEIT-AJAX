@@ -99,7 +99,6 @@
     _Players =[[NSMutableArray alloc] init];
 
     
-    
     if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
@@ -113,6 +112,7 @@
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                 [_Players addObject:name];
                 }
+            
             }
         sqlite3_finalize(statement);
         }
