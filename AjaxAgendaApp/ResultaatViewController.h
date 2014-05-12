@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *BeginTime;
 @property (weak, nonatomic) IBOutlet UILabel *endTime;
 @property (weak, nonatomic) IBOutlet UITextView *spelers;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @end

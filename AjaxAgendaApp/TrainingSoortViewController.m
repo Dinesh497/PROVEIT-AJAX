@@ -1,18 +1,18 @@
 //
-//  OefeningenViewController.m
+//  TrainingSoortViewController.m
 //  AjaxAgendaApp
 //
-//  Created by Ralph Oud on 17-04-14.
+//  Created by Ralph Oud on 12-05-14.
 //  Copyright (c) 2014 Prove IT. All rights reserved.
 //
 
-#import "OefeningenViewController.h"
+#import "TrainingSoortViewController.h"
 
-@interface OefeningenViewController ()
+@interface TrainingSoortViewController ()
 
 @end
 
-@implementation OefeningenViewController
+@implementation TrainingSoortViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view.
 }
 
@@ -47,4 +46,12 @@
 }
 */
 
+- (IBAction)movementTraining:(id)sender {
+}
+
+- (IBAction)veldTraining:(id)sender {
+}
+
+- (IBAction)revalidatieTraining:(id)sender {
+}
 @end

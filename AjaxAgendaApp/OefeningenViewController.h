@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OefeningenViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *FormulierView;
 
 @end

@@ -26,6 +26,7 @@
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D42856D71902EA8200077467 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D61902EA8200077467 /* Player.m */; };
 		D42856DD1902EC4E00077467 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856DC1902EC4E00077467 /* Team.m */; };
+		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
 		D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */; };
 		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
@@ -72,6 +73,8 @@
 		D42856D61902EA8200077467 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		D42856DB1902EC4E00077467 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
 		D42856DC1902EC4E00077467 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
+		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
 		D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingInfoViewController.h; sourceTree = "<group>"; };
 		D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingInfoViewController.m; sourceTree = "<group>"; };
 		D491866A18FA9BFB00B70233 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
 				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
 				D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */,
+				D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */,
+				D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */,
 				D4B8754D19004044009FF0C2 /* OefeningenViewController.h */,
 				D4B8754E19004044009FF0C2 /* OefeningenViewController.m */,
 				D42856D21902CFB300077467 /* SelectPlayersViewController.h */,
@@ -305,6 +310,7 @@
 				D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */,
 				1BC0D85F18F835B300789C6C /* LoginViewController.m in Sources */,
 				D42856DD1902EC4E00077467 /* Team.m in Sources */,
+				D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
 				D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
