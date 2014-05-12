@@ -107,11 +107,15 @@
         
         if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
-            while (sqlite3_step(statement) == SQLITE_ROW)
+            for (int index = 0; sqlite3_step(statement); index++) {
+                NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                [_Players addObject:name];
+            }
+            /*while (sqlite3_step(statement) == SQLITE_ROW)
             {
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                 [_Players addObject:name];
-                }
+                }*/
             
             }
         sqlite3_finalize(statement);
