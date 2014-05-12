@@ -28,6 +28,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    
+    _Form.layer.cornerRadius = 10;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,4 +49,7 @@
 }
 */
 
+- (IBAction)pressedAfwerken:(id)sender {
+    [_buttonAfwerken setSelected:YES];
+}
 @end

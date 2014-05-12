@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface OefeningenViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollForm;
+@property (weak, nonatomic) IBOutlet UIView *Form;
+
+
+- (IBAction)pressedAfwerken:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAfwerken;
+
+
 
 @end
