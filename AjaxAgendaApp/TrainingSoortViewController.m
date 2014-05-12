@@ -9,7 +9,7 @@
 #import "TrainingSoortViewController.h"
 
 @interface TrainingSoortViewController ()
-
+@property NSString *SelectedCategory;
 @end
 
 @implementation TrainingSoortViewController
@@ -47,11 +47,23 @@
 */
 
 - (IBAction)movementTraining:(id)sender {
+    _SelectedCategory = @"Movement training";
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_SelectedCategory forKey:@"Category"];
 }
 
 - (IBAction)veldTraining:(id)sender {
+    _SelectedCategory = @"Veld training";
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_SelectedCategory forKey:@"Category"];
 }
 
 - (IBAction)revalidatieTraining:(id)sender {
+    _SelectedCategory = @"Revalidatie training";
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_SelectedCategory forKey:@"Category"];
 }
 @end

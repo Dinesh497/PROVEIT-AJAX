@@ -30,7 +30,13 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // test Time
+    // Category
+    NSString *Category = [defaults objectForKey:@"Category"];
+    [_categoryLabel setText:Category];
+    
+    // Date
+    
+    // Time
     NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
     NSDate *endTime     = [defaults objectForKey:@"EndTime"];
     
@@ -46,7 +52,7 @@
     [_BeginTime setText:beginTimeString];
     [_endTime setText:endTimeString];
     
-    // Test players
+    // Players
     NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
     NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
     
