@@ -21,5 +21,6 @@
 - (IBAction)GereedButtonPressed:(id)sender;
 
 @property (strong, nonatomic) NSString *databasePath;
+@property (strong, nonatomic) NSString *name;
 @property (nonatomic) sqlite3 *ajaxtrainingDB;
 @end

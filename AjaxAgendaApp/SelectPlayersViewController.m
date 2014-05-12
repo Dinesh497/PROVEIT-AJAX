@@ -93,29 +93,25 @@
     
     
     const char *dbpath = [_databasePath UTF8String];
-    sqlite3_stmt *statement;
-    _Players = [[NSMutableArray alloc] init];
-    int index = 0;
+    
+    NSString *queryplayersa1_sql = [NSString stringWithFormat:
+                                    @"Select name from players where id = '1'"];
+    _Players =[[NSMutableArray alloc] init];
+
     
     
     if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
-        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where id = '1'"];
-        
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+        
+         sqlite3_stmt *statement;
         
         if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSMutableArray *Playersa1 = [[NSMutableArray alloc] init];
-                const char *a1  = (char *)sqlite3_column_text(statement, index);
-                while (a1) {
-                    [Playersa1 addObject:[NSString stringWithUTF8String:a1]];
-                    index++;
-                    a1 = (char *)sqlite3_column_text(statement, index);
-                }
-                [_Players addObject:Playersa1];
+                NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                [_Players addObject:name];
                 }
             }
         sqlite3_finalize(statement);
