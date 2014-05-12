@@ -19,6 +19,8 @@
 @property NSDate *BeginTime;
 @property NSDate *EndTime;
 
+@property NSString *SelectedField;
+
 @property NSDateFormatter *timeFormatter;
 @property NSDateFormatter *dateFormatter;
 
@@ -61,6 +63,9 @@
 
     // Set date
     NSDate *CurrentDate = [NSDate date];
+    _Date = CurrentDate;
+    
+    // Set begindate
     _BeginTime = CurrentDate;
     
     // Set endDate
@@ -299,6 +304,7 @@
     [_TrainingTableView beginUpdates];
     
     NSDate *date = _datePicker.date;
+    _Date = date;
     NSString *dateString = [_dateFormatter stringFromDate:date];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -363,6 +369,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 11";
 }
 
 - (IBAction)Veld10Geselecteerd:(id)sender {
@@ -375,6 +383,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 10";
 }
 
 - (IBAction)Veld2Geselecteerd:(id)sender {
@@ -387,6 +397,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 2";
 }
 
 - (IBAction)Veld9Geselecteerd:(id)sender {
@@ -399,6 +411,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 9";
 }
 
 - (IBAction)HoofdVeldGeselecteerd:(id)sender {
@@ -407,10 +421,12 @@
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
     [_TrainingTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = @"Hoofd";
-    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"hoofd"];
+    [_DetailsSectionTwo replaceObjectAtIndex:0 withObject:@"Hoofd"];
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Hoofd veld";
 }
 
 - (IBAction)Veld1Geselecteerd:(id)sender {
@@ -423,6 +439,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 1";
 }
 
 - (IBAction)Veld7Geselecteerd:(id)sender {
@@ -435,6 +453,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 7";
 }
 
 - (IBAction)Veld8Geselecteerd:(id)sender {
@@ -447,6 +467,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 8";
 }
 
 - (IBAction)Veld3Geselecteerd:(id)sender {
@@ -459,6 +481,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 3";
 }
 
 - (IBAction)Veld4Geselecteerd:(id)sender {
@@ -471,6 +495,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 4";
 }
 
 - (IBAction)Veld5Geselecteerd:(id)sender {
@@ -483,6 +509,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 5";
 }
 
 - (IBAction)Veld6Geselecteerd:(id)sender {
@@ -495,6 +523,8 @@
     
     [_TrainingTableView endUpdates];
     [_SelectFieldFrame removeFromSuperview];
+    
+    _SelectedField =@"Veld 6";
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -503,8 +533,10 @@
 
 - (IBAction)GereedButtonPressed:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:_BeginTime forKey:@"BeginTime"];
-    [userDefaults setObject:_EndTime forKey:@"EndTime"];
+    [userDefaults setObject:_BeginTime      forKey:@"BeginTime"];
+    [userDefaults setObject:_EndTime        forKey:@"EndTime"];
+    [userDefaults setObject:_Date           forKey:@"theDate"];
+    [userDefaults setObject:_SelectedField  forKey:@"Location"];
 }
 
 //----------------------------------------------------------------------------------------------------------

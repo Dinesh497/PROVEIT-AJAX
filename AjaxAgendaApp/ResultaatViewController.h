@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *spelers;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end

@@ -35,6 +35,17 @@
     [_categoryLabel setText:Category];
     
     // Date
+    NSDate *theDate     = [defaults objectForKey:@"theDate"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    
+    NSString *theDateString = [dateFormatter stringFromDate:theDate];
+    
+    [_dateLabel setText:theDateString];
     
     // Time
     NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
@@ -51,6 +62,10 @@
     
     [_BeginTime setText:beginTimeString];
     [_endTime setText:endTimeString];
+    
+    // Location
+    NSString *Location = [defaults objectForKey:@"Location"];
+    [_locationLabel setText:Location];
     
     // Players
     NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
