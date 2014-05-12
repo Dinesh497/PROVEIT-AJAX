@@ -634,7 +634,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="30" y="79" width="260" height="405"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-AW-MCd">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-AW-MCd">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="405"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -666,6 +666,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="CornerTrap" image="cornertrap.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedCornerTrap:" destination="dYD-2U-kqn" eventType="touchUpInside" id="rjp-XA-AEP"/>
                                                 </connections>
@@ -676,6 +677,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Kaatsen" image="kaatsen.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedKaatsen:" destination="dYD-2U-kqn" eventType="touchUpInside" id="RZv-OE-wc7"/>
                                                 </connections>
@@ -686,6 +688,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Ingooien" image="ingooien.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedIngooien:" destination="dYD-2U-kqn" eventType="touchUpInside" id="uFp-QH-CSH"/>
                                                 </connections>
@@ -703,6 +706,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Positiespel" image="positiespel.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedPositiespel:" destination="dYD-2U-kqn" eventType="touchUpInside" id="KH2-R7-zhV"/>
                                                 </connections>
@@ -713,6 +717,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Partijspel" image="partijspel.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedPartijspel:" destination="dYD-2U-kqn" eventType="touchUpInside" id="06b-Bv-sGc"/>
                                                 </connections>
@@ -723,6 +728,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Rondo" image="rondo.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedRondo:" destination="dYD-2U-kqn" eventType="touchUpInside" id="5Dr-Ye-yzj"/>
                                                 </connections>
@@ -733,6 +739,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="VS" image="vs.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedVS:" destination="dYD-2U-kqn" eventType="touchUpInside" id="maO-06-kQh"/>
                                                 </connections>
@@ -743,6 +750,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="WarmingUp" image="warming up.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedWarmingUp:" destination="dYD-2U-kqn" eventType="touchUpInside" id="bFj-sh-Rjx"/>
                                                 </connections>
@@ -753,6 +761,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Koppen" image="koppen.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedKoppen:" destination="dYD-2U-kqn" eventType="touchUpInside" id="vOy-FH-DnC"/>
                                                 </connections>
@@ -763,20 +772,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Uitloop" image="uitloop.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="tempSelectedButton.png"/>
                                                 <connections>
                                                     <action selector="pressedUitloop:" destination="dYD-2U-kqn" eventType="touchUpInside" id="4G5-d5-w4X"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-tY-lQM">
-                                                <rect key="frame" x="20" y="296" width="220" height="89"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Duh-cN-4Ab">
+                                                <rect key="frame" x="20" y="290" width="220" height="95"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Extra informatie:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-tK-e2N">
+                                                <rect key="frame" x="20" y="261" width="126" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
