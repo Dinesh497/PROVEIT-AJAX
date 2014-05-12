@@ -27,6 +27,18 @@
 		D42856D71902EA8200077467 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D61902EA8200077467 /* Player.m */; };
 		D42856DD1902EC4E00077467 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856DC1902EC4E00077467 /* Team.m */; };
 		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
+		D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369B1920D2A3001BBDBC /* afwerken.png */; };
+		D47D36A91920D2A3001BBDBC /* anders.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369C1920D2A3001BBDBC /* anders.png */; };
+		D47D36AA1920D2A3001BBDBC /* cornertrap.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369D1920D2A3001BBDBC /* cornertrap.png */; };
+		D47D36AB1920D2A3001BBDBC /* ingooien.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369E1920D2A3001BBDBC /* ingooien.png */; };
+		D47D36AC1920D2A3001BBDBC /* kaatsen.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369F1920D2A3001BBDBC /* kaatsen.png */; };
+		D47D36AD1920D2A3001BBDBC /* koppen.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A01920D2A3001BBDBC /* koppen.png */; };
+		D47D36AE1920D2A3001BBDBC /* partijspel.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A11920D2A3001BBDBC /* partijspel.png */; };
+		D47D36AF1920D2A3001BBDBC /* positiespel.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A21920D2A3001BBDBC /* positiespel.png */; };
+		D47D36B01920D2A3001BBDBC /* rondo.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A31920D2A3001BBDBC /* rondo.png */; };
+		D47D36B11920D2A3001BBDBC /* uitloop.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A41920D2A3001BBDBC /* uitloop.png */; };
+		D47D36B21920D2A3001BBDBC /* vs.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A51920D2A3001BBDBC /* vs.png */; };
+		D47D36B31920D2A3001BBDBC /* warming up.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D36A61920D2A3001BBDBC /* warming up.png */; };
 		D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */; };
 		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
@@ -75,6 +87,18 @@
 		D42856DC1902EC4E00077467 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
 		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
+		D47D369B1920D2A3001BBDBC /* afwerken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerken.png; sourceTree = "<group>"; };
+		D47D369C1920D2A3001BBDBC /* anders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anders.png; sourceTree = "<group>"; };
+		D47D369D1920D2A3001BBDBC /* cornertrap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cornertrap.png; sourceTree = "<group>"; };
+		D47D369E1920D2A3001BBDBC /* ingooien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingooien.png; sourceTree = "<group>"; };
+		D47D369F1920D2A3001BBDBC /* kaatsen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaatsen.png; sourceTree = "<group>"; };
+		D47D36A01920D2A3001BBDBC /* koppen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = koppen.png; sourceTree = "<group>"; };
+		D47D36A11920D2A3001BBDBC /* partijspel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partijspel.png; sourceTree = "<group>"; };
+		D47D36A21920D2A3001BBDBC /* positiespel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = positiespel.png; sourceTree = "<group>"; };
+		D47D36A31920D2A3001BBDBC /* rondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rondo.png; sourceTree = "<group>"; };
+		D47D36A41920D2A3001BBDBC /* uitloop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uitloop.png; sourceTree = "<group>"; };
+		D47D36A51920D2A3001BBDBC /* vs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vs.png; sourceTree = "<group>"; };
+		D47D36A61920D2A3001BBDBC /* warming up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warming up.png"; sourceTree = "<group>"; };
 		D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingInfoViewController.h; sourceTree = "<group>"; };
 		D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingInfoViewController.m; sourceTree = "<group>"; };
 		D491866A18FA9BFB00B70233 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -176,9 +200,8 @@
 		1BC0D84F18F835B300789C6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D47D36971920D243001BBDBC /* Images */,
 				1B297A29191BDB1E00C10129 /* ajaxtraining.db */,
-				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
-				D491866E18FB0D9B00B70233 /* background1008.png */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,
 				1BC0D85118F835B300789C6C /* InfoPlist.strings */,
 				1BC0D85418F835B300789C6C /* main.m */,
@@ -203,6 +226,43 @@
 				1BC0D87018F835B300789C6C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D47D36971920D243001BBDBC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D47D36991920D25A001BBDBC /* Buttons */,
+				D47D36981920D24F001BBDBC /* Backgrounds */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		D47D36981920D24F001BBDBC /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				D491866E18FB0D9B00B70233 /* background1008.png */,
+				D491866D18FB0D9B00B70233 /* loginScreen1136.png */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		D47D36991920D25A001BBDBC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D47D369B1920D2A3001BBDBC /* afwerken.png */,
+				D47D369C1920D2A3001BBDBC /* anders.png */,
+				D47D369D1920D2A3001BBDBC /* cornertrap.png */,
+				D47D369E1920D2A3001BBDBC /* ingooien.png */,
+				D47D369F1920D2A3001BBDBC /* kaatsen.png */,
+				D47D36A01920D2A3001BBDBC /* koppen.png */,
+				D47D36A11920D2A3001BBDBC /* partijspel.png */,
+				D47D36A21920D2A3001BBDBC /* positiespel.png */,
+				D47D36A31920D2A3001BBDBC /* rondo.png */,
+				D47D36A41920D2A3001BBDBC /* uitloop.png */,
+				D47D36A51920D2A3001BBDBC /* vs.png */,
+				D47D36A61920D2A3001BBDBC /* warming up.png */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,11 +342,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
+				D47D36B11920D2A3001BBDBC /* uitloop.png in Resources */,
+				D47D36AF1920D2A3001BBDBC /* positiespel.png in Resources */,
+				D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */,
+				D47D36AB1920D2A3001BBDBC /* ingooien.png in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
 				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
 				1B297A2A191BDB1E00C10129 /* ajaxtraining.db in Resources */,
+				D47D36B31920D2A3001BBDBC /* warming up.png in Resources */,
+				D47D36A91920D2A3001BBDBC /* anders.png in Resources */,
+				D47D36AA1920D2A3001BBDBC /* cornertrap.png in Resources */,
+				D47D36AC1920D2A3001BBDBC /* kaatsen.png in Resources */,
+				D47D36AD1920D2A3001BBDBC /* koppen.png in Resources */,
 				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,
+				D47D36B01920D2A3001BBDBC /* rondo.png in Resources */,
+				D47D36B21920D2A3001BBDBC /* vs.png in Resources */,
+				D47D36AE1920D2A3001BBDBC /* partijspel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,6 +82,7 @@
     // Maak Titels en start details voor locatie
     _HeadersSectionTwo = [[NSMutableArray alloc] initWithObjects:@"Veld",  nil];
     _DetailsSectionTwo = [[NSMutableArray alloc] initWithObjects:@"1",     nil];
+    _SelectedField =@"Veld 1";
     
     // De Datepicker is nog niet actief
     _ActiveDatePickerNumber = 5;
