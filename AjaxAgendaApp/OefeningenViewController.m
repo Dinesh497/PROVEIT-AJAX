@@ -50,6 +50,87 @@
 */
 
 - (IBAction)pressedAfwerken:(id)sender {
-    [_buttonAfwerken setSelected:YES];
+    if (_buttonAfwerken.selected) {
+        [_buttonAfwerken setSelected:NO];
+    } else{
+        [_buttonAfwerken setSelected:YES];
+    }
+}
+- (IBAction)pressedAnders:(id)sender {
+    if (_buttonAnders.selected) {
+        [_buttonAnders setSelected:NO];
+    } else{
+        [_buttonAnders setSelected:YES];
+    }
+}
+- (IBAction)pressedCornerTrap:(id)sender {
+    if (_buttonCornerTrap.selected) {
+        [_buttonCornerTrap setSelected:NO];
+    } else{
+        [_buttonCornerTrap setSelected:YES];
+    }
+}
+- (IBAction)pressedIngooien:(id)sender {
+    if (_buttonIngooien.selected) {
+        [_buttonIngooien setSelected:NO];
+    } else{
+        [_buttonIngooien setSelected:YES];
+    }
+}
+- (IBAction)pressedKaatsen:(id)sender {
+    if (_buttonKaatsen.selected) {
+        [_buttonKaatsen setSelected:NO];
+    } else{
+        [_buttonKaatsen setSelected:YES];
+    }
+}
+- (IBAction)pressedKoppen:(id)sender {
+    if (_buttonKoppen.selected) {
+        [_buttonKoppen setSelected:NO];
+    } else{
+        [_buttonKoppen setSelected:YES];
+    }
+}
+- (IBAction)pressedPartijspel:(id)sender {
+    if (_buttonPartijspel.selected) {
+        [_buttonPartijspel setSelected:NO];
+    } else{
+        [_buttonPartijspel setSelected:YES];
+    }
+}
+- (IBAction)pressedPositiespel:(id)sender {
+    if (_buttonPositiespel.selected) {
+        [_buttonPositiespel setSelected:NO];
+    } else{
+        [_buttonPositiespel setSelected:YES];
+    }
+}
+- (IBAction)pressedRondo:(id)sender {
+    if (_buttonRondo.selected) {
+        [_buttonRondo setSelected:NO];
+    } else{
+        [_buttonRondo setSelected:YES];
+    }
+}
+- (IBAction)pressedUitloop:(id)sender {
+    if (_buttonUitloop.selected) {
+        [_buttonUitloop setSelected:NO];
+    } else{
+        [_buttonUitloop setSelected:YES];
+    }
+}
+- (IBAction)pressedVS:(id)sender {
+    if (_buttonVS.selected) {
+        [_buttonVS setSelected:NO];
+    } else{
+        [_buttonVS setSelected:YES];
+    }
+}
+- (IBAction)pressedWarmingUp:(id)sender {
+    if (_buttonWarmingUp.selected) {
+        [_buttonWarmingUp setSelected:NO];
+    } else{
+        [_buttonWarmingUp setSelected:YES];
+    }
 }
 @end
