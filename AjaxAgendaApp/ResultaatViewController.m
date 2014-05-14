@@ -30,6 +30,9 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // Frame
+    _frame.layer.cornerRadius = 10;
+    
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
     [_categoryLabel setText:Category];
@@ -72,6 +75,17 @@
     NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
     
     [_spelers setText:PlayersString];
+    
+    // Oefeningen
+    
+    if ([Category isEqualToString:@"Veld training"]) {
+        NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
+        NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
+        [_OefeningenText setText:OefeningenString];
+    } else{
+        [_OefeningenHeader setHidden:   YES];
+        [_OefeningenText setHidden:     YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

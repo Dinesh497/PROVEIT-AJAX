@@ -11,6 +11,7 @@
 @interface OefeningenViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollForm;
 @property (weak, nonatomic) IBOutlet UIView *Form;
+- (IBAction)saveData:(id)sender;
 
 
 - (IBAction)pressedAfwerken:(id)sender;

@@ -57,6 +57,13 @@
 }
 */
 
+- (IBAction)saveData:(id)sender {
+    // Gereed button pressed
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_SelectedOefeningen forKey:@"SelectedOefeningenArray"];
+}
+
 - (IBAction)pressedAfwerken:(id)sender {
     if (_buttonAfwerken.selected) {
         [_buttonAfwerken setSelected:NO];
@@ -82,11 +89,11 @@
 - (IBAction)pressedCornerTrap:(id)sender {
     if (_buttonCornerTrap.selected) {
         [_buttonCornerTrap setSelected:NO];
-        NSInteger indexOfPlayer = [_SelectedOefeningen indexOfObject:@"Corner trap"];
+        NSInteger indexOfPlayer = [_SelectedOefeningen indexOfObject:@"Corner"];
         [_SelectedOefeningen removeObjectAtIndex:indexOfPlayer];
     } else{
         [_buttonCornerTrap setSelected:YES];
-        [_SelectedOefeningen addObject:@"Corner trap"];
+        [_SelectedOefeningen addObject:@"Corner"];
     }
 }
 
@@ -181,11 +188,11 @@
 - (IBAction)pressedWarmingUp:(id)sender {
     if (_buttonWarmingUp.selected) {
         [_buttonWarmingUp setSelected:NO];
-        NSInteger indexOfPlayer = [_SelectedOefeningen indexOfObject:@"Warming up"];
+        NSInteger indexOfPlayer = [_SelectedOefeningen indexOfObject:@"Warmingup"];
         [_SelectedOefeningen removeObjectAtIndex:indexOfPlayer];
     } else{
         [_buttonWarmingUp setSelected:YES];
-        [_SelectedOefeningen addObject:@"Warming up"];
+        [_SelectedOefeningen addObject:@"Warmingup"];
     }
 }
 
