@@ -122,7 +122,8 @@
         }
     sqlite3_close(_ajaxtrainingDB);
   
-    
+    // test
+    NSLog(@"In players array zitten: %@",_Players);
     
    // _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
     
