@@ -121,14 +121,11 @@
         sqlite3_finalize(statement);
         }
     sqlite3_close(_ajaxtrainingDB);
-  
-    // test
-    NSLog(@"In players array zitten: %@",_Players);
     
    // _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
     
 
-    //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+    // _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     
     //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
 
@@ -142,6 +139,9 @@
     
     // Set the searchbar invisible at start
     //[_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    
+    // test
+    NSLog(@"In players array zitten: %@",_Players);
 }
 
 //----------------------------------------------------------------------------------------------------------
