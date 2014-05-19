@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131C04EA192A08FF0027200A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131C04E9192A08FF0027200A /* EventKit.framework */; };
 		131F91561922946300DB0E37 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F91551922946300DB0E37 /* AgendaViewController.m */; };
 		131F917719229A1900DB0E37 /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F915919229A1900DB0E37 /* DSLCalendarDayCalloutView.m */; };
 		131F917819229A1900DB0E37 /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131F915A19229A1900DB0E37 /* DSLCalendarDayCalloutView.xib */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		131C04E9192A08FF0027200A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		131F91541922946300DB0E37 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaViewController.h; sourceTree = "<group>"; };
 		131F91551922946300DB0E37 /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
 		131F915819229A1900DB0E37 /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131C04EA192A08FF0027200A /* EventKit.framework in Frameworks */,
 				1BE3D266191A554B00A024DB /* libsqlite3.dylib in Frameworks */,
 				1BC0D84B18F835B300789C6C /* CoreGraphics.framework in Frameworks */,
 				1BC0D84D18F835B300789C6C /* UIKit.framework in Frameworks */,
@@ -262,6 +265,7 @@
 		1BC0D84718F835B300789C6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				131C04E9192A08FF0027200A /* EventKit.framework */,
 				1BE3D265191A554B00A024DB /* libsqlite3.dylib */,
 				1BC0D84818F835B300789C6C /* Foundation.framework */,
 				1BC0D84A18F835B300789C6C /* CoreGraphics.framework */,

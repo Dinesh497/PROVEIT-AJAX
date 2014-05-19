@@ -83,8 +83,8 @@
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
         [_OefeningenText setText:OefeningenString];
     } else{
-        [_OefeningenHeader setHidden:   YES];
-        [_OefeningenText setHidden:     YES];
+        //[_OefeningenHeader setHidden:   YES];
+        //[_OefeningenText setHidden:     YES];
     }
 }
 
@@ -94,6 +94,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)addLocal:(id)sender
+{
+        
+}
 /*
 #pragma mark - Navigation
 

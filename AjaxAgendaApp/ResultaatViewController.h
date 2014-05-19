@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *OefeningenHeader;
 @property (weak, nonatomic) IBOutlet UITextView *OefeningenText;
+@property (weak, nonatomic) IBOutlet UISwitch *addLocal;
 
 @end
