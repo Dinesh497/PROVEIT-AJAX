@@ -144,14 +144,14 @@
                 
                 _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
                 _datePicker.datePickerMode = UIDatePickerModeDate;
-                [_datePicker setLocale:[NSLocale currentLocale]];
+                // [_datePicker setLocale:[NSLocale currentLocale]];
                 
                 // Geef datePicker de juiste waarde
                 NSIndexPath *indexPathDetailCell = [NSIndexPath indexPathForRow:0 inSection:0];
                 UITableViewCell *cellDetail = [_TrainingTableView cellForRowAtIndexPath:indexPathDetailCell];
                 NSString *TimeString = cellDetail.detailTextLabel.text;
                 NSDate *datePickerTime = [_dateFormatter dateFromString:TimeString];
-                [_datePicker setDate:datePickerTime animated:YES];
+                [_datePicker setDate:datePickerTime animated:NO];
                 
                 [_datePicker addTarget:self action:@selector(datePicker1ValueChanged) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:_datePicker];
