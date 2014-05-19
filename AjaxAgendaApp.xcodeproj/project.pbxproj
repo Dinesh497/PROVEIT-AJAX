@@ -281,6 +281,8 @@
 				1BC0D85E18F835B300789C6C /* LoginViewController.m */,
 				D491866A18FA9BFB00B70233 /* MenuViewController.h */,
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
+				131F91541922946300DB0E37 /* AgendaViewController.h */,
+				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
 				D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */,
 				D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */,
@@ -295,8 +297,6 @@
 				D42856D61902EA8200077467 /* Player.m */,
 				D42856DB1902EC4E00077467 /* Team.h */,
 				D42856DC1902EC4E00077467 /* Team.m */,
-				131F91541922946300DB0E37 /* AgendaViewController.h */,
-				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				1BC0D86018F835B300789C6C /* Images.xcassets */,
 				1BC0D84F18F835B300789C6C /* Supporting Files */,
 			);
