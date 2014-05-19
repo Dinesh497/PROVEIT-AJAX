@@ -111,11 +111,13 @@
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
                 [_Players addObject:name];
             }*/
-            while (sqlite3_step(statement) == SQLITE_ROW)
+            if (sqlite3_step(statement) == SQLITE_DONE)
             {
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                 [_Players addObject:name];
-                }
+            }else{
+                NSLog(@"niet gelukt");
+            }
             
             }
         sqlite3_finalize(statement);
