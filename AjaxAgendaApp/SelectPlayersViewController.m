@@ -88,7 +88,7 @@
     // Fill the arrays
 
 
-   //_Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+   _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     
     
     
@@ -111,10 +111,10 @@
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
                 [_Players addObject:name];
             }*/
-            if (sqlite3_step(statement) == SQLITE_DONE)
+            if (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                [_Players addObject:name];
+                // NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                // [_Players addObject:name];
             }else{
                 NSLog(@"niet gelukt");
             }

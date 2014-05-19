@@ -1088,7 +1088,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Resultaat" id="siD-7C-TiO"/>
                     <connections>
                         <outlet property="BeginTime" destination="9Zl-Ih-CdP" id="udi-em-RN6"/>
-                        <outlet property="OefeningenHeader" destination="l9H-dE-cQC" id="d1j-JA-sUe"/>
+                        <outlet property="OefeningenHeader" destination="r0v-dd-dIQ" id="LIg-wc-eBh"/>
                         <outlet property="OefeningenText" destination="hJh-h2-xyk" id="CbA-N7-P0h"/>
                         <outlet property="addLocal" destination="eZz-bI-esC" id="kw8-op-dF4"/>
                         <outlet property="categoryLabel" destination="44d-m6-veq" id="kUb-tz-X8L"/>
@@ -1096,6 +1096,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="endTime" destination="8LD-kB-d3q" id="qQh-no-Yqd"/>
                         <outlet property="frame" destination="i20-ss-a7B" id="aKg-AK-Scm"/>
                         <outlet property="locationLabel" destination="hph-Fu-61C" id="0ha-JN-Sjh"/>
+                        <outlet property="scrollFrame" destination="l9H-dE-cQC" id="y6P-OO-fKn"/>
                         <outlet property="spelers" destination="MSd-ik-r4k" id="bVI-UP-Kaz"/>
                     </connections>
                 </viewController>
