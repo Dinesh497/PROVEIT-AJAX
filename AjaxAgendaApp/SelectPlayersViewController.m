@@ -114,16 +114,16 @@
             }*/
             if (sqlite3_step(statement) == SQLITE_ROW)
             {
-<<<<<<< HEAD
+
                 
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                 NSLog(@"PLayer op id 1 in DB %@", name);
                 [_Players addObject:name];
                 
-=======
+
                 // NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                 // [_Players addObject:name];
->>>>>>> FETCH_HEAD
+
             }else{
                 NSLog(@"niet gelukt");
             }
