@@ -34,6 +34,7 @@
     _frame.layer.cornerRadius       = 10;
     _scrollFrame.layer.cornerRadius = 10;
     
+    
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
     [_categoryLabel setText:Category];
