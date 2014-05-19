@@ -106,7 +106,7 @@
             if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
                 if (sqlite3_step(statement) == SQLITE_ROW){
                     NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                    NSLog(@"PLayer op id 1 in DB %@", name);
+                    NSLog(@"PLayer op id %d in DB: %@", index, name);
                     [_Players addObject:name];
                 }
                 sqlite3_finalize(statement);
