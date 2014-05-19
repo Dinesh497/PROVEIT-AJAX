@@ -60,8 +60,9 @@
     
     docsDir = dirPaths[0];
     
-    _databasePath = [[NSString alloc]
-                     initWithString: [docsDir stringByAppendingPathComponent:@"ajaxtraining.db"]];
+    _databasePath = [[NSBundle mainBundle]
+                     pathForResource:@"ajaxtraining1" ofType:@"db" ];
+    NSLog(@" pak ik wel de juiste DB %@", _databasePath);
     
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
@@ -111,10 +112,13 @@
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
                 [_Players addObject:name];
             }*/
-            if (sqlite3_step(statement) == SQLITE_DONE)
+            if (sqlite3_step(statement) == SQLITE_ROW)
             {
+                
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                NSLog(@"PLayer op id 1 in DB %@", name);
                 [_Players addObject:name];
+                
             }else{
                 NSLog(@"niet gelukt");
             }

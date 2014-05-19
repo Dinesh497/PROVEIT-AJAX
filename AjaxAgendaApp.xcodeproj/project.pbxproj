@@ -31,7 +31,7 @@
 		131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F917319229A1900DB0E37 /* DSLCalendarDaySelection.png */; };
 		131F918C19229A1900DB0E37 /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F917419229A1900DB0E37 /* DSLCalendarDaySelection@2x.png */; };
 		131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */; };
-		1B297A2A191BDB1E00C10129 /* ajaxtraining.db in Resources */ = {isa = PBXBuildFile; fileRef = 1B297A29191BDB1E00C10129 /* ajaxtraining.db */; };
+		1B297A2A191BDB1E00C10129 /* ajaxtraining1.db in Resources */ = {isa = PBXBuildFile; fileRef = 1B297A29191BDB1E00C10129 /* ajaxtraining1.db */; };
 		1BC0D84918F835B300789C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84818F835B300789C6C /* Foundation.framework */; };
 		1BC0D84B18F835B300789C6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84A18F835B300789C6C /* CoreGraphics.framework */; };
 		1BC0D84D18F835B300789C6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84C18F835B300789C6C /* UIKit.framework */; };
@@ -115,7 +115,7 @@
 		131F917419229A1900DB0E37 /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
 		131F917519229A1900DB0E37 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
 		131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
-		1B297A29191BDB1E00C10129 /* ajaxtraining.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ajaxtraining.db; sourceTree = "<group>"; };
+		1B297A29191BDB1E00C10129 /* ajaxtraining1.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ajaxtraining1.db; sourceTree = "<group>"; };
 		1BC0D84518F835B300789C6C /* AjaxAgendaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjaxAgendaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC0D84818F835B300789C6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BC0D84A18F835B300789C6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -274,6 +274,7 @@
 		1BC0D84E18F835B300789C6C /* AjaxAgendaApp */ = {
 			isa = PBXGroup;
 			children = (
+				1B297A29191BDB1E00C10129 /* ajaxtraining1.db */,
 				1BC0D85718F835B300789C6C /* AppDelegate.h */,
 				1BC0D85818F835B300789C6C /* AppDelegate.m */,
 				1BC0D85A18F835B300789C6C /* Main.storyboard */,
@@ -307,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				D47D36971920D243001BBDBC /* Images */,
-				1B297A29191BDB1E00C10129 /* ajaxtraining.db */,
 				1BC0D85018F835B300789C6C /* AjaxAgendaApp-Info.plist */,
 				1BC0D85118F835B300789C6C /* InfoPlist.strings */,
 				1BC0D85418F835B300789C6C /* main.m */,
@@ -466,7 +466,7 @@
 				131F918619229A1900DB0E37 /* DSLCalendarDaySelection-left@2x.png in Resources */,
 				131F918019229A1900DB0E37 /* DSLCalendar-nextMonth@2x.png in Resources */,
 				131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */,
-				1B297A2A191BDB1E00C10129 /* ajaxtraining.db in Resources */,
+				1B297A2A191BDB1E00C10129 /* ajaxtraining1.db in Resources */,
 				D47D36B31920D2A3001BBDBC /* warming up.png in Resources */,
 				131F918119229A1900DB0E37 /* DSLCalendar-previousMonth.png in Resources */,
 				D47D36A91920D2A3001BBDBC /* anders.png in Resources */,
