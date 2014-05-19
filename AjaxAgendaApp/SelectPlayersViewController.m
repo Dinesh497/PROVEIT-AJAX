@@ -49,56 +49,75 @@
     _SelectPlayerTable.layer.cornerRadius = 10;
     
     _SelectPlayersFrame.layer.cornerRadius = 10;
-
-    //dylan 
-    //Database
     
+    // make arrays alphabetic
+    
+    
+    // define selectedplayers array
+   //_SelectedPlayers = [[NSMutableArray alloc] init];
+    
+    // Set the searchbar invisible at start
+    //[_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    
+    // test
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Database
+//----------------------------------------------------------------------------------------------------------
+
+- (void) dbConnectie {
+
     NSString *docsDir;
     NSArray *dirPaths;
-    
+
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     docsDir = dirPaths[0];
-    
+
     _databasePath = [[NSBundle mainBundle]
-                     pathForResource:@"ajaxtraining1" ofType:@"db" ];
+                 pathForResource:@"ajaxtraining1" ofType:@"db" ];
+
     // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
-    
+
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    
+
     if ([filemgr fileExistsAtPath:_databasePath] == NO)
     {
         const char *dbpath = [_databasePath UTF8String];
-        
+    
         if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
         {
             char *errMsg;
             const char *sql_stmt =
             " CREATE TABLE IF NOT EXISTS PLAYERS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TEAM TEXT, NAME TEXT, TEXT1 TEXT, TEXT2 TEXT, TEXT3 TEXT, TEXT4 TEXT)";
-            
-            if (sqlite3_exec(_ajaxtrainingDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
-            {
-                _status.text = @"Failed to create table";
-            }
-            sqlite3_close(_ajaxtrainingDB);
-        } else {
-         _status.text = @"Failed to open/create database";
+        
+                if (sqlite3_exec(_ajaxtrainingDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+                {
+                    _status.text = @"Failed to create table";
+                }
+                    sqlite3_close(_ajaxtrainingDB);
         }
+        else
+            {
+            _status.text = @"Failed to open/create database";
+            }
     }
-    
-    // Fill the arrays
+}
 
+// Fill the arrays
 
-   // _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-    
+- (void) fillArrays {
+
     const char *dbpath = [_databasePath UTF8String];
     _Players =[[NSMutableArray alloc] init];
 
     int rows = [self GetArticlesCount];
-    
-    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK){
+
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
         for (int index = 1; index <= rows; index++) {
-            
+        
             NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where id = '%d'", index];
             const char *querya1_stmt = [queryplayersa1_sql UTF8String];
             sqlite3_stmt *statement;
@@ -112,33 +131,16 @@
                 sqlite3_finalize(statement);
             }
         }
-    sqlite3_close(_ajaxtrainingDB);
+        sqlite3_close(_ajaxtrainingDB);
     }
-   // _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
-    
-
-    // _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-    
-    //_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
-
-    _Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
-    
-    // make arrays alphabetic
-    
-    
-    // define selectedplayers array
-   // _SelectedPlayers = [[NSMutableArray alloc] init];
-    
-    // Set the searchbar invisible at start
-    //[_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    // test
     NSLog(@"In players array zitten: %@",_Players);
 }
 
-//----------------------------------------------------------------------------------------------------------
-// Database
-//----------------------------------------------------------------------------------------------------------
+// _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
+// _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
+//_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
+
+//_Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
 
 - (int) GetArticlesCount
 {
