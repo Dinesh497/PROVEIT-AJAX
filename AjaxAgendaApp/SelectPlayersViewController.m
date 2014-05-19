@@ -51,7 +51,8 @@
     _SelectPlayersFrame.layer.cornerRadius = 10;
     
     // make arrays alphabetic
-    
+    [self dbConnectie];
+    [self fillArrays];
     
     // define selectedplayers array
    //_SelectedPlayers = [[NSMutableArray alloc] init];
