@@ -62,7 +62,7 @@
     
     _databasePath = [[NSBundle mainBundle]
                      pathForResource:@"ajaxtraining1" ofType:@"db" ];
-    NSLog(@" pak ik wel de juiste DB %@", _databasePath);
+    // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
     
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
@@ -89,50 +89,31 @@
     // Fill the arrays
 
 
-   _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-    
-    
+   // _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
     
     const char *dbpath = [_databasePath UTF8String];
-    
-    NSString *queryplayersa1_sql = [NSString stringWithFormat:
-                                    @"Select name from players where id = '1'"];
     _Players =[[NSMutableArray alloc] init];
 
+    int rows = [self GetArticlesCount];
     
-    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
-    {
-        const char *querya1_stmt = [queryplayersa1_sql UTF8String];
-        
-         sqlite3_stmt *statement;
-        
-        if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK)
-        {
-            /*for (int index = 0; sqlite3_step(statement) == SQLITE_ROW ; index++) {
-                NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
-                [_Players addObject:name];
-            }*/
-            if (sqlite3_step(statement) == SQLITE_ROW)
-            {
-
-                
-                NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                NSLog(@"PLayer op id 1 in DB %@", name);
-                [_Players addObject:name];
-                
-
-                // NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                // [_Players addObject:name];
-
-            }else{
-                NSLog(@"niet gelukt");
-            }
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK){
+        for (int index = 1; index <= rows; index++) {
             
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where id = '%d'", index];
+            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+            sqlite3_stmt *statement;
+        
+            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                if (sqlite3_step(statement) == SQLITE_ROW){
+                    NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                    NSLog(@"PLayer op id 1 in DB %@", name);
+                    [_Players addObject:name];
+                }
+                sqlite3_finalize(statement);
             }
-        sqlite3_finalize(statement);
         }
     sqlite3_close(_ajaxtrainingDB);
-    
+    }
    // _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
     
 
@@ -153,6 +134,39 @@
     
     // test
     NSLog(@"In players array zitten: %@",_Players);
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Database
+//----------------------------------------------------------------------------------------------------------
+
+- (int) GetArticlesCount
+{
+    int count = 0;
+    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        const char* sqlStatement = "SELECT COUNT(*) FROM players";
+        sqlite3_stmt *statement;
+        
+        if( sqlite3_prepare_v2(_ajaxtrainingDB, sqlStatement, -1, &statement, NULL) == SQLITE_OK )
+        {
+            //Loop through all the returned rows (should be just one)
+            while( sqlite3_step(statement) == SQLITE_ROW )
+            {
+                count = sqlite3_column_int(statement, 0);
+            }
+        }
+        else
+        {
+            NSLog( @"Failed from sqlite3_prepare_v2. Error is:  %s", sqlite3_errmsg(_ajaxtrainingDB) );
+        }
+        
+        // Finalize and close database.
+        sqlite3_finalize(statement);
+        sqlite3_close(_ajaxtrainingDB);
+    }
+    
+    return count;
 }
 
 //----------------------------------------------------------------------------------------------------------
