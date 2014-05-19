@@ -31,7 +31,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // Frame
-    _frame.layer.cornerRadius = 10;
+    _frame.layer.cornerRadius       = 10;
+    _scrollFrame.layer.cornerRadius = 10;
     
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
@@ -83,8 +84,8 @@
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
         [_OefeningenText setText:OefeningenString];
     } else{
-        [_OefeningenHeader setHidden:   YES];
-        [_OefeningenText setHidden:     YES];
+        [_OefeningenHeader  removeFromSuperview];
+        [_OefeningenText    removeFromSuperview];
     }
 }
 
@@ -94,6 +95,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)addLocal:(id)sender
+{
+        
+}
 /*
 #pragma mark - Navigation
 
