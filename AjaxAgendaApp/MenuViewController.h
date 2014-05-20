@@ -10,4 +10,7 @@
 
 @interface MenuViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *AgendaButton;
+@property (weak, nonatomic) IBOutlet UIButton *TrainingButton;
+
 @end

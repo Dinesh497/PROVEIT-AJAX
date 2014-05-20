@@ -27,6 +27,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Agenda Button
+    _AgendaButton.layer.cornerRadius = 10;
+    
+    
+    // Training Button
+    _TrainingButton.layer.cornerRadius = 10;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
