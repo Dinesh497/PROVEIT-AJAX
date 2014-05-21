@@ -192,7 +192,7 @@
     {
         for (int index = 1; index <= rows; index++) {
             
-            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where team = '%@' with id = '%d'", TeamName, index];
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where team = '%@' and id = '%d'", TeamName, index];
             const char *querya1_stmt = [queryplayersa1_sql UTF8String];
             sqlite3_stmt *statement;
             
@@ -209,8 +209,6 @@
     }
     NSLog(@"In selectingTeam array zitten: %@",_SelectedTeam);
 }
-
-//_Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
 
 - (int) GetArticlesCount
 {
@@ -256,9 +254,11 @@
         if (_SegmentController.selectedSegmentIndex == 0) {
             return [_Players count];
         } else{
-            
-            return [_Teams count];
-            // Selected Team if-statement
+            if (_selectedATeam) {
+                return [_SelectedTeam count];
+            }else{
+                return [_Teams count];
+            }
         }
     }
 }
@@ -284,11 +284,16 @@
             cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
             cell.textLabel.text = [_Players objectAtIndex:indexPath.row];
         } else{
-            // Looking at teams list
-            cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
-            cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
             
-            // selected team if-statement
+            if(_selectedATeam){
+                // Looking at players in team list
+                cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+                cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
+            }else{
+                // Looking at teams list
+                cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
+                cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+            }
         }
     }
     

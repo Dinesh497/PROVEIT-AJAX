@@ -94,46 +94,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-Qa-8QR">
-                                <rect key="frame" x="70" y="204" width="180" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-Qa-8QR">
+                                <rect key="frame" x="58" y="203" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" image="agenda.png">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="        Agenda">
-                                            <attributes>
-                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="uC1-Li-LCP" kind="push" id="xbP-R6-NGg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-D8-mAu">
-                                <rect key="frame" x="70" y="256" width="180" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-D8-mAu">
+                                <rect key="frame" x="58" y="256" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" image="training.png">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="        ">
-                                            <attributes>
-                                                <color key="NSColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="Training">
-                                            <attributes>
-                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="W4d-al-rvd" kind="push" id="vmy-wo-2te"/>
@@ -583,10 +560,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-aC-7fz">
-                                <rect key="frame" x="96" y="177" width="128" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-aC-7fz">
+                                <rect key="frame" x="58" y="176" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Movement training">
+                                <state key="normal" title="Movement training" image="movement.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -595,10 +572,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="ZpX-NW-krg" kind="push" id="eKI-Be-EbC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-eP-RVf">
-                                <rect key="frame" x="95" y="253" width="131" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-eP-RVf">
+                                <rect key="frame" x="58" y="282" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Revalidatie training">
+                                <state key="normal" image="revalidatie.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -607,10 +584,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="ZpX-NW-krg" kind="push" id="6wp-IU-xi8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-Ry-6gQ">
-                                <rect key="frame" x="118" y="215" width="85" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-Ry-6gQ">
+                                <rect key="frame" x="58" y="229" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Veld training">
+                                <state key="normal" image="Veld.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -661,7 +638,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Afwerken" image="afwerken.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="afwerkenhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedAfwerken:" destination="dYD-2U-kqn" eventType="touchUpInside" id="fg9-VO-CQK"/>
                                                 </connections>
@@ -672,7 +649,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Anders" image="anders.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="andershighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedAnders:" destination="dYD-2U-kqn" eventType="touchUpInside" id="Kca-cJ-wQm"/>
                                                 </connections>
@@ -683,7 +660,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="CornerTrap" image="cornertrap.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="cornertraphighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedCornerTrap:" destination="dYD-2U-kqn" eventType="touchUpInside" id="rjp-XA-AEP"/>
                                                 </connections>
@@ -694,7 +671,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Kaatsen" image="kaatsen.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="kaatsenhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedKaatsen:" destination="dYD-2U-kqn" eventType="touchUpInside" id="RZv-OE-wc7"/>
                                                 </connections>
@@ -705,7 +682,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Ingooien" image="ingooien.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="ingooienhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedIngooien:" destination="dYD-2U-kqn" eventType="touchUpInside" id="uFp-QH-CSH"/>
                                                 </connections>
@@ -723,7 +700,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Positiespel" image="positiespel.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="positiespelhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedPositiespel:" destination="dYD-2U-kqn" eventType="touchUpInside" id="KH2-R7-zhV"/>
                                                 </connections>
@@ -734,7 +711,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Partijspel" image="partijspel.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="partijspelhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedPartijspel:" destination="dYD-2U-kqn" eventType="touchUpInside" id="06b-Bv-sGc"/>
                                                 </connections>
@@ -745,7 +722,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Rondo" image="rondo.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="rondohighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedRondo:" destination="dYD-2U-kqn" eventType="touchUpInside" id="5Dr-Ye-yzj"/>
                                                 </connections>
@@ -756,7 +733,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="VS" image="vs.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="vshighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedVS:" destination="dYD-2U-kqn" eventType="touchUpInside" id="maO-06-kQh"/>
                                                 </connections>
@@ -767,7 +744,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="WarmingUp" image="warming up.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="warming uphighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedWarmingUp:" destination="dYD-2U-kqn" eventType="touchUpInside" id="bFj-sh-Rjx"/>
                                                 </connections>
@@ -778,7 +755,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Koppen" image="koppen.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="koppenhighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedKoppen:" destination="dYD-2U-kqn" eventType="touchUpInside" id="vOy-FH-DnC"/>
                                                 </connections>
@@ -789,7 +766,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <state key="normal" title="Uitloop" image="uitloop.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="selected" image="tempSelectedButton.png"/>
+                                                <state key="selected" image="uitloophighlighted.png"/>
                                                 <connections>
                                                     <action selector="pressedUitloop:" destination="dYD-2U-kqn" eventType="touchUpInside" id="4G5-d5-w4X"/>
                                                 </connections>
@@ -1134,23 +1111,37 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
+        <image name="Veld.png" width="310" height="77"/>
         <image name="afwerken.png" width="179" height="179"/>
-        <image name="agenda.png" width="44" height="44"/>
+        <image name="afwerkenhighlighted.png" width="179" height="179"/>
+        <image name="agenda.png" width="308" height="78"/>
         <image name="anders.png" width="179" height="179"/>
+        <image name="andershighlighted.png" width="179" height="179"/>
         <image name="background1008.png" width="640" height="1008"/>
         <image name="cornertrap.png" width="179" height="179"/>
+        <image name="cornertraphighlighted.png" width="179" height="179"/>
         <image name="ingooien.png" width="179" height="179"/>
+        <image name="ingooienhighlighted.png" width="179" height="179"/>
         <image name="kaatsen.png" width="179" height="179"/>
+        <image name="kaatsenhighlighted.png" width="179" height="179"/>
         <image name="koppen.png" width="179" height="179"/>
+        <image name="koppenhighlighted.png" width="179" height="179"/>
         <image name="loginScreen1136.png" width="640" height="1136"/>
+        <image name="movement.png" width="310" height="77"/>
         <image name="partijspel.png" width="179" height="179"/>
+        <image name="partijspelhighlighted.png" width="179" height="179"/>
         <image name="positiespel.png" width="179" height="179"/>
+        <image name="positiespelhighlighted.png" width="179" height="179"/>
+        <image name="revalidatie.png" width="310" height="77"/>
         <image name="rondo.png" width="179" height="179"/>
-        <image name="tempSelectedButton.png" width="179" height="179"/>
-        <image name="training.png" width="44" height="44"/>
+        <image name="rondohighlighted.png" width="179" height="179"/>
+        <image name="training.png" width="308" height="78"/>
         <image name="uitloop.png" width="179" height="179"/>
+        <image name="uitloophighlighted.png" width="179" height="179"/>
         <image name="vs.png" width="179" height="179"/>
+        <image name="vshighlighted.png" width="179" height="179"/>
         <image name="warming up.png" width="179" height="179"/>
+        <image name="warming uphighlighted.png" width="179" height="179"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

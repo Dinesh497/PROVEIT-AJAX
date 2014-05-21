@@ -69,11 +69,23 @@
 		D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D491866B18FA9BFB00B70233 /* MenuViewController.m */; };
 		D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866D18FB0D9B00B70233 /* loginScreen1136.png */; };
 		D491867018FB0D9B00B70233 /* background1008.png in Resources */ = {isa = PBXBuildFile; fileRef = D491866E18FB0D9B00B70233 /* background1008.png */; };
-		D4A08BFA192C023F00B83133 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A08BF5192C023F00B83133 /* agenda.png */; };
-		D4A08BFB192C023F00B83133 /* movement.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A08BF6192C023F00B83133 /* movement.png */; };
-		D4A08BFC192C023F00B83133 /* revalidatie.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A08BF7192C023F00B83133 /* revalidatie.png */; };
-		D4A08BFD192C023F00B83133 /* training.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A08BF8192C023F00B83133 /* training.png */; };
-		D4A08BFE192C023F00B83133 /* veld.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A08BF9192C023F00B83133 /* veld.png */; };
+		D498FFB7192CA0DE00E7D7F0 /* afwerkenhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFAB192CA0DE00E7D7F0 /* afwerkenhighlighted.png */; };
+		D498FFB8192CA0DE00E7D7F0 /* andershighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFAC192CA0DE00E7D7F0 /* andershighlighted.png */; };
+		D498FFB9192CA0DE00E7D7F0 /* cornertraphighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFAD192CA0DE00E7D7F0 /* cornertraphighlighted.png */; };
+		D498FFBA192CA0DE00E7D7F0 /* ingooienhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFAE192CA0DE00E7D7F0 /* ingooienhighlighted.png */; };
+		D498FFBB192CA0DE00E7D7F0 /* kaatsenhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFAF192CA0DE00E7D7F0 /* kaatsenhighlighted.png */; };
+		D498FFBC192CA0DE00E7D7F0 /* koppenhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB0192CA0DE00E7D7F0 /* koppenhighlighted.png */; };
+		D498FFBD192CA0DE00E7D7F0 /* partijspelhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB1192CA0DE00E7D7F0 /* partijspelhighlighted.png */; };
+		D498FFBE192CA0DE00E7D7F0 /* positiespelhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB2192CA0DE00E7D7F0 /* positiespelhighlighted.png */; };
+		D498FFBF192CA0DE00E7D7F0 /* rondohighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB3192CA0DE00E7D7F0 /* rondohighlighted.png */; };
+		D498FFC0192CA0DE00E7D7F0 /* uitloophighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB4192CA0DE00E7D7F0 /* uitloophighlighted.png */; };
+		D498FFC1192CA0DE00E7D7F0 /* vshighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB5192CA0DE00E7D7F0 /* vshighlighted.png */; };
+		D498FFC2192CA0DE00E7D7F0 /* warming uphighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB6192CA0DE00E7D7F0 /* warming uphighlighted.png */; };
+		D498FFD0192CA40A00E7D7F0 /* movement.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCD192CA40A00E7D7F0 /* movement.png */; };
+		D498FFD1192CA40A00E7D7F0 /* revalidatie.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCE192CA40A00E7D7F0 /* revalidatie.png */; };
+		D498FFD2192CA40A00E7D7F0 /* Veld.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCF192CA40A00E7D7F0 /* Veld.png */; };
+		D498FFD5192CA50B00E7D7F0 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD3192CA50B00E7D7F0 /* agenda.png */; };
+		D498FFD6192CA50B00E7D7F0 /* training.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD4192CA50B00E7D7F0 /* training.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
 		D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */; };
 /* End PBXBuildFile section */
@@ -170,11 +182,23 @@
 		D491866B18FA9BFB00B70233 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		D491866D18FB0D9B00B70233 /* loginScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1136.png; sourceTree = "<group>"; };
 		D491866E18FB0D9B00B70233 /* background1008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1008.png; sourceTree = "<group>"; };
-		D4A08BF5192C023F00B83133 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
-		D4A08BF6192C023F00B83133 /* movement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movement.png; sourceTree = "<group>"; };
-		D4A08BF7192C023F00B83133 /* revalidatie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revalidatie.png; sourceTree = "<group>"; };
-		D4A08BF8192C023F00B83133 /* training.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = training.png; sourceTree = "<group>"; };
-		D4A08BF9192C023F00B83133 /* veld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veld.png; sourceTree = "<group>"; };
+		D498FFAB192CA0DE00E7D7F0 /* afwerkenhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerkenhighlighted.png; sourceTree = "<group>"; };
+		D498FFAC192CA0DE00E7D7F0 /* andershighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = andershighlighted.png; sourceTree = "<group>"; };
+		D498FFAD192CA0DE00E7D7F0 /* cornertraphighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cornertraphighlighted.png; sourceTree = "<group>"; };
+		D498FFAE192CA0DE00E7D7F0 /* ingooienhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingooienhighlighted.png; sourceTree = "<group>"; };
+		D498FFAF192CA0DE00E7D7F0 /* kaatsenhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaatsenhighlighted.png; sourceTree = "<group>"; };
+		D498FFB0192CA0DE00E7D7F0 /* koppenhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = koppenhighlighted.png; sourceTree = "<group>"; };
+		D498FFB1192CA0DE00E7D7F0 /* partijspelhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partijspelhighlighted.png; sourceTree = "<group>"; };
+		D498FFB2192CA0DE00E7D7F0 /* positiespelhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = positiespelhighlighted.png; sourceTree = "<group>"; };
+		D498FFB3192CA0DE00E7D7F0 /* rondohighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rondohighlighted.png; sourceTree = "<group>"; };
+		D498FFB4192CA0DE00E7D7F0 /* uitloophighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uitloophighlighted.png; sourceTree = "<group>"; };
+		D498FFB5192CA0DE00E7D7F0 /* vshighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vshighlighted.png; sourceTree = "<group>"; };
+		D498FFB6192CA0DE00E7D7F0 /* warming uphighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warming uphighlighted.png"; sourceTree = "<group>"; };
+		D498FFCD192CA40A00E7D7F0 /* movement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movement.png; sourceTree = "<group>"; };
+		D498FFCE192CA40A00E7D7F0 /* revalidatie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revalidatie.png; sourceTree = "<group>"; };
+		D498FFCF192CA40A00E7D7F0 /* Veld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Veld.png; sourceTree = "<group>"; };
+		D498FFD3192CA50B00E7D7F0 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
+		D498FFD4192CA50B00E7D7F0 /* training.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = training.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
 		D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultaatViewController.h; sourceTree = "<group>"; };
@@ -369,11 +393,23 @@
 		D47D36991920D25A001BBDBC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D4A08BF5192C023F00B83133 /* agenda.png */,
-				D4A08BF6192C023F00B83133 /* movement.png */,
-				D4A08BF7192C023F00B83133 /* revalidatie.png */,
-				D4A08BF8192C023F00B83133 /* training.png */,
-				D4A08BF9192C023F00B83133 /* veld.png */,
+				D498FFD3192CA50B00E7D7F0 /* agenda.png */,
+				D498FFD4192CA50B00E7D7F0 /* training.png */,
+				D498FFCD192CA40A00E7D7F0 /* movement.png */,
+				D498FFCE192CA40A00E7D7F0 /* revalidatie.png */,
+				D498FFCF192CA40A00E7D7F0 /* Veld.png */,
+				D498FFAB192CA0DE00E7D7F0 /* afwerkenhighlighted.png */,
+				D498FFAC192CA0DE00E7D7F0 /* andershighlighted.png */,
+				D498FFAD192CA0DE00E7D7F0 /* cornertraphighlighted.png */,
+				D498FFAE192CA0DE00E7D7F0 /* ingooienhighlighted.png */,
+				D498FFAF192CA0DE00E7D7F0 /* kaatsenhighlighted.png */,
+				D498FFB0192CA0DE00E7D7F0 /* koppenhighlighted.png */,
+				D498FFB1192CA0DE00E7D7F0 /* partijspelhighlighted.png */,
+				D498FFB2192CA0DE00E7D7F0 /* positiespelhighlighted.png */,
+				D498FFB3192CA0DE00E7D7F0 /* rondohighlighted.png */,
+				D498FFB4192CA0DE00E7D7F0 /* uitloophighlighted.png */,
+				D498FFB5192CA0DE00E7D7F0 /* vshighlighted.png */,
+				D498FFB6192CA0DE00E7D7F0 /* warming uphighlighted.png */,
 				D47D369B1920D2A3001BBDBC /* afwerken.png */,
 				D47D369C1920D2A3001BBDBC /* anders.png */,
 				D47D369D1920D2A3001BBDBC /* cornertrap.png */,
@@ -469,44 +505,56 @@
 			files = (
 				131F918919229A1900DB0E37 /* DSLCalendarDaySelection-right.png in Resources */,
 				131F917819229A1900DB0E37 /* DSLCalendarDayCalloutView.xib in Resources */,
+				D498FFBF192CA0DE00E7D7F0 /* rondohighlighted.png in Resources */,
+				D498FFD1192CA40A00E7D7F0 /* revalidatie.png in Resources */,
+				D498FFC2192CA0DE00E7D7F0 /* warming uphighlighted.png in Resources */,
 				D42741ED1920ECFB00A7582F /* tempSelectedButton.png in Resources */,
 				1BC0D86118F835B300789C6C /* Images.xcassets in Resources */,
-				D4A08BFD192C023F00B83133 /* training.png in Resources */,
 				D47D36B11920D2A3001BBDBC /* uitloop.png in Resources */,
-				D4A08BFE192C023F00B83133 /* veld.png in Resources */,
 				131F918719229A1900DB0E37 /* DSLCalendarDaySelection-middle.png in Resources */,
-				D4A08BFC192C023F00B83133 /* revalidatie.png in Resources */,
 				D47D36AF1920D2A3001BBDBC /* positiespel.png in Resources */,
 				D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */,
+				D498FFBA192CA0DE00E7D7F0 /* ingooienhighlighted.png in Resources */,
+				D498FFBB192CA0DE00E7D7F0 /* kaatsenhighlighted.png in Resources */,
 				D47D36AB1920D2A3001BBDBC /* ingooien.png in Resources */,
+				D498FFBC192CA0DE00E7D7F0 /* koppenhighlighted.png in Resources */,
 				1BC0D85318F835B300789C6C /* InfoPlist.strings in Resources */,
 				131F918219229A1900DB0E37 /* DSLCalendar-previousMonth@2x.png in Resources */,
 				D491866F18FB0D9B00B70233 /* loginScreen1136.png in Resources */,
 				131F918419229A1900DB0E37 /* DSLCalendarDayCallout@2x.png in Resources */,
-				D4A08BFA192C023F00B83133 /* agenda.png in Resources */,
+				D498FFB9192CA0DE00E7D7F0 /* cornertraphighlighted.png in Resources */,
+				D498FFB7192CA0DE00E7D7F0 /* afwerkenhighlighted.png in Resources */,
 				131F917B19229A1900DB0E37 /* DSLCalendarMonthSelectorView.xib in Resources */,
 				131F918519229A1900DB0E37 /* DSLCalendarDaySelection-left.png in Resources */,
 				131F918619229A1900DB0E37 /* DSLCalendarDaySelection-left@2x.png in Resources */,
 				131F918019229A1900DB0E37 /* DSLCalendar-nextMonth@2x.png in Resources */,
 				131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */,
 				1B297A2A191BDB1E00C10129 /* ajaxtraining1.db in Resources */,
+				D498FFD5192CA50B00E7D7F0 /* agenda.png in Resources */,
+				D498FFD2192CA40A00E7D7F0 /* Veld.png in Resources */,
 				D47D36B31920D2A3001BBDBC /* warming up.png in Resources */,
+				D498FFD6192CA50B00E7D7F0 /* training.png in Resources */,
 				131F918119229A1900DB0E37 /* DSLCalendar-previousMonth.png in Resources */,
 				D47D36A91920D2A3001BBDBC /* anders.png in Resources */,
+				D498FFC0192CA0DE00E7D7F0 /* uitloophighlighted.png in Resources */,
+				D498FFC1192CA0DE00E7D7F0 /* vshighlighted.png in Resources */,
 				D47D36AA1920D2A3001BBDBC /* cornertrap.png in Resources */,
 				131F918819229A1900DB0E37 /* DSLCalendarDaySelection-middle@2x.png in Resources */,
+				D498FFD0192CA40A00E7D7F0 /* movement.png in Resources */,
 				D47D36AC1920D2A3001BBDBC /* kaatsen.png in Resources */,
 				131F918A19229A1900DB0E37 /* DSLCalendarDaySelection-right@2x.png in Resources */,
 				D47D36AD1920D2A3001BBDBC /* koppen.png in Resources */,
 				D491867018FB0D9B00B70233 /* background1008.png in Resources */,
 				1BC0D85C18F835B300789C6C /* Main.storyboard in Resources */,
+				D498FFBD192CA0DE00E7D7F0 /* partijspelhighlighted.png in Resources */,
 				D47D36B01920D2A3001BBDBC /* rondo.png in Resources */,
 				131F917F19229A1900DB0E37 /* DSLCalendar-nextMonth.png in Resources */,
 				131F918319229A1900DB0E37 /* DSLCalendarDayCallout.png in Resources */,
-				D4A08BFB192C023F00B83133 /* movement.png in Resources */,
 				D47D36B21920D2A3001BBDBC /* vs.png in Resources */,
 				131F918C19229A1900DB0E37 /* DSLCalendarDaySelection@2x.png in Resources */,
+				D498FFB8192CA0DE00E7D7F0 /* andershighlighted.png in Resources */,
 				D47D36AE1920D2A3001BBDBC /* partijspel.png in Resources */,
+				D498FFBE192CA0DE00E7D7F0 /* positiespelhighlighted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
