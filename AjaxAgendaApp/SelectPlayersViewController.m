@@ -61,13 +61,10 @@
     [self fillArrays];
     [self fillTeamArrays];
     
-    // define selectedplayers array
-   //_SelectedPlayers = [[NSMutableArray alloc] init];
+    _SelectedPlayers = [[NSMutableArray alloc] init];
     
     // Set the searchbar invisible at start
     [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    // test
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -254,7 +251,7 @@
             return [_Players count];
         } else{
             if (_selectedATeam) {
-                return [_SelectedTeam count] + 1;
+                return ([_SelectedTeam count] + 2);
             }else{
                 return [_Teams count];
             }
@@ -286,12 +283,10 @@
             
             if(_selectedATeam){
                 // Looking at players in team list
-                if(indexPath.row == [_SelectedTeam count] + 1){
-                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"SelectAllCell"];
-                }else{
-                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
-                    cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
-                }
+                
+                cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+                cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
+                
             }else{
                 // Looking at teams list
                 cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
@@ -311,37 +306,49 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(_SegmentController.selectedSegmentIndex == 0){
+    
+    UITableViewCell *cell = [_SelectPlayerTable cellForRowAtIndexPath:indexPath];
+    
+    if (cell.tag == 0) {
+        // Speler cell selected
         
-        // Selecting a player
-        if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+        if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
+            
             // The player is already selected
-            [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-            
-            NSString *selectingPlayer = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
-            
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            NSString *selectingPlayer = cell.textLabel.text;
             NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
             [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
-            
-            
         }else{
+            
             // The player is not selected
             [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-            
             NSString *selectingPlayer = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
             [_SelectedPlayers addObject:selectingPlayer];
-            
         }
-        } else{
-            // Selecting a team
-            
-            NSString *selectingTeam = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
-            [self fillSelectedTeamArraywithTeamName:selectingTeam];
-            
-            _selectedATeam = YES;
-            [_SelectPlayerTable reloadData];
-            
-        }
+        
+        NSLog(@"%@", _SelectedPlayers);
+    }
+    
+    if (cell.tag == 1) {
+        // Team cell selected
+        
+        NSString *selectingTeam = cell.textLabel.text;
+        [self fillSelectedTeamArraywithTeamName:selectingTeam];
+        _selectedATeam = YES;
+        [_SelectPlayerTable reloadData];
+    }
+    
+    if (cell.tag == 2) {
+        // SelectAll cell selected
+        
+    }
+    
+    if (cell.tag == 3) {
+        // Return cell selected
+        _selectedATeam = NO;
+        [_SelectPlayerTable reloadData];
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
