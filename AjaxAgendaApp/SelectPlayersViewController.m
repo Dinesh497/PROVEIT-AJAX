@@ -142,6 +142,8 @@
         sqlite3_close(_ajaxtrainingDB);
     }
     NSLog(@"In players array zitten: %@",_Players);
+    
+    
 }
 
 - (void) fillTeamArrays {
