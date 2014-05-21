@@ -20,6 +20,9 @@
 - (IBAction)SelectedSegmentChanged:(id)sender;
 - (IBAction)GereedButtonPressed:(id)sender;
 
+- (IBAction)SelectAllInTeam:(id)sender;
+- (IBAction)ReturnFromTeam:(id)sender;
+
 @property (strong, nonatomic) NSString *databasePath;
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) sqlite3 *ajaxtrainingDB;

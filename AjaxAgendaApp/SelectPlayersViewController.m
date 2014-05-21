@@ -251,7 +251,7 @@
             return [_Players count];
         } else{
             if (_selectedATeam) {
-                return ([_SelectedTeam count]);
+                return ([_SelectedTeam count] + 1);
             }else{
                 return [_Teams count];
             }
@@ -283,10 +283,12 @@
             
             if(_selectedATeam){
                 // Looking at players in team list
-                
-                cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
-                cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
-                
+                if (indexPath.row == 0) {
+                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"AllReturnCell"];
+                }else{
+                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+                    cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row - 1];
+                }
             }else{
                 // Looking at teams list
                 cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
@@ -351,6 +353,14 @@
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (IBAction)SelectAllInTeam:(id)sender {
+    
+}
+
+- (IBAction)ReturnFromTeam:(id)sender {
+    NSLog(@"return me!");
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -423,7 +433,6 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:_SelectedPlayers forKey:@"PlayersArray"];
 }
-
 //----------------------------------------------------------------------------------------------------------
 // Xcode
 //----------------------------------------------------------------------------------------------------------
