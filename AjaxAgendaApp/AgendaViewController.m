@@ -27,7 +27,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //TO DO, autosetdate to current date when loaded.
-    tableData = [NSArray arrayWithObjects:@"
 }
 
 //DSLCalendarViewDelegate methods
