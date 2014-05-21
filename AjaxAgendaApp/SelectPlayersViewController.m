@@ -251,7 +251,7 @@
             return [_Players count];
         } else{
             if (_selectedATeam) {
-                return ([_SelectedTeam count] + 2);
+                return ([_SelectedTeam count]);
             }else{
                 return [_Teams count];
             }
