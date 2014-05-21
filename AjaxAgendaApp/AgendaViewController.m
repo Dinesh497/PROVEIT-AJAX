@@ -18,20 +18,27 @@
 
 @implementation AgendaViewController
 
+{
+    NSArray *tableData;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //TO DO, autosetdate to current date when loaded.
+    tableData = [NSArray arrayWithObjects:@"
 }
 
-#pragma mark - DSLCalendarViewDelegate methods
+//DSLCalendarViewDelegate methods
+
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
-        NSLog( @"Selected %ld/%ld - %ld/%ld", (long)range.startDay.day, (long)range.startDay.month, (long)range.endDay.day, (long)range.endDay.month);
+        NSLog(@"Selected %d/%d - %d/%d", range.startDay.day, range.startDay.month, range.endDay.day, range.endDay.month);
     }
     else {
-        NSLog( @"No selection" );
+        NSLog(@"No selection");
     }
 }
 

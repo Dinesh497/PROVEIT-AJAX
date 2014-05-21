@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AgendaViewController : UIViewController
+@interface AgendaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
 
 @end
