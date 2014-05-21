@@ -83,9 +83,9 @@
 		D498FFC2192CA0DE00E7D7F0 /* warming uphighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFB6192CA0DE00E7D7F0 /* warming uphighlighted.png */; };
 		D498FFD0192CA40A00E7D7F0 /* movement.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCD192CA40A00E7D7F0 /* movement.png */; };
 		D498FFD1192CA40A00E7D7F0 /* revalidatie.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCE192CA40A00E7D7F0 /* revalidatie.png */; };
-		D498FFD2192CA40A00E7D7F0 /* Veld.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFCF192CA40A00E7D7F0 /* Veld.png */; };
 		D498FFD5192CA50B00E7D7F0 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD3192CA50B00E7D7F0 /* agenda.png */; };
 		D498FFD6192CA50B00E7D7F0 /* training.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD4192CA50B00E7D7F0 /* training.png */; };
+		D498FFD8192CA58400E7D7F0 /* veld.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD7192CA58400E7D7F0 /* veld.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
 		D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */; };
 /* End PBXBuildFile section */
@@ -196,9 +196,9 @@
 		D498FFB6192CA0DE00E7D7F0 /* warming uphighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warming uphighlighted.png"; sourceTree = "<group>"; };
 		D498FFCD192CA40A00E7D7F0 /* movement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movement.png; sourceTree = "<group>"; };
 		D498FFCE192CA40A00E7D7F0 /* revalidatie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revalidatie.png; sourceTree = "<group>"; };
-		D498FFCF192CA40A00E7D7F0 /* Veld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Veld.png; sourceTree = "<group>"; };
 		D498FFD3192CA50B00E7D7F0 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
 		D498FFD4192CA50B00E7D7F0 /* training.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = training.png; sourceTree = "<group>"; };
+		D498FFD7192CA58400E7D7F0 /* veld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veld.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
 		D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultaatViewController.h; sourceTree = "<group>"; };
@@ -393,11 +393,11 @@
 		D47D36991920D25A001BBDBC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D498FFD7192CA58400E7D7F0 /* veld.png */,
 				D498FFD3192CA50B00E7D7F0 /* agenda.png */,
 				D498FFD4192CA50B00E7D7F0 /* training.png */,
 				D498FFCD192CA40A00E7D7F0 /* movement.png */,
 				D498FFCE192CA40A00E7D7F0 /* revalidatie.png */,
-				D498FFCF192CA40A00E7D7F0 /* Veld.png */,
 				D498FFAB192CA0DE00E7D7F0 /* afwerkenhighlighted.png */,
 				D498FFAC192CA0DE00E7D7F0 /* andershighlighted.png */,
 				D498FFAD192CA0DE00E7D7F0 /* cornertraphighlighted.png */,
@@ -531,8 +531,8 @@
 				131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */,
 				1B297A2A191BDB1E00C10129 /* ajaxtraining1.db in Resources */,
 				D498FFD5192CA50B00E7D7F0 /* agenda.png in Resources */,
-				D498FFD2192CA40A00E7D7F0 /* Veld.png in Resources */,
 				D47D36B31920D2A3001BBDBC /* warming up.png in Resources */,
+				D498FFD8192CA58400E7D7F0 /* veld.png in Resources */,
 				D498FFD6192CA50B00E7D7F0 /* training.png in Resources */,
 				131F918119229A1900DB0E37 /* DSLCalendar-previousMonth.png in Resources */,
 				D47D36A91920D2A3001BBDBC /* anders.png in Resources */,

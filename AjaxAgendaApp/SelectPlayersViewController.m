@@ -133,7 +133,6 @@
             if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
                 if (sqlite3_step(statement) == SQLITE_ROW){
                     NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                    NSLog(@"PLayer op id %d in DB: %@", index, name);
                     [_Players addObject:name];
                 }
                 sqlite3_finalize(statement);
@@ -255,7 +254,7 @@
             return [_Players count];
         } else{
             if (_selectedATeam) {
-                return [_SelectedTeam count];
+                return [_SelectedTeam count] + 1;
             }else{
                 return [_Teams count];
             }
@@ -287,8 +286,12 @@
             
             if(_selectedATeam){
                 // Looking at players in team list
-                cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
-                cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
+                if(indexPath.row == [_SelectedTeam count] + 1){
+                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"SelectAllCell"];
+                }else{
+                    cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"PlayerCell"];
+                    cell.textLabel.text = [_SelectedTeam objectAtIndex:indexPath.row];
+                }
             }else{
                 // Looking at teams list
                 cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
@@ -334,6 +337,9 @@
             
             NSString *selectingTeam = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
             [self fillSelectedTeamArraywithTeamName:selectingTeam];
+            
+            _selectedATeam = YES;
+            [_SelectPlayerTable reloadData];
             
         }
     
