@@ -13,24 +13,64 @@
 @interface AgendaViewController () <DSLCalendarViewDelegate>
 
 @property (weak, nonatomic) IBOutlet DSLCalendarView *calendarView;
+@property (readwrite, nonatomic) NSMutableArray *appointment;
+@property NSMutableArray *selectedAppointment;
 
 @end
 
 @implementation AgendaViewController
 
-{
-    NSArray *tableData;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     //TO DO, autosetdate to current date when loaded.
 }
 
-//DSLCalendarViewDelegate methods
+//Database
 
+- (void) dbConnectie {
+    
+    NSString *docsDir;
+    NSArray *dirPaths;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    docsDir = dirPaths[0];
+    
+    _databasePath = [[NSBundle mainBundle]
+                     pathForResource:@"ajaxtraining1" ofType:@"db" ];
+    
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    
+    if ([filemgr fileExistsAtPath:_databasePath] == NO)
+    {
+        const char *dbpath = [_databasePath UTF8String];
+        
+        if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+        {
+            char *errMsg;
+            const char *sql_stmt =
+            " CREATE TABLE IF NOT EXISTS PLAYERS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TEAM TEXT, NAME TEXT, TEXT1 TEXT, TEXT2 TEXT, TEXT3 TEXT, TEXT4 TEXT)";
+            
+            if (sqlite3_exec(_ajaxtrainingDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+            {
+                _status.text = @"Failed to create table";
+            }
+            sqlite3_close(_ajaxtrainingDB);
+        }
+        else
+        {
+            _status.text = @"Failed to open/create database";
+        }
+    }
+}
+
+//MutableArray
+
+
+//DSLCalendarViewDelegate methods
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {

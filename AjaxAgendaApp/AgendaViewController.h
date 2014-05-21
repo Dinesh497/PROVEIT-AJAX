@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
-@interface AgendaViewController : UIViewController
+@interface AgendaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSString *databasePath;
+@property (nonatomic) sqlite3 *ajaxtrainingDB;
+@property (strong, nonatomic) IBOutlet UILabel *status;
 
 @end
