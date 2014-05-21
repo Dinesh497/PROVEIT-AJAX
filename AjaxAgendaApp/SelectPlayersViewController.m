@@ -19,6 +19,10 @@
 // contains the selected players
 @property NSMutableArray *SelectedPlayers;
 
+// contains the team that is selected
+@property NSMutableArray *SelectedTeam;
+@property BOOL selectedATeam;
+
 // Shows when the searchbar is being used
 @property BOOL isSearching;
 
@@ -50,15 +54,18 @@
     
     _SelectPlayersFrame.layer.cornerRadius = 10;
     
+    [_SegmentController setSelectedSegmentIndex:1];
+    
     // make arrays alphabetic
     [self dbConnectie];
     [self fillArrays];
+    [self fillTeamArrays];
     
     // define selectedplayers array
    //_SelectedPlayers = [[NSMutableArray alloc] init];
     
     // Set the searchbar invisible at start
-    //[_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    [_SelectPlayerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     
     // test
 }
@@ -137,9 +144,69 @@
     NSLog(@"In players array zitten: %@",_Players);
 }
 
-// _Players = [[NSMutableArray alloc] initWithContentsOfFile:Playersa1];
-// _Players = [[NSMutableArray alloc] initWithObjects:@"Jan Groen", @"Jan Blauw", @"Dirk", @"Henk", @"Klaas", @"Joop", @"Hein", @"Dinesh", @"Johan", @"Anass", nil];
-//_Players = [[NSMutableArray alloc] initWithContentsOfFile:selectplayers_sql];
+- (void) fillTeamArrays {
+    
+    const char *dbpath = [_databasePath UTF8String];
+    _Teams =[[NSMutableArray alloc] init];
+    
+    int rows = [self GetArticlesCount];
+    
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        for (int index = 1; index <= rows; index++) {
+            
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select team from players where id = '%d'", index];
+            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+            sqlite3_stmt *statement;
+            
+            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                if (sqlite3_step(statement) == SQLITE_ROW){
+                    NSString *team = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                    
+                    if ( [_Teams containsObject: team] ) {
+                        // do found
+                        // Nothing to do here
+                    } else {
+                        // do not found
+                        [_Teams addObject:team];
+                    }
+                }
+                sqlite3_finalize(statement);
+            }
+        }
+        sqlite3_close(_ajaxtrainingDB);
+    }
+    NSLog(@"In Teams array zitten: %@",_Teams);
+}
+
+- (void) fillSelectedTeamArraywithTeamName:(NSString*)TeamName {
+    
+    const char *dbpath = [_databasePath UTF8String];
+    _SelectedTeam =[[NSMutableArray alloc] init];
+    
+    int rows = [self GetArticlesCount];
+    
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        for (int index = 1; index <= rows; index++) {
+            
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where team = '%@' with id = '%d'", TeamName, index];
+            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+            sqlite3_stmt *statement;
+            
+            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                if (sqlite3_step(statement) == SQLITE_ROW){
+                    NSString *player = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                    [_SelectedTeam addObject:player];
+                    
+                }
+                sqlite3_finalize(statement);
+            }
+        }
+        sqlite3_close(_ajaxtrainingDB);
+    }
+    NSLog(@"In selectingTeam array zitten: %@",_SelectedTeam);
+}
 
 //_Teams = [[NSMutableArray alloc] initWithObjects:@"Jongens A1", @"Jongens A2", @"Jongens B1", @"Jongens C1", @"Jongens C2", nil];
 
@@ -187,7 +254,9 @@
         if (_SegmentController.selectedSegmentIndex == 0) {
             return [_Players count];
         } else{
+            
             return [_Teams count];
+            // Selected Team if-statement
         }
     }
 }
@@ -216,6 +285,8 @@
             // Looking at teams list
             cell = [_SelectPlayerTable dequeueReusableCellWithIdentifier:@"TeamCell"];
             cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+            
+            // selected team if-statement
         }
     }
     
@@ -242,7 +313,6 @@
             NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
             [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
             
-            // test: NSLog(@"SelectedPlayers bevat: %@", _SelectedPlayers);
             
         }else{
             // The player is not selected
@@ -254,6 +324,10 @@
         }
         } else{
             // Selecting a team
+            
+            NSString *selectingTeam = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
+            [self fillSelectedTeamArraywithTeamName:selectingTeam];
+            
         }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
