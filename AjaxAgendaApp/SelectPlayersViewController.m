@@ -346,6 +346,27 @@
 
 - (IBAction)SelectAllInTeam:(id)sender {
     
+    for(int index = 0; index < [_SelectedTeam count]; index++){
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(index + 1) inSection:0];
+        UITableViewCell *cell = [_SelectPlayerTable cellForRowAtIndexPath:indexPath];
+        
+        if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
+        
+            // The player is already selected
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            NSString *selectingPlayer = cell.textLabel.text;
+            NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
+            [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
+        }else{
+        
+            // The player is not selected
+            [_SelectPlayerTable cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+            NSString *selectingPlayer = [_SelectPlayerTable cellForRowAtIndexPath:indexPath].textLabel.text;
+            [_SelectedPlayers addObject:selectingPlayer];
+        }
+    }
+    
 }
 
 - (IBAction)ReturnFromTeam:(id)sender {
