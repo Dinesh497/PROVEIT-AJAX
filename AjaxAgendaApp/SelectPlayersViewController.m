@@ -341,17 +341,6 @@
         [_SelectPlayerTable reloadData];
     }
     
-    if (cell.tag == 2) {
-        // SelectAll cell selected
-        
-    }
-    
-    if (cell.tag == 3) {
-        // Return cell selected
-        _selectedATeam = NO;
-        [_SelectPlayerTable reloadData];
-    }
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -360,7 +349,8 @@
 }
 
 - (IBAction)ReturnFromTeam:(id)sender {
-    NSLog(@"return me!");
+    _selectedATeam = NO;
+    [_SelectPlayerTable reloadData];
 }
 
 //----------------------------------------------------------------------------------------------------------
