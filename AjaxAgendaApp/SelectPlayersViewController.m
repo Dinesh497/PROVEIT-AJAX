@@ -56,7 +56,6 @@
     
     [_SegmentController setSelectedSegmentIndex:1];
     
-    // make arrays alphabetic
     [self dbConnectie];
     [self fillArrays];
     [self fillTeamArrays];

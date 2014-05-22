@@ -19,5 +19,8 @@
 - (IBAction)WachtwoordTextDidExit:(id)sender;
 
 
+@property (readwrite, nonatomic) NSMutableArray *Usernames;
+@property (readwrite, nonatomic) NSMutableArray *passwords;
+
 
 @end

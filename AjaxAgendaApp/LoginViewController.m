@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 
+
 @interface LoginViewController ()
 
 @end
@@ -20,6 +21,13 @@
 	
     _LoginFrame.layer.cornerRadius = 15;
 }
+
+//----------------------------------------------------------------------------------------------------------
+// Database
+//----------------------------------------------------------------------------------------------------------
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
