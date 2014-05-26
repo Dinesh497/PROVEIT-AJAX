@@ -18,7 +18,8 @@
 - (IBAction)TrainerTextDidExit:(id)sender;
 - (IBAction)WachtwoordTextDidExit:(id)sender;
 
-
+@property (strong, nonatomic) NSString *databasePath;
+@property (nonatomic) sqlite3 *ajaxtrainingDB;
 @property (readwrite, nonatomic) NSMutableArray *Usernames;
 @property (readwrite, nonatomic) NSMutableArray *passwords;
 
