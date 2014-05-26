@@ -97,6 +97,19 @@
     NSLog(@"In players array zitten: %@",_appointment);
 }
 
+// UITableview methodes
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    return cell;
+}
+
 //GetArticleCount
 
 - (int) GetArticlesCount

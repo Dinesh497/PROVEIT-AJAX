@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
-@interface SwitchAndAddPlayersViewController : UIViewController
+@interface SwitchAndAddPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UITableView *PlayersTableView;
 
