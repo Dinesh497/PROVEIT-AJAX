@@ -50,8 +50,7 @@
 		1BE3D266191A554B00A024DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE3D265191A554B00A024DB /* libsqlite3.dylib */; };
 		D42741ED1920ECFB00A7582F /* tempSelectedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D42741EC1920ECFB00A7582F /* tempSelectedButton.png */; };
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
-		D42856D71902EA8200077467 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D61902EA8200077467 /* Player.m */; };
-		D42856DD1902EC4E00077467 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856DC1902EC4E00077467 /* Team.m */; };
+		D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */; };
 		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
 		D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369B1920D2A3001BBDBC /* afwerken.png */; };
 		D47D36A91920D2A3001BBDBC /* anders.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369C1920D2A3001BBDBC /* anders.png */; };
@@ -158,10 +157,8 @@
 		D42741EC1920ECFB00A7582F /* tempSelectedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempSelectedButton.png; sourceTree = "<group>"; };
 		D42856D21902CFB300077467 /* SelectPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayersViewController.h; sourceTree = "<group>"; };
 		D42856D31902CFB300077467 /* SelectPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayersViewController.m; sourceTree = "<group>"; };
-		D42856D51902EA8200077467 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		D42856D61902EA8200077467 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		D42856DB1902EC4E00077467 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
-		D42856DC1902EC4E00077467 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchAndAddPlayersViewController.h; sourceTree = "<group>"; };
+		D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchAndAddPlayersViewController.m; sourceTree = "<group>"; };
 		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
 		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
 		D47D369B1920D2A3001BBDBC /* afwerken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerken.png; sourceTree = "<group>"; };
@@ -320,6 +317,8 @@
 				1BC0D85E18F835B300789C6C /* LoginViewController.m */,
 				D491866A18FA9BFB00B70233 /* MenuViewController.h */,
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
+				D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */,
+				D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */,
 				131F91541922946300DB0E37 /* AgendaViewController.h */,
 				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
@@ -332,10 +331,6 @@
 				D42856D31902CFB300077467 /* SelectPlayersViewController.m */,
 				D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */,
 				D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */,
-				D42856D51902EA8200077467 /* Player.h */,
-				D42856D61902EA8200077467 /* Player.m */,
-				D42856DB1902EC4E00077467 /* Team.h */,
-				D42856DC1902EC4E00077467 /* Team.m */,
 				1BC0D86018F835B300789C6C /* Images.xcassets */,
 				1BC0D84F18F835B300789C6C /* Supporting Files */,
 			);
@@ -575,14 +570,13 @@
 			files = (
 				131F917E19229A1900DB0E37 /* DSLCalendarView.m in Sources */,
 				131F917A19229A1900DB0E37 /* DSLCalendarMonthSelectorView.m in Sources */,
-				D42856D71902EA8200077467 /* Player.m in Sources */,
 				D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */,
 				D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */,
 				1BC0D85F18F835B300789C6C /* LoginViewController.m in Sources */,
 				131F917719229A1900DB0E37 /* DSLCalendarDayCalloutView.m in Sources */,
 				131F917D19229A1900DB0E37 /* DSLCalendarRange.m in Sources */,
+				D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */,
 				131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */,
-				D42856DD1902EC4E00077467 /* Team.m in Sources */,
 				D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
 				D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */,

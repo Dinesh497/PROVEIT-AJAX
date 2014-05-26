@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
-#import "Team.h"
 
 @interface SelectPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *SelectPlayerTable;
