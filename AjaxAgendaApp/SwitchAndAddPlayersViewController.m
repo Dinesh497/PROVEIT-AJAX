@@ -20,6 +20,7 @@
 @property BOOL selectedATeam;
 @property NSString *selectedTeam;
 
+@property BOOL choosingTeam;
 @property NSString *editingPlayer;
 
 @end
@@ -64,10 +65,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_selectedATeam) {
-        return ([_PlayersSelectedTeam count] + 1);
-    } else{
+    if (_choosingTeam) {
         return [_Teams count];
+    } else{
+        if (_selectedATeam) {
+            return ([_PlayersSelectedTeam count] + 1);
+        } else{
+            return [_Teams count];
+        }
     }
 }
 
@@ -75,21 +80,26 @@
 {
     UITableViewCell *cell;
     
-    if (_selectedATeam) {
-        // Team geselecteerd
-        if (indexPath.row == 0) {
-            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"BackCell"];
-            NSString *team = [NSString stringWithFormat:@"Jongens %@", _selectedTeam];
-            cell.textLabel.text = team;
-            cell.textLabel.textColor = [UIColor lightGrayColor];
-            
-        } else {
-            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
-            cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
-        }
-    } else{
-        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
+    if (_choosingTeam) {
+        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"selectTeamCell"];
         cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+    } else{
+        if (_selectedATeam) {
+            // Team geselecteerd
+            if (indexPath.row == 0) {
+                cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"BackCell"];
+                NSString *team = [NSString stringWithFormat:@"Jongens %@", _selectedTeam];
+                cell.textLabel.text = team;
+                cell.textLabel.textColor = [UIColor lightGrayColor];
+            
+            } else {
+                cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+                cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
+            }
+        } else{
+            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
+            cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+        }
     }
     
     return cell;
@@ -113,6 +123,11 @@
     if (cell.tag == 1) {
         // Player cell selected
         
+    }
+    if (cell.tag == 2) {
+        // choose team cell selected
+        NSString *teamName = cell.textLabel.text;
+        [self wijzigTeam:teamName];
     }
     
     [_PlayersTableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -178,8 +193,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         // Wijzig team
-        
-        [self wijzigTeam];
+        _choosingTeam = YES;
+        [_PlayersTableView reloadData];
     }
     if (buttonIndex == 1) {
         // Verwijder speler
@@ -190,17 +205,13 @@
     [_PlayersTableView reloadData];
 }
 
-- (void) selectTeam{
-    
-}
-
-- (void) wijzigTeam{
+- (void) wijzigTeam:(NSString*) team{
     
     const char *dbpath = [_databasePath UTF8String];
     sqlite3_stmt *updateStmt;
     if(sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
-        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"UPDATE players SET team = 'A2' WHERE name ='%@'", _editingPlayer];
+    NSString *queryplayersa1_sql = [NSString stringWithFormat:@"UPDATE players SET team = '%@' WHERE name ='%@'", team, _editingPlayer];
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
         if(sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &updateStmt, NULL) == SQLITE_OK)
             NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(_ajaxtrainingDB));
@@ -213,6 +224,9 @@
         NSLog(@"Error while updating. %s", sqlite3_errmsg(_ajaxtrainingDB));
     sqlite3_finalize(updateStmt);
     sqlite3_close(_ajaxtrainingDB);
+    
+    _choosingTeam = NO;
+    [_PlayersTableView reloadData];
 }
 
 - (void) verwijderSpeler{

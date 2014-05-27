@@ -30,6 +30,7 @@
     
     [self dbConnectie];
     [self fillArrays];
+    
     //TO DO, autosetdate to current date when loaded.
 }
 
