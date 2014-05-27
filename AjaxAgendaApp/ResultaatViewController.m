@@ -77,6 +77,7 @@
     
     [_spelers setText:PlayersString];
     
+    
     // Oefeningen
     
     if ([Category isEqualToString:@"Veld training"]) {
