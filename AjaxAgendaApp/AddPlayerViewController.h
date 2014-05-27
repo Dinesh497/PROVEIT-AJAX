@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AddPlayerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *Frame;
+@property (weak, nonatomic) IBOutlet UITextField *NameTextfield;
 
 @end

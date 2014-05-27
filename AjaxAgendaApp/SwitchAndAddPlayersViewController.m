@@ -178,7 +178,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         // Wijzig team
-        
+        [self wijzigTeam];
     }
     if (buttonIndex == 1) {
         // Verwijder speler
@@ -190,6 +190,31 @@
 }
 
 - (void) wijzigTeam{
+    
+    const char *dbpath = [_databasePath UTF8String];
+    sqlite3 *database;
+    sqlite3_stmt *updateStmt;
+    if(sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        const char *sql = "UPDATE players SET team = 'A2' WHERE name = ?";
+        if(sqlite3_prepare_v2(database, sql, -1, &updateStmt, NULL) != SQLITE_OK)
+            NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(database));
+    }
+    sqlite3_bind_int(updateStmt, 1, 1000);
+    
+    
+    
+    char* errmsg;
+    sqlite3_exec(database, "COMMIT", NULL, NULL, &errmsg);
+    
+    if(SQLITE_DONE != sqlite3_step(updateStmt))
+        NSLog(@"Error while updating. %s", sqlite3_errmsg(database));
+    sqlite3_finalize(updateStmt);
+    
+    
+    sqlite3_close(database);
+
+    
     
 }
 

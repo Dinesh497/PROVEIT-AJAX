@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _Frame.layer.cornerRadius = 10;
+    
 }
 
 - (void)didReceiveMemoryWarning
