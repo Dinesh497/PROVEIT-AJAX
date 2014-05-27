@@ -81,7 +81,7 @@
 
     _databasePath = [[NSBundle mainBundle]
                  pathForResource:@"ajaxtraining1" ofType:@"db" ];
-
+    
     // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
 
     NSFileManager *filemgr = [NSFileManager defaultManager];
