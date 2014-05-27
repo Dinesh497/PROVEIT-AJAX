@@ -12,5 +12,7 @@
 @interface SwitchAndAddPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UITableView *PlayersTableView;
+- (IBAction)BackButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *TeamNameLabel;
 
 @end

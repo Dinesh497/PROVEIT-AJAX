@@ -18,6 +18,7 @@
 @property (nonatomic) sqlite3 *ajaxtrainingDB;
 
 @property BOOL selectedATeam;
+@property NSString *selectedTeam;
 
 @end
 
@@ -45,6 +46,8 @@
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +63,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_selectedATeam) {
-        return [_PlayersSelectedTeam count];
+        return ([_PlayersSelectedTeam count] + 1);
     } else{
         return [_Teams count];
     }
@@ -69,15 +72,81 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    if (_PlayersSelectedTeam) {
-        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
-        cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+    
+    if (_selectedATeam) {
+        // Team geselecteerd
+        if (indexPath.row == 0) {
+            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"BackCell"];
+            NSString *team = [NSString stringWithFormat:@"Jongens %@", _selectedTeam];
+            cell.textLabel.text = team;
+            cell.textLabel.textColor = [UIColor lightGrayColor];
+            
+        } else {
+            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+            cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
+        }
     } else{
         cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
         cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [_PlayersTableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.tag == 0) {
+        // Team cell selected
+        
+        NSString *selectingTeam = cell.textLabel.text;
+        _selectedTeam = selectingTeam;
+        [self fillSelectedTeamArraywithTeamName:selectingTeam];
+        _selectedATeam = YES;
+        [_PlayersTableView reloadData];
+        
+    }
+    if (cell.tag == 1) {
+        // Player cell selected
+        
+    }
+    
+    [_PlayersTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [_PlayersTableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.tag == 1) {
+        return UITableViewCellEditingStyleDelete;
+    } else{
+        return UITableViewCellEditingStyleNone;
+    }
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [_PlayersTableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.tag == 1) {
+        return YES;
+    } else{
+        return NO;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+    }
+}
+
+- (IBAction)BackButtonPressed:(id)sender {
+    _selectedATeam = NO;
+    [_PlayersTableView reloadData];
 }
 
 //----------------------------------------------------------------------------------------------------------

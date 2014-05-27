@@ -51,6 +51,7 @@
 		D42741ED1920ECFB00A7582F /* tempSelectedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D42741EC1920ECFB00A7582F /* tempSelectedButton.png */; };
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */; };
+		D475A1651934961600863ED2 /* spelerswijzigen.png in Resources */ = {isa = PBXBuildFile; fileRef = D475A1641934961600863ED2 /* spelerswijzigen.png */; };
 		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
 		D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369B1920D2A3001BBDBC /* afwerken.png */; };
 		D47D36A91920D2A3001BBDBC /* anders.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369C1920D2A3001BBDBC /* anders.png */; };
@@ -159,6 +160,7 @@
 		D42856D31902CFB300077467 /* SelectPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayersViewController.m; sourceTree = "<group>"; };
 		D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchAndAddPlayersViewController.h; sourceTree = "<group>"; };
 		D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchAndAddPlayersViewController.m; sourceTree = "<group>"; };
+		D475A1641934961600863ED2 /* spelerswijzigen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spelerswijzigen.png; sourceTree = "<group>"; };
 		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
 		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
 		D47D369B1920D2A3001BBDBC /* afwerken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerken.png; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 		D47D36991920D25A001BBDBC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D475A1641934961600863ED2 /* spelerswijzigen.png */,
 				D498FFD7192CA58400E7D7F0 /* veld.png */,
 				D498FFD3192CA50B00E7D7F0 /* agenda.png */,
 				D498FFD4192CA50B00E7D7F0 /* training.png */,
@@ -523,6 +526,7 @@
 				131F918519229A1900DB0E37 /* DSLCalendarDaySelection-left.png in Resources */,
 				131F918619229A1900DB0E37 /* DSLCalendarDaySelection-left@2x.png in Resources */,
 				131F918019229A1900DB0E37 /* DSLCalendar-nextMonth@2x.png in Resources */,
+				D475A1651934961600863ED2 /* spelerswijzigen.png in Resources */,
 				131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */,
 				1B297A2A191BDB1E00C10129 /* ajaxtraining1.db in Resources */,
 				D498FFD5192CA50B00E7D7F0 /* agenda.png in Resources */,
