@@ -122,7 +122,7 @@
     if (cell.tag == 1) {
         return UITableViewCellEditingStyleDelete;
     } else{
-        return UITableViewCellEditingStyleNone;
+        return UITableViewCellEditingStyleDelete;
     }
     
 }
@@ -140,8 +140,13 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //add code here for when you hit delete
+        // Delete button pressed
+        NSLog(@"Wijzig");
     }
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Wijzig";
 }
 
 - (IBAction)BackButtonPressed:(id)sender {
