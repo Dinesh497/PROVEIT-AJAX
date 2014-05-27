@@ -24,6 +24,7 @@
 @property NSString *editingPlayer;
 
 @property BOOL AddingPlayer;
+@property UITextField *NameNewPlayerTextfield;
 
 @end
 
@@ -102,6 +103,7 @@
                 if (_AddingPlayer) {
                     if (indexPath.row == 1) {
                         cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"AddPlayerCell"];
+                        _NameNewPlayerTextfield = (UITextField*)[cell viewWithTag:9];
                     } else{
                         cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
                         cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 2)];
@@ -213,9 +215,30 @@
     [_PlayersTableView reloadData];
 }
 
+- (IBAction)PlayerAdded:(id)sender {
+    NSLog(@"%@ wordt toegevoegd", _NameNewPlayerTextfield.text);
+    
+    NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
+    
+    if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+        static sqlite3_stmt *compiledStatement;
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, NULL);
+        sqlite3_finalize(compiledStatement);
+    }
+    sqlite3_close(_ajaxtrainingDB);
+    
+    [self fillSelectedTeamArraywithTeamName:_selectedTeam];
+    _AddingPlayer = NO;
+    [_PlayersTableView reloadData];
+}
+
 - (IBAction)StopAddPlayer:(id)sender {
     _AddingPlayer = NO;
     [_PlayersTableView reloadData];
+}
+
+- (IBAction)ReturnButtonName:(id)sender {
+    [sender resignFirstResponder];
 }
 
 - (void)showWijzigMenu{
@@ -237,9 +260,15 @@
     }
     if (buttonIndex == 1) {
         // Verwijder speler
+        
+        if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+            static sqlite3_stmt *compiledStatement;
+            sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"delete from players where name = '%@'", _editingPlayer] UTF8String], NULL, NULL, NULL);
+            sqlite3_finalize(compiledStatement);
+        }
+        sqlite3_close(_ajaxtrainingDB);
+        
     }
-    
-    [self fillTeamArrays];
     [self fillSelectedTeamArraywithTeamName:_selectedTeam];
     [_PlayersTableView reloadData];
 }
@@ -370,7 +399,6 @@
                 if (sqlite3_step(statement) == SQLITE_ROW){
                     NSString *player = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                     [_PlayersSelectedTeam addObject:player];
-                    
                 }
                 sqlite3_finalize(statement);
             }

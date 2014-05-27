@@ -684,12 +684,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                                     <state key="normal" title="Voeg toe">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="PlayerAdded:" destination="9V1-Wi-FAc" eventType="touchUpInside" id="e1O-Qn-gCa"/>
+                                                                    </connections>
                                                                 </button>
-                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZB-uU-kZW">
+                                                                <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZB-uU-kZW">
                                                                     <rect key="frame" x="20" y="13" width="220" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <connections>
+                                                                        <action selector="ReturnButtonName:" destination="9V1-Wi-FAc" eventType="editingDidEndOnExit" id="Pcv-pB-5F6"/>
+                                                                    </connections>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3i-8s-MSq">
                                                                     <rect key="frame" x="179" y="51" width="61" height="30"/>
