@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *ajaxtrainingDB;
 @property (strong, nonatomic) IBOutlet UILabel *status;
+@property (weak, nonatomic) IBOutlet UITableView *TrainingenTableView;
 
 @end

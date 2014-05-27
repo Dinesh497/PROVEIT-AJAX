@@ -13,8 +13,10 @@
 @interface AgendaViewController () <DSLCalendarViewDelegate>
 
 @property (weak, nonatomic) IBOutlet DSLCalendarView *calendarView;
-@property (readwrite, nonatomic) NSMutableArray *appointment;
+@property (readwrite, nonatomic) NSMutableArray *Trainingen;
 @property NSMutableArray *selectedAppointment;
+@property (weak, nonatomic) NSString *selectedDate;
+
 
 @end
 
@@ -23,12 +25,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+    _TrainingenTableView.dataSource = self;
+    _TrainingenTableView.delegate =  self;
     //TO DO, autosetdate to current date when loaded.
 }
 
-//Database
+//----------------------------------------------------------------------------------------------------------
+// Database
+//----------------------------------------------------------------------------------------------------------
+
 
 - (void) dbConnectie {
     
@@ -67,12 +72,14 @@
     }
 }
 
-//MutableArray
+//----------------------------------------------------------------------------------------------------------
+//Get Trainingen array
+//----------------------------------------------------------------------------------------------------------
 
 - (void) fillArrays {
     
     const char *dbpath = [_databasePath UTF8String];
-    _appointment =[[NSMutableArray alloc] init];
+    _Trainingen =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
     
@@ -80,44 +87,30 @@
     {
         for (int index = 1; index <= rows; index++) {
             
-            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select name from players where id = '%d'", index];
-            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+            NSString *querytrainingen_sql = [NSString stringWithFormat:@"Select begin_date from trainingen where id = '%d'", index];
+            const char *queryBeginDate_stmt = [querytrainingen_sql UTF8String];
             sqlite3_stmt *statement;
             
-            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+            if (sqlite3_prepare_v2(_ajaxtrainingDB, queryBeginDate_stmt, -1, &statement, NULL) == SQLITE_OK){
                 if (sqlite3_step(statement) == SQLITE_ROW){
-                    NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                    [_appointment addObject:name];
+                    NSString *beginDate = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                    [_Trainingen addObject:beginDate];
                 }
                 sqlite3_finalize(statement);
             }
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In players array zitten: %@",_appointment);
+    NSLog(@"In traingen array zitten: %@",_Trainingen);
 }
-
-// UITableview methodes
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 5;
-}
-
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell;
-    return cell;
-}
-
-//GetArticleCount
 
 - (int) GetArticlesCount
+
 {
     int count = 0;
     if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
-        const char* sqlStatement = "SELECT COUNT(*) FROM players";
+        const char* sqlStatement = "SELECT COUNT(*) FROM trainingen";
         sqlite3_stmt *statement;
         
         if( sqlite3_prepare_v2(_ajaxtrainingDB, sqlStatement, -1, &statement, NULL) == SQLITE_OK )
@@ -141,7 +134,25 @@
     return count;
 }
 
+//----------------------------------------------------------------------------------------------------------
+// UITableview methodes
+//----------------------------------------------------------------------------------------------------------
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_Trainingen count];
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [_TrainingenTableView dequeueReusableCellWithIdentifier:@"TrainingCell"];
+    cell.textLabel.text = [_Trainingen objectAtIndex:indexPath.row];
+    return cell;
+}
+
+//----------------------------------------------------------------------------------------------------------
 //DSLCalendarViewDelegate methods
+//----------------------------------------------------------------------------------------------------------
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
