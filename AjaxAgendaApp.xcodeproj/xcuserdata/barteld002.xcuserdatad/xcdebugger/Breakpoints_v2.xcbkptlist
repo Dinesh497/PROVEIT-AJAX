@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AjaxAgendaApp/AgendaViewController.m"
-            timestampString = "422915603.350132"
+            timestampString = "422920057.085448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AjaxAgendaApp/AgendaViewController.m"
-            timestampString = "422915603.350132"
+            timestampString = "422920057.085448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "@implementation AgendaViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "-calendarView:didSelectRange:"
+            landmarkName = "-fillArrays:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

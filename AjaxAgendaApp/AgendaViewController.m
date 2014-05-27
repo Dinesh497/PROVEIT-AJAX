@@ -28,7 +28,6 @@
     
     [self dbConnectie];
     self.calendarView.delegate = self;
-    
     //TO DO, autosetdate to current date when loaded.
 }
 
@@ -104,6 +103,7 @@
         sqlite3_close(_ajaxtrainingDB);
     }
     NSLog(@"In traingen array zitten: %@",_Trainingen);
+    [_TrainingenTableView reloadData];
 }
 
 - (int) GetArticlesCount
