@@ -226,6 +226,7 @@
     sqlite3_close(_ajaxtrainingDB);
     
     _choosingTeam = NO;
+    [self fillSelectedTeamArraywithTeamName:_selectedTeam];
     [_PlayersTableView reloadData];
 }
 
