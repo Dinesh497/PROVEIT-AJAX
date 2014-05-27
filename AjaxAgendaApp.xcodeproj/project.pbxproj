@@ -52,7 +52,6 @@
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */; };
 		D475A1651934961600863ED2 /* spelerswijzigen.png in Resources */ = {isa = PBXBuildFile; fileRef = D475A1641934961600863ED2 /* spelerswijzigen.png */; };
-		D475A1681934BDB300863ED2 /* AddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D475A1671934BDB300863ED2 /* AddPlayerViewController.m */; };
 		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
 		D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369B1920D2A3001BBDBC /* afwerken.png */; };
 		D47D36A91920D2A3001BBDBC /* anders.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369C1920D2A3001BBDBC /* anders.png */; };
@@ -162,8 +161,6 @@
 		D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchAndAddPlayersViewController.h; sourceTree = "<group>"; };
 		D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchAndAddPlayersViewController.m; sourceTree = "<group>"; };
 		D475A1641934961600863ED2 /* spelerswijzigen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spelerswijzigen.png; sourceTree = "<group>"; };
-		D475A1661934BDB300863ED2 /* AddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlayerViewController.h; sourceTree = "<group>"; };
-		D475A1671934BDB300863ED2 /* AddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlayerViewController.m; sourceTree = "<group>"; };
 		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
 		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
 		D47D369B1920D2A3001BBDBC /* afwerken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerken.png; sourceTree = "<group>"; };
@@ -324,8 +321,6 @@
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
 				D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */,
 				D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */,
-				D475A1661934BDB300863ED2 /* AddPlayerViewController.h */,
-				D475A1671934BDB300863ED2 /* AddPlayerViewController.m */,
 				131F91541922946300DB0E37 /* AgendaViewController.h */,
 				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
@@ -577,7 +572,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D475A1681934BDB300863ED2 /* AddPlayerViewController.m in Sources */,
 				131F917E19229A1900DB0E37 /* DSLCalendarView.m in Sources */,
 				131F917A19229A1900DB0E37 /* DSLCalendarMonthSelectorView.m in Sources */,
 				D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */,

@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UITableView *PlayersTableView;
 - (IBAction)BackButtonPressed:(id)sender;
+- (IBAction)AddPlayer:(id)sender;
+- (IBAction)PlayerAdded:(id)sender;
+- (IBAction)StopAddPlayer:(id)sender;
+- (IBAction)ReturnButtonName:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddPlayerButton;
 
 @end

@@ -20,7 +20,11 @@
 @property BOOL selectedATeam;
 @property NSString *selectedTeam;
 
+@property BOOL choosingTeam;
 @property NSString *editingPlayer;
+
+@property BOOL AddingPlayer;
+@property UITextField *NameNewPlayerTextfield;
 
 @end
 
@@ -64,10 +68,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_selectedATeam) {
-        return ([_PlayersSelectedTeam count] + 1);
-    } else{
+    if (_choosingTeam) {
         return [_Teams count];
+    } else{
+        if (_selectedATeam) {
+            if (_AddingPlayer) {
+                return ([_PlayersSelectedTeam count] + 2);
+            }else{
+                return ([_PlayersSelectedTeam count] + 1);
+            }
+        } else{
+            return [_Teams count];
+        }
     }
 }
 
@@ -75,21 +87,36 @@
 {
     UITableViewCell *cell;
     
-    if (_selectedATeam) {
-        // Team geselecteerd
-        if (indexPath.row == 0) {
-            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"BackCell"];
-            NSString *team = [NSString stringWithFormat:@"Jongens %@", _selectedTeam];
-            cell.textLabel.text = team;
-            cell.textLabel.textColor = [UIColor lightGrayColor];
-            
-        } else {
-            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
-            cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
-        }
-    } else{
-        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
+    if (_choosingTeam) {
+        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"selectTeamCell"];
         cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+    } else{
+        if (_selectedATeam) {
+            // Team geselecteerd
+            if (indexPath.row == 0) {
+                cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"BackCell"];
+                NSString *team = [NSString stringWithFormat:@"Jongens %@", _selectedTeam];
+                cell.textLabel.text = team;
+                cell.textLabel.textColor = [UIColor lightGrayColor];
+            
+            } else {
+                if (_AddingPlayer) {
+                    if (indexPath.row == 1) {
+                        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"AddPlayerCell"];
+                        _NameNewPlayerTextfield = (UITextField*)[cell viewWithTag:9];
+                    } else{
+                        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+                        cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 2)];
+                    }
+                } else{
+                    cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+                    cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
+                }
+            }
+        } else{
+            cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
+            cell.textLabel.text = [_Teams objectAtIndex:indexPath.row];
+        }
     }
     
     return cell;
@@ -114,8 +141,27 @@
         // Player cell selected
         
     }
+    if (cell.tag == 2) {
+        // choose team cell selected
+        NSString *teamName = cell.textLabel.text;
+        [self wijzigTeam:teamName];
+    }
     
     [_PlayersTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_AddingPlayer) {
+        if (indexPath.row == 1) {
+            return 88;
+        }else{
+            return 44;
+        }
+    } else{
+        return 44;
+    }
+    
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -164,6 +210,37 @@
     [_PlayersTableView reloadData];
 }
 
+- (IBAction)AddPlayer:(id)sender {
+    _AddingPlayer = YES;
+    [_PlayersTableView reloadData];
+}
+
+- (IBAction)PlayerAdded:(id)sender {
+    NSLog(@"%@ wordt toegevoegd", _NameNewPlayerTextfield.text);
+    
+    NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
+    
+    if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+        static sqlite3_stmt *compiledStatement;
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, NULL);
+        sqlite3_finalize(compiledStatement);
+    }
+    sqlite3_close(_ajaxtrainingDB);
+    
+    [self fillSelectedTeamArraywithTeamName:_selectedTeam];
+    _AddingPlayer = NO;
+    [_PlayersTableView reloadData];
+}
+
+- (IBAction)StopAddPlayer:(id)sender {
+    _AddingPlayer = NO;
+    [_PlayersTableView reloadData];
+}
+
+- (IBAction)ReturnButtonName:(id)sender {
+    [sender resignFirstResponder];
+}
+
 - (void)showWijzigMenu{
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Annuleer" destructiveButtonTitle:nil otherButtonTitles:@"Wijzig team", @"Verwijder speler", nil];
@@ -178,29 +255,31 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         // Wijzig team
-        
-        [self wijzigTeam];
+        _choosingTeam = YES;
+        [_PlayersTableView reloadData];
     }
     if (buttonIndex == 1) {
         // Verwijder speler
+        
+        if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+            static sqlite3_stmt *compiledStatement;
+            sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"delete from players where name = '%@'", _editingPlayer] UTF8String], NULL, NULL, NULL);
+            sqlite3_finalize(compiledStatement);
+        }
+        sqlite3_close(_ajaxtrainingDB);
+        
     }
-    
-    [self fillTeamArrays];
     [self fillSelectedTeamArraywithTeamName:_selectedTeam];
     [_PlayersTableView reloadData];
 }
 
-- (void) selectTeam{
-    
-}
-
-- (void) wijzigTeam{
+- (void) wijzigTeam:(NSString*) team{
     
     const char *dbpath = [_databasePath UTF8String];
     sqlite3_stmt *updateStmt;
     if(sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
-        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"UPDATE players SET team = 'A2' WHERE name ='%@'", _editingPlayer];
+    NSString *queryplayersa1_sql = [NSString stringWithFormat:@"UPDATE players SET team = '%@' WHERE name ='%@'", team, _editingPlayer];
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
         if(sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &updateStmt, NULL) == SQLITE_OK)
             NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(_ajaxtrainingDB));
@@ -213,6 +292,10 @@
         NSLog(@"Error while updating. %s", sqlite3_errmsg(_ajaxtrainingDB));
     sqlite3_finalize(updateStmt);
     sqlite3_close(_ajaxtrainingDB);
+    
+    _choosingTeam = NO;
+    [self fillSelectedTeamArraywithTeamName:_selectedTeam];
+    [_PlayersTableView reloadData];
 }
 
 - (void) verwijderSpeler{
@@ -316,7 +399,6 @@
                 if (sqlite3_step(statement) == SQLITE_ROW){
                     NSString *player = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
                     [_PlayersSelectedTeam addObject:player];
-                    
                 }
                 sqlite3_finalize(statement);
             }

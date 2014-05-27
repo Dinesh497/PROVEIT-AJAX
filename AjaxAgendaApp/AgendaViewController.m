@@ -28,6 +28,8 @@
     
     [self dbConnectie];
     self.calendarView.delegate = self;
+    
+    //TO DO, autosetdate to current date when loaded.
 }
 
 //----------------------------------------------------------------------------------------------------------
