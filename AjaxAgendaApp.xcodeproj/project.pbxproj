@@ -48,6 +48,7 @@
 		1BC0D87218F835B300789C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BC0D87018F835B300789C6C /* InfoPlist.strings */; };
 		1BC0D87418F835B300789C6C /* AjaxAgendaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */; };
 		1BE3D266191A554B00A024DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE3D265191A554B00A024DB /* libsqlite3.dylib */; };
+		D417FA6F19352D9A0030BB81 /* Iphoneicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D417FA6E19352D9A0030BB81 /* Iphoneicon.png */; };
 		D42741ED1920ECFB00A7582F /* tempSelectedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D42741EC1920ECFB00A7582F /* tempSelectedButton.png */; };
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */; };
@@ -155,6 +156,7 @@
 		1BC0D87118F835B300789C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BC0D87318F835B300789C6C /* AjaxAgendaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjaxAgendaAppTests.m; sourceTree = "<group>"; };
 		1BE3D265191A554B00A024DB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D417FA6E19352D9A0030BB81 /* Iphoneicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Iphoneicon.png; sourceTree = "<group>"; };
 		D42741EC1920ECFB00A7582F /* tempSelectedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempSelectedButton.png; sourceTree = "<group>"; };
 		D42856D21902CFB300077467 /* SelectPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayersViewController.h; sourceTree = "<group>"; };
 		D42856D31902CFB300077467 /* SelectPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayersViewController.m; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		D47D36971920D243001BBDBC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D417FA6E19352D9A0030BB81 /* Iphoneicon.png */,
 				D47D36991920D25A001BBDBC /* Buttons */,
 				D47D36981920D24F001BBDBC /* Backgrounds */,
 			);
@@ -535,6 +538,7 @@
 				D498FFD6192CA50B00E7D7F0 /* training.png in Resources */,
 				131F918119229A1900DB0E37 /* DSLCalendar-previousMonth.png in Resources */,
 				D47D36A91920D2A3001BBDBC /* anders.png in Resources */,
+				D417FA6F19352D9A0030BB81 /* Iphoneicon.png in Resources */,
 				D498FFC0192CA0DE00E7D7F0 /* uitloophighlighted.png in Resources */,
 				D498FFC1192CA0DE00E7D7F0 /* vshighlighted.png in Resources */,
 				D47D36AA1920D2A3001BBDBC /* cornertrap.png in Resources */,

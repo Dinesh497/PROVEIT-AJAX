@@ -196,7 +196,6 @@
         _editingPlayer = cell.textLabel.text;
         // NSLog(@"Wijzig: %@", _editingPlayer);
         [self showWijzigMenu];
-        
     }
 }
 
