@@ -178,6 +178,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         // Wijzig team
+        
         [self wijzigTeam];
     }
     if (buttonIndex == 1) {
@@ -189,33 +190,29 @@
     [_PlayersTableView reloadData];
 }
 
+- (void) selectTeam{
+    
+}
+
 - (void) wijzigTeam{
     
     const char *dbpath = [_databasePath UTF8String];
-    sqlite3 *database;
     sqlite3_stmt *updateStmt;
     if(sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
-        const char *sql = "UPDATE players SET team = 'A2' WHERE name = ?";
-        if(sqlite3_prepare_v2(database, sql, -1, &updateStmt, NULL) != SQLITE_OK)
-            NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(database));
+        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"UPDATE players SET team = 'A2' WHERE name ='%@'", _editingPlayer];
+        const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+        if(sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &updateStmt, NULL) == SQLITE_OK)
+            NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(_ajaxtrainingDB));
     }
-    sqlite3_bind_int(updateStmt, 1, 1000);
-    
-    
     
     char* errmsg;
-    sqlite3_exec(database, "COMMIT", NULL, NULL, &errmsg);
+    sqlite3_exec(_ajaxtrainingDB, "COMMIT", NULL, NULL, &errmsg);
     
     if(SQLITE_DONE != sqlite3_step(updateStmt))
-        NSLog(@"Error while updating. %s", sqlite3_errmsg(database));
+        NSLog(@"Error while updating. %s", sqlite3_errmsg(_ajaxtrainingDB));
     sqlite3_finalize(updateStmt);
-    
-    
-    sqlite3_close(database);
-
-    
-    
+    sqlite3_close(_ajaxtrainingDB);
 }
 
 - (void) verwijderSpeler{
