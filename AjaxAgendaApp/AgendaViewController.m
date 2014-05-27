@@ -89,7 +89,7 @@
     {
         for (int index = 1; index <= rows; index++) {
             
-            NSString *querytrainingen_sql = [NSString stringWithFormat:@"Select begin_date from trainingen where id = '%d' and begin_date = '%@'", index, selectedDate];
+            NSString *querytrainingen_sql = [NSString stringWithFormat:@"Select begin_tijd from trainingen where id = '%d' and datum = '%@'", index, selectedDate];
             const char *queryBeginDate_stmt = [querytrainingen_sql UTF8String];
             sqlite3_stmt *statement;
             
