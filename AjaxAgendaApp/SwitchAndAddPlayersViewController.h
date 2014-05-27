@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
-@interface SwitchAndAddPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SwitchAndAddPlayersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UITableView *PlayersTableView;
 - (IBAction)BackButtonPressed:(id)sender;

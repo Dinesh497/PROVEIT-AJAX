@@ -20,6 +20,8 @@
 @property BOOL selectedATeam;
 @property NSString *selectedTeam;
 
+@property NSString *editingPlayer;
+
 @end
 
 @implementation SwitchAndAddPlayersViewController
@@ -139,9 +141,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [_PlayersTableView cellForRowAtIndexPath:indexPath];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete button pressed
-        NSLog(@"Wijzig");
+        _editingPlayer = cell.textLabel.text;
+        // NSLog(@"Wijzig: %@", _editingPlayer);
+        [self showWijzigMenu];
+        
     }
 }
 
@@ -152,6 +160,39 @@
 - (IBAction)BackButtonPressed:(id)sender {
     _selectedATeam = NO;
     [_PlayersTableView reloadData];
+}
+
+- (void)showWijzigMenu{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Annuleer" destructiveButtonTitle:nil otherButtonTitles:@"Wijzig team", @"Verwijder speler", nil];
+    
+    [actionSheet showInView:self.view];
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Actionsheet
+//----------------------------------------------------------------------------------------------------------
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        // Wijzig team
+        
+    }
+    if (buttonIndex == 1) {
+        // Verwijder speler
+    }
+    
+    [self fillTeamArrays];
+    [self fillSelectedTeamArraywithTeamName:_selectedTeam];
+    [_PlayersTableView reloadData];
+}
+
+- (void) wijzigTeam{
+    
+}
+
+- (void) verwijderSpeler{
+    
 }
 
 //----------------------------------------------------------------------------------------------------------
