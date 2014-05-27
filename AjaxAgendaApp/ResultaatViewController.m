@@ -32,7 +32,9 @@
     
     // Frame
     _frame.layer.cornerRadius       = 10;
-    _scrollFrame.layer.cornerRadius = 10;
+    _scrollFrame2.layer.cornerRadius = 10;
+    _scrollFrame2.delegate = self;
+    _scrollFrame2.contentSize = CGSizeMake(260, 500);
     
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
@@ -89,6 +91,23 @@
         [_OefeningenText    removeFromSuperview];
     }
 }
+
+//----------------------------------------------------------------------------------------------------------
+// UIScrollView
+//----------------------------------------------------------------------------------------------------------
+
+-(void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    //ensure that the end of scroll is fired.
+    [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.3];
+}
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
