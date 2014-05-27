@@ -648,7 +648,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Teams" id="v7B-RT-TtK"/>
+                    <navigationItem key="navigationItem" title="Teams" id="v7B-RT-TtK">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hUC-m4-1QY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="IBH-VF-TxY">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="Addplayer:" destination="9V1-Wi-FAc" id="6WZ-VM-S44"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Frame" destination="Y83-5j-qfo" id="e9E-hD-flj"/>
                         <outlet property="PlayersTableView" destination="JBs-WB-Wwx" id="gvE-Tb-UaM"/>
@@ -701,7 +714,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-Ry-6gQ">
                                 <rect key="frame" x="58" y="229" width="205" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="veld.png">
+                                <state key="normal" image="veldButton.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1282,7 +1295,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="training.png" width="308" height="78"/>
         <image name="uitloop.png" width="179" height="179"/>
         <image name="uitloophighlighted.png" width="179" height="179"/>
-        <image name="veld.png" width="310" height="77"/>
+        <image name="veldButton.png" width="310" height="77"/>
         <image name="vs.png" width="179" height="179"/>
         <image name="vshighlighted.png" width="179" height="179"/>
         <image name="warming up.png" width="179" height="179"/>
@@ -1294,6 +1307,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mIx-ZW-7Wd"/>
+        <segue reference="eKI-Be-EbC"/>
     </inferredMetricsTieBreakers>
 </document>

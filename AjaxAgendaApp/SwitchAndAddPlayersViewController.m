@@ -162,6 +162,9 @@
     [_PlayersTableView reloadData];
 }
 
+- (IBAction)Addplayer:(id)sender {
+}
+
 - (void)showWijzigMenu{
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Annuleer" destructiveButtonTitle:nil otherButtonTitles:@"Wijzig team", @"Verwijder speler", nil];
