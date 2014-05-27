@@ -15,8 +15,6 @@
 @property (weak, nonatomic) IBOutlet DSLCalendarView *calendarView;
 @property (readwrite, nonatomic) NSMutableArray *Trainingen;
 @property NSMutableArray *selectedAppointment;
-@property (weak, nonatomic) NSString *selectedDate;
-
 
 @end
 
@@ -29,8 +27,7 @@
     _TrainingenTableView.delegate =  self;
     
     [self dbConnectie];
-    [self fillArrays];
-    //TO DO, autosetdate to current date when loaded.
+    self.calendarView.delegate = self;
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -79,7 +76,7 @@
 //Get Trainingen array
 //----------------------------------------------------------------------------------------------------------
 
-- (void) fillArrays {
+- (void) fillArrays:(NSString *)selectedDate {
     
     const char *dbpath = [_databasePath UTF8String];
     _Trainingen =[[NSMutableArray alloc] init];
@@ -90,7 +87,7 @@
     {
         for (int index = 1; index <= rows; index++) {
             
-            NSString *querytrainingen_sql = [NSString stringWithFormat:@"Select begin_date from trainingen where id = '%d'", index];
+            NSString *querytrainingen_sql = [NSString stringWithFormat:@"Select begin_date from trainingen where id = '%d' and begin_date = '%@'", index, selectedDate];
             const char *queryBeginDate_stmt = [querytrainingen_sql UTF8String];
             sqlite3_stmt *statement;
             
@@ -154,12 +151,16 @@
 }
 
 //----------------------------------------------------------------------------------------------------------
-//DSLCalendarViewDelegate methods
+// DSLCalendarViewDelegate methods
 //----------------------------------------------------------------------------------------------------------
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
-        NSLog(@"Selected %ld/%ld - %ld/%ld", (long)range.startDay.day, (long)range.startDay.month, (long)range.endDay.day, (long)range.endDay.month);
+        NSString *selectedDate = [NSString stringWithFormat:@"%ld-%ld-%ld", (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
+        NSLog(@"%@",selectedDate);
+        
+        //Vul array elke keer met de geselecteerde datum
+        [self fillArrays:(selectedDate)];
     }
     else {
         NSLog(@"No selection");
