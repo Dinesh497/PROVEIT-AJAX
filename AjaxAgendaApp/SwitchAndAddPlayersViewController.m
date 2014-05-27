@@ -23,6 +23,8 @@
 @property BOOL choosingTeam;
 @property NSString *editingPlayer;
 
+@property BOOL AddingPlayer;
+
 @end
 
 @implementation SwitchAndAddPlayersViewController
@@ -69,7 +71,11 @@
         return [_Teams count];
     } else{
         if (_selectedATeam) {
-            return ([_PlayersSelectedTeam count] + 1);
+            if (_AddingPlayer) {
+                return ([_PlayersSelectedTeam count] + 2);
+            }else{
+                return ([_PlayersSelectedTeam count] + 1);
+            }
         } else{
             return [_Teams count];
         }
@@ -93,8 +99,17 @@
                 cell.textLabel.textColor = [UIColor lightGrayColor];
             
             } else {
-                cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
-                cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
+                if (_AddingPlayer) {
+                    if (indexPath.row == 1) {
+                        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"AddPlayerCell"];
+                    } else{
+                        cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+                        cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 2)];
+                    }
+                } else{
+                    cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"PlayersCell"];
+                    cell.textLabel.text = [_PlayersSelectedTeam objectAtIndex:(indexPath.row - 1)];
+                }
             }
         } else{
             cell = [_PlayersTableView dequeueReusableCellWithIdentifier:@"ChooseTeamCell"];
@@ -131,6 +146,20 @@
     }
     
     [_PlayersTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_AddingPlayer) {
+        if (indexPath.row == 1) {
+            return 88;
+        }else{
+            return 44;
+        }
+    } else{
+        return 44;
+    }
+    
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -176,6 +205,16 @@
 - (IBAction)BackButtonPressed:(id)sender {
     [_AddPlayerButton setEnabled:NO];
     _selectedATeam = NO;
+    [_PlayersTableView reloadData];
+}
+
+- (IBAction)AddPlayer:(id)sender {
+    _AddingPlayer = YES;
+    [_PlayersTableView reloadData];
+}
+
+- (IBAction)StopAddPlayer:(id)sender {
+    _AddingPlayer = NO;
     [_PlayersTableView reloadData];
 }
 
