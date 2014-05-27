@@ -649,20 +649,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Teams" id="v7B-RT-TtK">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="hUC-m4-1QY">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="hUC-m4-1QY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="IBH-VF-TxY">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <segue destination="D7I-ou-geg" kind="push" id="Y3R-j3-Fc1"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="Addplayer:" destination="9V1-Wi-FAc" id="6WZ-VM-S44"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AddPlayerButton" destination="hUC-m4-1QY" id="SbJ-Ay-zNS"/>
                         <outlet property="Frame" destination="Y83-5j-qfo" id="e9E-hD-flj"/>
                         <outlet property="PlayersTableView" destination="JBs-WB-Wwx" id="gvE-Tb-UaM"/>
                     </connections>
@@ -670,6 +668,37 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E4-Qi-JWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1455" y="1148"/>
+        </scene>
+        <!--Add Player View Controller - Voeg speler toe-->
+        <scene sceneID="WB0-X3-xI4">
+            <objects>
+                <viewController id="D7I-ou-geg" customClass="AddPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QGA-Y0-1JL"/>
+                        <viewControllerLayoutGuide type="bottom" id="XHz-bk-Kla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1AV-md-6IT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1008.png" translatesAutoresizingMaskIntoConstraints="NO" id="4vr-Xt-Gxh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLX-jL-IIX">
+                                <rect key="frame" x="30" y="79" width="260" height="405"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Voeg speler toe" id="o3P-ub-fF7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHj-Ch-JgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="1148"/>
         </scene>
         <!--Training Soort View Controller - Categorieën-->
         <scene sceneID="8Pq-F3-OfO">

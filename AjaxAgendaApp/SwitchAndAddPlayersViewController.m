@@ -49,7 +49,7 @@
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
     
-    
+    [_AddPlayerButton setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,6 +106,7 @@
         _selectedTeam = selectingTeam;
         [self fillSelectedTeamArraywithTeamName:selectingTeam];
         _selectedATeam = YES;
+        [_AddPlayerButton setEnabled:YES];
         [_PlayersTableView reloadData];
         
     }
@@ -158,11 +159,9 @@
 }
 
 - (IBAction)BackButtonPressed:(id)sender {
+    [_AddPlayerButton setEnabled:NO];
     _selectedATeam = NO;
     [_PlayersTableView reloadData];
-}
-
-- (IBAction)Addplayer:(id)sender {
 }
 
 - (void)showWijzigMenu{

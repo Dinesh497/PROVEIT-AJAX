@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UITableView *PlayersTableView;
 - (IBAction)BackButtonPressed:(id)sender;
-- (IBAction)Addplayer:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *TeamNameLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *AddPlayerButton;
 
 @end
