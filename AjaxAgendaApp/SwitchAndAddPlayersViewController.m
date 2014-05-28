@@ -215,13 +215,16 @@
 }
 
 - (IBAction)PlayerAdded:(id)sender {
-    NSLog(@"%@ wordt toegevoegd", _NameNewPlayerTextfield.text);
     
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
     
     if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, NULL);
+        char* errmsg;
+        int number = [self GetArticlesCount] + 1;
+        NSLog(@"%@ wordt toegevoegd op positie %d", _NameNewPlayerTextfield.text, number);
+        
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
         sqlite3_finalize(compiledStatement);
     }
     sqlite3_close(_ajaxtrainingDB);

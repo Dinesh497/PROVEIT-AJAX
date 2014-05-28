@@ -16,13 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollFrame;
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollFrame2;
-
-
 @property (weak, nonatomic) IBOutlet UITextView *OefeningenText;
 @property (weak, nonatomic) IBOutlet UILabel *OefeningenHeader;
-@property (weak, nonatomic) IBOutlet UISwitch *addLocal;
+
 
 @end
