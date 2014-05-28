@@ -30,28 +30,93 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // Frame
-    _frame.layer.cornerRadius       = 10;
-    
-    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
-    
-    scroll.pagingEnabled = YES;
-    scroll.layer.cornerRadius = 10;
-    
-    [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
-    [scroll addSubview:_Resultaten];
-    
-    [_Resultaten2 setFrame:CGRectMake(0, 405, _frame.frame.size.width, 40)];
-    [scroll addSubview:_Resultaten2];
-    
-    scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height);
-    
-    [_frame addSubview:scroll];
-    
-    
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
     [_categoryLabel setText:Category];
+    
+    // Players
+    NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
+    NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
+    [_spelers setText:PlayersString];
+    
+    // Oefeningen
+    
+    if ([Category isEqualToString:@"Veld training"]) {
+        NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
+        NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
+        [_OefeningenText setText:OefeningenString];
+    } else{
+        [_OefeningenHeader  removeFromSuperview];
+        [_OefeningenText    removeFromSuperview];
+    }
+    
+    // Extra info oefeningen
+    
+    if ([Category isEqualToString:@"Veld training"]) {
+        NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
+        NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
+        [_OefeningenText setText:OefeningenString];
+    } else{
+        [_ExtraInfoLabel    removeFromSuperview];
+        [_ExtraInfoTextView removeFromSuperview];
+    }
+    
+    // Spelers text view
+    
+    CGRect spelerframe = _spelers.frame;
+    spelerframe.size.height = _spelers.contentSize.height;
+    _spelers.frame = spelerframe;
+    
+    CGSize spelersSize = [_spelers sizeThatFits:_spelers.frame.size];
+    _spelersHeightConstraint.constant = spelersSize.height;
+    
+    // Frame
+    _frame.layer.cornerRadius = 10;
+    
+    // Oefeningen text view
+    
+    CGRect oefeningenframe = _spelers.frame;
+    oefeningenframe.size.height = _spelers.contentSize.height;
+    _spelers.frame = oefeningenframe;
+    
+    CGSize oefeningenSize = [_spelers sizeThatFits:_spelers.frame.size];
+    _oefeningenHeightConstraint.constant = oefeningenSize.height;
+    
+    // Extra info view
+    
+    CGRect ExtraInfoframe = _spelers.frame;
+    ExtraInfoframe.size.height = _spelers.contentSize.height;
+    _spelers.frame = ExtraInfoframe;
+    
+    CGSize ExtraInfoSize = [_spelers sizeThatFits:_spelers.frame.size];
+    _extraInfoHeightConstraint.constant = ExtraInfoSize.height;
+    
+    
+    
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
+    
+    scroll.scrollEnabled = YES;
+    scroll.layer.cornerRadius = 10;
+    
+    int heightResultaten;
+    
+    // Details frame
+    if ([Category isEqualToString:@"Veld training"]) {
+        heightResultaten = 230 + spelersSize.height + oefeningenSize.height + ExtraInfoSize.height;
+        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
+    } else{
+        heightResultaten = 200 + spelersSize.height;
+        
+        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, heightResultaten)];
+    }
+    [scroll addSubview:_Resultaten];
+    
+    // Buttons frame
+    [_Resultaten2 setFrame:CGRectMake(0, heightResultaten, _frame.frame.size.width, 40)];
+    [scroll addSubview:_Resultaten2];
+    
+    scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height);
+    [_frame addSubview:scroll];
     
     // Date
     NSDate *theDate     = [defaults objectForKey:@"theDate"];
@@ -86,23 +151,6 @@
     NSString *Location = [defaults objectForKey:@"Location"];
     [_locationLabel setText:Location];
     
-    // Players
-    NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
-    NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
-    
-    [_spelers setText:PlayersString];
-    
-    
-    // Oefeningen
-    
-    if ([Category isEqualToString:@"Veld training"]) {
-        NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
-        NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
-        [_OefeningenText setText:OefeningenString];
-    } else{
-        [_OefeningenHeader  removeFromSuperview];
-        [_OefeningenText    removeFromSuperview];
-    }
 }
 
 - (void)didReceiveMemoryWarning
