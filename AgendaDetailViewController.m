@@ -77,6 +77,17 @@
     }
 }
 
+//----------------------------------------------------------------------------------------------------------
+// Get training array
+//----------------------------------------------------------------------------------------------------------
+
+- (void) getIndexNUmberTraining {
+    
+    //get selected date uit defaults
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSString *selectedDate = [defaults objectForKey:@"StringSelectedDate"];
+}
+              
 /*
 #pragma mark - Navigation
 

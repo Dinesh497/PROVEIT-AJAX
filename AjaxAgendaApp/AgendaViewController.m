@@ -152,6 +152,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [_TrainingenTableView cellForRowAtIndexPath:indexPath];
+    NSString *selectedDate = cell.textLabel.text;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:selectedDate forKey:@"StringSelectedDate"];
+}
+
 //----------------------------------------------------------------------------------------------------------
 // DSLCalendarViewDelegate methods
 //----------------------------------------------------------------------------------------------------------
