@@ -72,9 +72,9 @@
 
 - (void) dbConnectie {
 
-    NSString *docsDir;
     NSArray *dirPaths;
-
+    NSString *docsDir;
+    
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     docsDir = dirPaths[0];
