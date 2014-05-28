@@ -83,7 +83,7 @@
     {
         for (int index = 1; index <= rows; index++) {
             
-            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select password from trainers where id = '%d'", index];
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select password from trainers where name = '%d'", index];
             const char *querya1_stmt = [queryplayersa1_sql UTF8String];
             sqlite3_stmt *statement;
             
@@ -172,6 +172,26 @@
 - (NSString*) PasswordfromDatabase:(NSString*)Trainername{
     // Get password from database from the using Trainer
     NSString *Password = Trainername;
+    
+    const char *dbpath = [_databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+    
+        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select password from trainers where name = '%@'", Trainername];
+        
+        const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+        char *Errmsg;
+        sqlite3_stmt *statement;
+    
+        sqlite3_exec(_ajaxtrainingDB, querya1_stmt, NULL, NULL, &Errmsg);
+        
+        Password = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+        
+        sqlite3_finalize(statement);
+        }
+    sqlite3_close(_ajaxtrainingDB);
+
     return Password;
 }
 
