@@ -62,13 +62,13 @@
             
             if (sqlite3_exec(_ajaxtrainingDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
-                _status.text = @"Failed to create table";
+                NSLog(@"Failed to create table");
             }
             sqlite3_close(_ajaxtrainingDB);
         }
         else
         {
-            _status.text = @"Failed to open/create database";
+            NSLog(@"Failed to open/create database");
         }
     }
 }
