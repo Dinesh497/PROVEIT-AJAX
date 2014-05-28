@@ -33,6 +33,22 @@
     // Frame
     _frame.layer.cornerRadius       = 10;
     
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
+    
+    scroll.pagingEnabled = YES;
+    scroll.layer.cornerRadius = 10;
+    
+    [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
+    [scroll addSubview:_Resultaten];
+    
+    [_Resultaten2 setFrame:CGRectMake(0, 405, _frame.frame.size.width, 40)];
+    [scroll addSubview:_Resultaten2];
+    
+    scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height);
+    
+    [_frame addSubview:scroll];
+    
+    
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
     [_categoryLabel setText:Category];
