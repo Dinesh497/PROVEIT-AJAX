@@ -28,7 +28,6 @@
     
     [self dbConnectie];
     self.calendarView.delegate = self;
-    //TO DO, autosetdate to current date when loaded.
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -167,6 +166,11 @@
     if (range != nil) {
         NSString *selectedDate = [NSString stringWithFormat:@"%ld-%ld-%ld", (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
         NSLog(@"%@",selectedDate);
+        
+        
+        //Maakt een userDefault voor de selectedDate
+        [[NSUserDefaults standardUserDefaults] setObject:selectedDate forKey:@"selectedDate"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
         //Vul array elke keer met de geselecteerde datum
         [self fillArrays:(selectedDate)];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -300,7 +300,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locatie:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izP-z6-auN">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Veld:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izP-z6-auN">
                                                 <rect key="frame" x="20" y="136" width="93" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -324,15 +324,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Training informatie" id="dA0-DH-16W"/>
                     <connections>
-                        <outlet property="Begin_tijd" destination="zs8-Ke-mzn" id="SOd-Ct-bU1"/>
-                        <outlet property="Datum" destination="8C0-qH-RZk" id="UjV-gt-hfB"/>
-                        <outlet property="Veld" destination="Wax-58-8hS" id="P96-LR-g87"/>
-                        <outlet property="begin_tijd" destination="zs8-Ke-mzn" id="IkP-xQ-oVa"/>
-                        <outlet property="datum" destination="8C0-qH-RZk" id="MUg-Pi-unf"/>
-                        <outlet property="extra_info" destination="5xT-La-Cog" id="gYZ-UA-0fJ"/>
-                        <outlet property="oefeningen" destination="IhY-fF-Thc" id="vgF-EB-nyA"/>
-                        <outlet property="spelers" destination="lY3-CM-4sw" id="jWn-dd-q0M"/>
-                        <outlet property="veld" destination="Wax-58-8hS" id="9Ty-v2-poF"/>
+                        <outlet property="BeginTijdLabel" destination="zs8-Ke-mzn" id="zNL-L0-OfX"/>
+                        <outlet property="DatumLabel" destination="8C0-qH-RZk" id="1PD-Yn-ppH"/>
+                        <outlet property="EindTijdLabel" destination="3UO-9q-87S" id="LQF-MB-uSU"/>
+                        <outlet property="ExtraInfoLabel" destination="5xT-La-Cog" id="StZ-zE-rDp"/>
+                        <outlet property="OefeningenLabel" destination="IhY-fF-Thc" id="hdx-5h-jTO"/>
+                        <outlet property="SpelersLabel" destination="lY3-CM-4sw" id="M4W-LX-hdS"/>
+                        <outlet property="VeldLabel" destination="Wax-58-8hS" id="M6X-7n-gEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTq-af-t6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
