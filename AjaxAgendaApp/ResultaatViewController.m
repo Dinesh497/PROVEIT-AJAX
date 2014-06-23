@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view.
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger HeaderHeightSize = 29;
     
     // Category
     NSString *Category = [defaults objectForKey:@"Category"];
@@ -52,20 +53,27 @@
     
     // Oefeningen
     
+    CGSize oefeningenSize;
+    
     if ([Category isEqualToString:@"Veld training"]) {
         NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
         [_OefeningenText setText:OefeningenString];
-        [_OefeningenText setFrame:CGRectMake(20, 317 + spelersSize.height, 220, 36)];
+        
+        oefeningenSize = [_OefeningenText sizeThatFits:_OefeningenText.frame.size];
+        _oefeningenHeightConstraint.constant = oefeningenSize.height;
+        
+        [_OefeningenHeader setFrame:CGRectMake(20, 238 + spelersSize.height, 88, 21)];
+        
+        [_OefeningenText setFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 36)];
         
     } else{
         [_OefeningenHeader  removeFromSuperview];
         [_OefeningenText    removeFromSuperview];
     }
     
-    CGSize oefeningenSize = [_OefeningenText sizeThatFits:_OefeningenText.frame.size];
-    _oefeningenHeightConstraint.constant = oefeningenSize.height;
     
+    /*
     
     // Extra info oefeningen
     
@@ -82,6 +90,8 @@
     CGSize ExtraInfoSize = [_ExtraInfoTextView sizeThatFits:_ExtraInfoTextView.frame.size];
     _extraInfoHeightConstraint.constant = ExtraInfoSize.height;
     
+    */
+    
     
     // Frame
     _frame.layer.cornerRadius = 10;
@@ -96,13 +106,13 @@
     
     // Details frame
     if ([Category isEqualToString:@"Veld training"]) {
-        heightResultaten = 230 + spelersSize.height + oefeningenSize.height + ExtraInfoSize.height;
+        heightResultaten = 230 + spelersSize.height + oefeningenSize.height/* + ExtraInfoSize.height */;
     } else{
         heightResultaten = 200 + spelersSize.height;
     }
     
-    if (heightResultaten < 277) {
-        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, 317)];
+    if (heightResultaten < 365) {
+        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, 365)];
     } else{
         [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, heightResultaten)];
     }
@@ -111,7 +121,7 @@
     
     
     // Buttons frame
-    [_Resultaten2 setFrame:CGRectMake(0, heightResultaten, _frame.frame.size.width, 40)];
+    [_Resultaten2 setFrame:CGRectMake(0, _Resultaten.frame.size.height, _frame.frame.size.width, 40)];
     [scroll addSubview:_Resultaten2];
     
     scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height);
