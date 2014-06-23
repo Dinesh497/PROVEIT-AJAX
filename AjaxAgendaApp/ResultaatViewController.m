@@ -93,23 +93,30 @@
     
     int heightResultaten;
     
+    
     // Details frame
     if ([Category isEqualToString:@"Veld training"]) {
         heightResultaten = 230 + spelersSize.height + oefeningenSize.height + ExtraInfoSize.height;
-        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, _frame.frame.size.height)];
     } else{
         heightResultaten = 200 + spelersSize.height;
-        
+    }
+    
+    if (heightResultaten < 277) {
+        [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, 317)];
+    } else{
         [_Resultaten setFrame:CGRectMake(0, 0, _frame.frame.size.width, heightResultaten)];
     }
+    
     [scroll addSubview:_Resultaten];
+    
     
     // Buttons frame
     [_Resultaten2 setFrame:CGRectMake(0, heightResultaten, _frame.frame.size.width, 40)];
     [scroll addSubview:_Resultaten2];
     
-    scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height + 50);
+    scroll.contentSize = CGSizeMake(_Resultaten.frame.size.width, _Resultaten.frame.size.height + _Resultaten2.frame.size.height);
     [_frame addSubview:scroll];
+    
     
     // Date
     NSDate *theDate     = [defaults objectForKey:@"theDate"];
@@ -123,6 +130,7 @@
     NSString *theDateString = [dateFormatter stringFromDate:theDate];
     
     [_dateLabel setText:theDateString];
+    
     
     // Time
     NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
@@ -139,6 +147,7 @@
     
     [_BeginTime setText:beginTimeString];
     [_endTime setText:endTimeString];
+    
     
     // Location
     NSString *Location = [defaults objectForKey:@"Location"];

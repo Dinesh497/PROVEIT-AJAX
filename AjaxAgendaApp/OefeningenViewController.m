@@ -64,6 +64,11 @@
     [userDefaults setObject:_SelectedOefeningen forKey:@"SelectedOefeningenArray"];
 }
 
+- (IBAction)ReturnButtonExtraInfoPressed:(id)sender {
+    
+    [sender resignFirstResponder];
+}
+
 - (IBAction)pressedAfwerken:(id)sender {
     if (_buttonAfwerken.selected) {
         [_buttonAfwerken setSelected:NO];

@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIView *Form;
 - (IBAction)saveData:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *ExtraInfoText;
+- (IBAction)ReturnButtonExtraInfoPressed:(id)sender;
 
 - (IBAction)pressedAfwerken:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAfwerken;
