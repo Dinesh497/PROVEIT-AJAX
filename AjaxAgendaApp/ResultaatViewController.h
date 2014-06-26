@@ -19,12 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UITextView *OefeningenText;
-@property (weak, nonatomic) IBOutlet UILabel *OefeningenHeader;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *oefeningenHeightConstraint;
-@property (weak, nonatomic) IBOutlet UILabel *ExtraInfoLabel;
-@property (weak, nonatomic) IBOutlet UITextView *ExtraInfoTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *extraInfoHeightConstraint;
 
 
 @end

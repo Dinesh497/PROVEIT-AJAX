@@ -53,23 +53,30 @@
     
     // Oefeningen
     
+    UITextView *OefeningenText = [[UITextView alloc] initWithFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 200)];
+    UILabel *OefeningenHeader = [[UILabel alloc] initWithFrame:CGRectMake(20, 238 + spelersSize.height, 220, 21)];
+    [OefeningenHeader setText:@"Oefeningen:"];
+    
+    
+    
     CGSize oefeningenSize;
     
     if ([Category isEqualToString:@"Veld training"]) {
         NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
-        [_OefeningenText setText:OefeningenString];
+        [OefeningenText setText:OefeningenString];
         
-        oefeningenSize = [_OefeningenText sizeThatFits:_OefeningenText.frame.size];
-        _oefeningenHeightConstraint.constant = oefeningenSize.height;
+        oefeningenSize = [OefeningenText sizeThatFits:OefeningenText.frame.size];
         
-        [_OefeningenHeader setFrame:CGRectMake(20, 238 + spelersSize.height, 88, 21)];
+        [_Resultaten addSubview:OefeningenHeader];
+        [_Resultaten addSubview:OefeningenText];
         
-        [_OefeningenText setFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 36)];
+        //[OefeningenHeader setFrame:CGRectMake(20, 238 + spelersSize.height, 88, 21)];
+        //[OefeningenText setFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 50)];
         
     } else{
-        [_OefeningenHeader  removeFromSuperview];
-        [_OefeningenText    removeFromSuperview];
+        [OefeningenHeader  removeFromSuperview];
+        [OefeningenText    removeFromSuperview];
     }
     
     
@@ -100,13 +107,14 @@
     
     scroll.scrollEnabled = YES;
     scroll.layer.cornerRadius = 10;
+    scroll.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     int heightResultaten;
     
     
     // Details frame
     if ([Category isEqualToString:@"Veld training"]) {
-        heightResultaten = 230 + spelersSize.height + oefeningenSize.height/* + ExtraInfoSize.height */;
+        heightResultaten = 230 + spelersSize.height + oefeningenSize.height;
     } else{
         heightResultaten = 200 + spelersSize.height;
     }
