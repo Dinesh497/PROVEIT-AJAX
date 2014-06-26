@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultaatViewController : UIViewController <UIScrollViewDelegate>
+@interface ResultaatViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *BeginTime;
 @property (weak, nonatomic) IBOutlet UILabel *endTime;
 @property (weak, nonatomic) IBOutlet UIView *frame;

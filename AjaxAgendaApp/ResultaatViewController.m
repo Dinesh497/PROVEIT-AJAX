@@ -53,26 +53,32 @@
     
     // Oefeningen
     
-    UITextView *OefeningenText = [[UITextView alloc] initWithFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 200)];
-    UILabel *OefeningenHeader = [[UILabel alloc] initWithFrame:CGRectMake(20, 238 + spelersSize.height, 220, 21)];
+    UILabel *OefeningenHeader = [[UILabel alloc] init];
     [OefeningenHeader setText:@"Oefeningen:"];
     
-    
+    UITextView *OefeningenText = [[UITextView alloc] init];
+    [OefeningenText setSelectable:NO];
+    [OefeningenText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     
     CGSize oefeningenSize;
     
     if ([Category isEqualToString:@"Veld training"]) {
+        
         NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @"\n"];
         [OefeningenText setText:OefeningenString];
+        
+        CGRect oefeningenframe = OefeningenText.frame;
+        oefeningenframe.size.height = OefeningenText.contentSize.height;
+        OefeningenText.frame = spelerframe;
         
         oefeningenSize = [OefeningenText sizeThatFits:OefeningenText.frame.size];
         
         [_Resultaten addSubview:OefeningenHeader];
         [_Resultaten addSubview:OefeningenText];
         
-        //[OefeningenHeader setFrame:CGRectMake(20, 238 + spelersSize.height, 88, 21)];
-        //[OefeningenText setFrame:CGRectMake(20, 317 + _spelers.frame.size.height + HeaderHeightSize, 220, 50)];
+        [OefeningenHeader setFrame:CGRectMake(20, 194 + spelersSize.height + 4, 220, 21)];
+        [OefeningenText setFrame:CGRectMake(20, 194 + spelersSize.height + HeaderHeightSize, 220, oefeningenSize.height)];
         
     } else{
         [OefeningenHeader  removeFromSuperview];
@@ -80,25 +86,36 @@
     }
     
     
-    /*
     
     // Extra info oefeningen
     
+    UILabel *ExtraInfoHeader = [[UILabel alloc] init];
+    [ExtraInfoHeader setText:@"Extra informatie:"];
+    
+    UITextField *ExtraInfoText = [[UITextField alloc] init];
+    [ExtraInfoText setDelegate:self];
+    [ExtraInfoText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
+    CGSize ExtraInfoSize;
+    
     if ([Category isEqualToString:@"Veld training"]) {
+        
         NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
         NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @""];
-        [_ExtraInfoTextView setText:OefeningenString];
-        [_ExtraInfoTextView setFrame:CGRectMake(20, 390 + spelersSize.height + oefeningenSize.height, 220, 36)];
+        [ExtraInfoText setText:OefeningenString];
+        
+        ExtraInfoSize = [ExtraInfoText sizeThatFits:ExtraInfoText.frame.size];
+        
+        [_Resultaten addSubview:ExtraInfoHeader];
+        [_Resultaten addSubview:ExtraInfoText];
+        
+        [ExtraInfoHeader setFrame:CGRectMake(20, 194 + spelersSize.height + oefeningenSize.height + HeaderHeightSize + 4, 220, 36)];
+        [ExtraInfoText setFrame:CGRectMake(20, 194 + spelersSize.height + oefeningenSize.height + HeaderHeightSize + HeaderHeightSize, 220, ExtraInfoSize.height)];
+        
     } else{
-        [_ExtraInfoLabel    removeFromSuperview];
-        [_ExtraInfoTextView removeFromSuperview];
+        [ExtraInfoHeader    removeFromSuperview];
+        [ExtraInfoText      removeFromSuperview];
     }
-    
-    CGSize ExtraInfoSize = [_ExtraInfoTextView sizeThatFits:_ExtraInfoTextView.frame.size];
-    _extraInfoHeightConstraint.constant = ExtraInfoSize.height;
-    
-    */
-    
     
     // Frame
     _frame.layer.cornerRadius = 10;
@@ -114,7 +131,7 @@
     
     // Details frame
     if ([Category isEqualToString:@"Veld training"]) {
-        heightResultaten = 230 + spelersSize.height + oefeningenSize.height;
+        heightResultaten = 194 + spelersSize.height + oefeningenSize.height + ExtraInfoSize.height + HeaderHeightSize + HeaderHeightSize;
     } else{
         heightResultaten = 200 + spelersSize.height;
     }
@@ -183,6 +200,17 @@
 {
         
 }
+
+//----------------------------------------------------------------------------------------------------------
+// TextField
+//----------------------------------------------------------------------------------------------------------
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    return (newLength > 25) ? NO : YES;
+}
+
+
 /*
 #pragma mark - Navigation
 
