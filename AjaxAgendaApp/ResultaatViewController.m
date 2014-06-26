@@ -92,17 +92,17 @@
     UILabel *ExtraInfoHeader = [[UILabel alloc] init];
     [ExtraInfoHeader setText:@"Extra informatie:"];
     
-    UITextField *ExtraInfoText = [[UITextField alloc] init];
-    [ExtraInfoText setDelegate:self];
+    UITextView *ExtraInfoText = [[UITextView alloc] init];
+    [ExtraInfoText setSelectable:NO];
+    [ExtraInfoText setFont:[UIFont fontWithName:@"System" size:14.0]];
     [ExtraInfoText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     
     CGSize ExtraInfoSize;
     
     if ([Category isEqualToString:@"Veld training"]) {
         
-        NSMutableArray *OefeningenArray = [defaults objectForKey:@"SelectedOefeningenArray"];
-        NSString *OefeningenString = [OefeningenArray componentsJoinedByString: @""];
-        [ExtraInfoText setText:OefeningenString];
+        NSString *ExtraInformation = [defaults objectForKey:@"ExtraInfo"];
+        [ExtraInfoText setText:ExtraInformation];
         
         ExtraInfoSize = [ExtraInfoText sizeThatFits:ExtraInfoText.frame.size];
         
@@ -200,16 +200,6 @@
 {
         
 }
-
-//----------------------------------------------------------------------------------------------------------
-// TextField
-//----------------------------------------------------------------------------------------------------------
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSUInteger newLength = [textField.text length] + [string length] - range.length;
-    return (newLength > 25) ? NO : YES;
-}
-
 
 /*
 #pragma mark - Navigation
