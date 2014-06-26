@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TijdWeergaveViewController : UIViewController
+@interface TijdWeergaveViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TijdweergaveTable;
 
 @end

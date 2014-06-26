@@ -26,12 +26,33 @@
 - (void)viewDidLoad
 {
     _TijdweergaveTable.layer.cornerRadius = 10;
+    _TijdweergaveTable.delegate     = self;
+    _TijdweergaveTable.dataSource   = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//----------------------------------------------------------------------------------------------------------
+// UITableview
+//----------------------------------------------------------------------------------------------------------
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *Cell = [_TijdweergaveTable dequeueReusableCellWithIdentifier:@"Team"];
+    return Cell;
+    
 }
 
 /*
