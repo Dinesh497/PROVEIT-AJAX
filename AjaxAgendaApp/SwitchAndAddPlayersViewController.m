@@ -284,6 +284,7 @@
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
         if(sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &updateStmt, NULL) == SQLITE_OK)
             NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(_ajaxtrainingDB));
+            NSLog(@"wat doe ik nou eigenlijk %@", team);
     }
     
     char* errmsg;
