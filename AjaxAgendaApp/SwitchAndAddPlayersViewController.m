@@ -49,10 +49,6 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
-<<<<<<< HEAD
-=======
-
->>>>>>> FETCH_HEAD
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
@@ -228,15 +224,7 @@
         char* errmsg;
         int number = [self GetArticlesCount] + 1;
         NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
-<<<<<<< HEAD
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (name, team, ID) values ('%@', '%@', '%d')", NameNewPlayer, _selectedTeam, number] UTF8String], NULL, NULL, &errmsg);
-=======
-        
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (name, team, ID) values ('%@', '%@', '%d')", NameNewPlayer, _selectedTeam, number] UTF8String], NULL, NULL, &errmsg);
-
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT INTO players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
-
->>>>>>> FETCH_HEAD
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (id, name, team) values ('%d', '%@', '%@')", number, _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, &errmsg);
         sqlite3_finalize(compiledStatement);
     }
     sqlite3_close(_ajaxtrainingDB);
