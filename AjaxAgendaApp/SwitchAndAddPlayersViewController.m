@@ -217,6 +217,7 @@
 - (IBAction)PlayerAdded:(id)sender {
     
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
+    _NameNewPlayerTextfield.text = @"";
     
     if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
