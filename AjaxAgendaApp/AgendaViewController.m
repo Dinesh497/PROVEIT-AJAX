@@ -37,7 +37,7 @@
 
 - (void) dbConnectie {
     
-    NSString *docsDir;
+   /* NSString *docsDir;
     NSArray *dirPaths;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -70,6 +70,25 @@
             NSLog(@"Failed to open/create database");
         }
     }
+    */
+    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    // Check if the database is existed.
+    if(![fm fileExistsAtPath:_dbPath])
+    {
+        // If database is not existed, copy from the database template in the bundle
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
+        NSError* error = nil;
+        [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        NSLog(@"DB is copied.");
+        if(error){
+            NSLog(@"can't copy db.");
+        }
+    }
+
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -78,7 +97,7 @@
 
 - (void) fillArrays:(NSString *)selectedDate {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _Trainingen =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -109,7 +128,7 @@
 
 {
     int count = 0;
-    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    if (sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char* sqlStatement = "SELECT COUNT(*) FROM trainingen";
         sqlite3_stmt *statement;

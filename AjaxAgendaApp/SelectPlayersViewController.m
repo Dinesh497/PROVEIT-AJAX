@@ -127,6 +127,18 @@
     }
 }
 
+- (id)init {
+    if ((self = [super init])) {
+        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
+        
+        if (sqlite3_open([dbPath UTF8String], &_ajaxtrainingDB) != SQLITE_OK) {
+            NSLog(@"Failed to open database!");
+        }
+    }
+    return self;
+}
+
 // Fill the arrays
 
 - (void) fillArrays {
