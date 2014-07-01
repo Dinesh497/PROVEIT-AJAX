@@ -49,10 +49,7 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
-<<<<<<< HEAD
-    
-=======
->>>>>>> FETCH_HEAD
+
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
