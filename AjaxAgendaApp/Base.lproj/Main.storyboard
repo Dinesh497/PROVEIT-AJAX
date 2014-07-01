@@ -727,7 +727,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1455" y="411"/>
         </scene>
-        <!--Tijd Weergave View Controller-->
+        <!--Tijd Weergave View Controller - Tijdweergave-->
         <scene sceneID="cuv-rq-BP1">
             <objects>
                 <viewController id="etf-Oh-zh6" customClass="TijdWeergaveViewController" sceneMemberID="viewController">
@@ -743,13 +743,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Z7-W7r">
-                                <rect key="frame" x="30" y="142" width="260" height="406"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Z7-W7r">
+                                <rect key="frame" x="30" y="143" width="260" height="405"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Team" id="rml-lx-Hzv">
-                                        <rect key="frame" x="0.0" y="22" width="260" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rml-lx-Hzv" id="AwZ-N6-jp1">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="43"/>
@@ -765,7 +765,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Player" id="rNE-Xf-gFg">
-                                        <rect key="frame" x="0.0" y="66" width="260" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rNE-Xf-gFg" id="Zjh-8g-sH8">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="43"/>
@@ -781,7 +781,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Begindatum" rowHeight="162" id="cCp-oI-UAh">
-                                        <rect key="frame" x="0.0" y="110" width="260" height="162"/>
+                                        <rect key="frame" x="0.0" y="143" width="260" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCp-oI-UAh" id="Teg-hT-qsj">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="161"/>
@@ -789,7 +789,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Einddatum" rowHeight="162" id="AmW-mj-US1">
-                                        <rect key="frame" x="0.0" y="272" width="260" height="162"/>
+                                        <rect key="frame" x="0.0" y="305" width="260" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AmW-mj-US1" id="u6E-xM-AmK">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="161"/>
@@ -801,14 +801,41 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c5H-6U-C1c"/>
+                    <navigationItem key="navigationItem" title="Tijdweergave" id="c5H-6U-C1c">
+                        <barButtonItem key="rightBarButtonItem" title="Gereed" id="0jv-A0-HUh">
+                            <connections>
+                                <action selector="GereedButtonPressed:" destination="etf-Oh-zh6" id="bwy-zw-dmD"/>
+                                <segue destination="nSy-AY-zSn" kind="push" id="oNn-5d-Gf4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="Gereed" destination="0jv-A0-HUh" id="99k-s3-7CO"/>
                         <outlet property="TijdweergaveTable" destination="K0k-Z7-W7r" id="Qwa-hO-Xbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUd-41-jAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="839" y="1138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HjQ-W1-bI3">
+            <objects>
+                <viewController id="nSy-AY-zSn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MNa-4p-aC2"/>
+                        <viewControllerLayoutGuide type="bottom" id="HHo-jc-LB8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hic-fH-pq7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1DS-4h-heT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NY-w9-pit" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="1138"/>
         </scene>
         <!--Switch And Add Players View Controller - Teams-->
         <scene sceneID="0bh-rR-93C">
@@ -991,7 +1018,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E4-Qi-JWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="1148"/>
+            <point key="canvasLocation" x="1841" y="1138"/>
         </scene>
         <!--Training Soort View Controller - Categorieën-->
         <scene sceneID="8Pq-F3-OfO">
