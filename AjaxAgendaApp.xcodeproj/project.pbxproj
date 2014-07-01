@@ -34,6 +34,7 @@
 		131F918C19229A1900DB0E37 /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F917419229A1900DB0E37 /* DSLCalendarDaySelection@2x.png */; };
 		131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */; };
 		13C9E940195C41A700D1AAE6 /* TijdWeergaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C9E93F195C41A700D1AAE6 /* TijdWeergaveViewController.m */; };
+		1B965C091962E72600E755C8 /* ajaxtraining.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1B965C081962E72600E755C8 /* ajaxtraining.sqlite */; };
 		1BC0D84918F835B300789C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84818F835B300789C6C /* Foundation.framework */; };
 		1BC0D84B18F835B300789C6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84A18F835B300789C6C /* CoreGraphics.framework */; };
 		1BC0D84D18F835B300789C6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84C18F835B300789C6C /* UIKit.framework */; };
@@ -140,6 +141,7 @@
 		131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
 		13C9E93E195C41A700D1AAE6 /* TijdWeergaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TijdWeergaveViewController.h; sourceTree = "<group>"; };
 		13C9E93F195C41A700D1AAE6 /* TijdWeergaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TijdWeergaveViewController.m; sourceTree = "<group>"; };
+		1B965C081962E72600E755C8 /* ajaxtraining.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ajaxtraining.sqlite; sourceTree = "<group>"; };
 		1BC0D84518F835B300789C6C /* AjaxAgendaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjaxAgendaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC0D84818F835B300789C6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BC0D84A18F835B300789C6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -317,6 +319,7 @@
 		1BC0D84E18F835B300789C6C /* AjaxAgendaApp */ = {
 			isa = PBXGroup;
 			children = (
+				1B965C081962E72600E755C8 /* ajaxtraining.sqlite */,
 				1BC0D85718F835B300789C6C /* AppDelegate.h */,
 				1BC0D85818F835B300789C6C /* AppDelegate.m */,
 				1BC0D85A18F835B300789C6C /* Main.storyboard */,
@@ -514,6 +517,7 @@
 				131F918919229A1900DB0E37 /* DSLCalendarDaySelection-right.png in Resources */,
 				131F917819229A1900DB0E37 /* DSLCalendarDayCalloutView.xib in Resources */,
 				D498FFBF192CA0DE00E7D7F0 /* rondohighlighted.png in Resources */,
+				1B965C091962E72600E755C8 /* ajaxtraining.sqlite in Resources */,
 				D498FFD1192CA40A00E7D7F0 /* revalidatie.png in Resources */,
 				D498FFC2192CA0DE00E7D7F0 /* warming uphighlighted.png in Resources */,
 				D42741ED1920ECFB00A7582F /* tempSelectedButton.png in Resources */,
