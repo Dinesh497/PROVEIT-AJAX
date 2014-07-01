@@ -49,6 +49,10 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
+<<<<<<< HEAD
+=======
+
+>>>>>>> FETCH_HEAD
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
@@ -307,7 +311,7 @@
 
 - (void) dbConnectie {
     
-    //NSString *docsDir;
+   // NSString *docsDir;
    // NSArray *dirPaths;
     
   //  dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -344,14 +348,14 @@
     }*/
     
     NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
     NSFileManager *fm = [NSFileManager defaultManager];
     
     // Check if the database is existed.
     if(![fm fileExistsAtPath:_dbPath])
     {
         // If database is not existed, copy from the database template in the bundle
-        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining1" ofType:@"db"];
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
         NSError* error = nil;
         [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
         if(error){
@@ -365,7 +369,7 @@
 - (id)init {
     if ((self = [super init])) {
         NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
         
         if (sqlite3_open([dbPath UTF8String], &_ajaxtrainingDB) != SQLITE_OK) {
             NSLog(@"Failed to open database!");
