@@ -359,6 +359,8 @@
         }
     }
     
+    NSLog(@"where is the DB %@", _dbPath);
+    
     
 }
 
