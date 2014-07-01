@@ -226,7 +226,10 @@
         int number = [self GetArticlesCount] + 1;
         NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
         
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (name, team, ID) values ('%@', '%@', '%d')", NameNewPlayer, _selectedTeam, number] UTF8String], NULL, NULL, &errmsg);
+
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT INTO players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
+
         sqlite3_finalize(compiledStatement);
     }
     sqlite3_close(_ajaxtrainingDB);
@@ -345,16 +348,17 @@
     }*/
     
     NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
     NSFileManager *fm = [NSFileManager defaultManager];
     
     // Check if the database is existed.
     if(![fm fileExistsAtPath:_dbPath])
     {
         // If database is not existed, copy from the database template in the bundle
-        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining1" ofType:@"db"];
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
         NSError* error = nil;
         [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        NSLog(@"DB is copied.");
         if(error){
             NSLog(@"can't copy db.");
         }
@@ -366,7 +370,7 @@
 - (id)init {
     if ((self = [super init])) {
         NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
         
         if (sqlite3_open([dbPath UTF8String], &_ajaxtrainingDB) != SQLITE_OK) {
             NSLog(@"Failed to open database!");

@@ -40,7 +40,7 @@
     docsDir = dirPaths[0];
     
     _databasePath = [[NSBundle mainBundle]
-                     pathForResource:@"ajaxtraining1" ofType:@"db" ];
+                     pathForResource:@"ajaxtraining" ofType:@"sqlite" ];
 }
 
 - (void) usernameArray {

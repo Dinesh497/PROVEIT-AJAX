@@ -80,7 +80,7 @@
     docsDir = dirPaths[0];
 
     _databasePath = [[NSBundle mainBundle]
-                 pathForResource:@"ajaxtraining1" ofType:@"db" ];
+                 pathForResource:@"ajaxtraining" ofType:@"sqlite" ];
     
     // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
 
