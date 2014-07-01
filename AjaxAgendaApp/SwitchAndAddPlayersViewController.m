@@ -229,7 +229,7 @@
         int number = [self GetArticlesCount] + 1;
         NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
         
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT INTO players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
         sqlite3_finalize(compiledStatement);
     }
     sqlite3_close(_ajaxtrainingDB);
@@ -358,6 +358,7 @@
         NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
         NSError* error = nil;
         [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        NSLog(@"DB is copied.");
         if(error){
             NSLog(@"can't copy db.");
         }
