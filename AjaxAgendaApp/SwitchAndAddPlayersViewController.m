@@ -49,7 +49,6 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
-    [self copyDatabaseIfNeeded];
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
