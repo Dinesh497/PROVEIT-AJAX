@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AjaxAgendaApp/SwitchAndAddPlayersViewController.m"
-            timestampString = "425913096.164768"
+            timestampString = "425913390.228266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AjaxAgendaApp/SwitchAndAddPlayersViewController.m"
-            timestampString = "425913145.793737"
+            timestampString = "425913390.228266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-PlayerAdded:"
             landmarkType = "5">
          </BreakpointContent>
