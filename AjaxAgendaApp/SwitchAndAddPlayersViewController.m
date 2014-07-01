@@ -227,7 +227,7 @@
         static sqlite3_stmt *compiledStatement;
         char* errmsg;
         int number = [self GetArticlesCount] + 1;
-        NSLog(@"%@ wordt toegevoegd op positie %d", _NameNewPlayerTextfield.text, number);
+        NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
         
         sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
         sqlite3_finalize(compiledStatement);
