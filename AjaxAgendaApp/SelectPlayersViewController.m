@@ -72,7 +72,7 @@
 
 - (void) dbConnectie {
 
-    NSArray *dirPaths;
+   /* NSArray *dirPaths;
     NSString *docsDir;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -107,13 +107,31 @@
             _status.text = @"Failed to open/create database";
             }
     }
+    */
+    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    // Check if the database is existed.
+    if(![fm fileExistsAtPath:_dbPath])
+    {
+        // If database is not existed, copy from the database template in the bundle
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
+        NSError* error = nil;
+        [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        NSLog(@"DB is copied.");
+        if(error){
+            NSLog(@"can't copy db.");
+        }
+    }
 }
 
 // Fill the arrays
 
 - (void) fillArrays {
 
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _Players =[[NSMutableArray alloc] init];
 
     int rows = [self GetArticlesCount];
@@ -143,7 +161,7 @@
 
 - (void) fillTeamArrays {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _Teams =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -178,7 +196,7 @@
 
 - (void) fillSelectedTeamArraywithTeamName:(NSString*)TeamName {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _SelectedTeam =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -208,7 +226,7 @@
 - (int) GetArticlesCount
 {
     int count = 0;
-    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    if (sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char* sqlStatement = "SELECT COUNT(*) FROM players";
         sqlite3_stmt *statement;
