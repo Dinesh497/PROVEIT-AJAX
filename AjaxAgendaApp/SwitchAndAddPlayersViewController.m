@@ -13,7 +13,7 @@
 @property NSMutableArray *Teams;
 @property NSMutableArray *PlayersSelectedTeam;
 
-@property (strong, nonatomic) NSString *databasePath;
+@property (strong, nonatomic) NSString *dbPath;
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) sqlite3 *ajaxtrainingDB;
 
@@ -49,7 +49,7 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
-    [self copyDatabaseIfNeeded];
+    
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
@@ -219,7 +219,7 @@
     
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
     
-    if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+    if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
         char* errmsg;
         int number = [self GetArticlesCount] + 1;
@@ -264,7 +264,7 @@
     if (buttonIndex == 1) {
         // Verwijder speler
         
-        if(sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+        if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
             static sqlite3_stmt *compiledStatement;
             sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"delete from players where name = '%@'", _editingPlayer] UTF8String], NULL, NULL, NULL);
             sqlite3_finalize(compiledStatement);
@@ -277,7 +277,7 @@
 
 - (void) wijzigTeam:(NSString*) team{
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     sqlite3_stmt *updateStmt;
     if(sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
@@ -307,25 +307,25 @@
 
 - (void) dbConnectie {
     
-    NSString *docsDir;
-    NSArray *dirPaths;
+    //NSString *docsDir;
+   // NSArray *dirPaths;
     
-    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  //  dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-    docsDir = dirPaths[0];
+  //  docsDir = dirPaths[0];
     
-    _databasePath = [[NSBundle mainBundle]
-                     pathForResource:@"ajaxtraining1" ofType:@"db" ];
+   // _databasePath = [[NSBundle mainBundle]
+     //                pathForResource:@"ajaxtraining1" ofType:@"db" ];
     
     // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
     
-    NSFileManager *filemgr = [NSFileManager defaultManager];
+   // NSFileManager *filemgr = [NSFileManager defaultManager];
     
-    if ([filemgr fileExistsAtPath:_databasePath] == NO)
+    /*if ([filemgr fileExistsAtPath:_databasePath] == NO)
     {
         const char *dbpath = [_databasePath UTF8String];
-        
-        if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+     
+       if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
         {
             char *errMsg;
             const char *sql_stmt =
@@ -341,12 +341,42 @@
         {
             NSLog(@"Failed to open/create database");
         }
+    }*/
+    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    // Check if the database is existed.
+    if(![fm fileExistsAtPath:_dbPath])
+    {
+        // If database is not existed, copy from the database template in the bundle
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining1" ofType:@"db"];
+        NSError* error = nil;
+        [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        if(error){
+            NSLog(@"can't copy db.");
+        }
     }
+    
+    
+}
+
+- (id)init {
+    if ((self = [super init])) {
+        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining1.db"];
+        
+        if (sqlite3_open([dbPath UTF8String], &_ajaxtrainingDB) != SQLITE_OK) {
+            NSLog(@"Failed to open database!");
+        }
+    }
+    return self;
 }
 
 - (void) fillTeamArrays {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _Teams =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -381,7 +411,7 @@
 
 - (void) fillSelectedTeamArraywithTeamName:(NSString*)TeamName {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _PlayersSelectedTeam =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -410,7 +440,7 @@
 - (int) GetArticlesCount
 {
     int count = 0;
-    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    if (sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char* sqlStatement = "SELECT COUNT(*) FROM players";
         sqlite3_stmt *statement;
