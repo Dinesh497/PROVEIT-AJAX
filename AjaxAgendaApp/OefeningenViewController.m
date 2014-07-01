@@ -62,6 +62,9 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:_SelectedOefeningen forKey:@"SelectedOefeningenArray"];
+    
+    NSString *ExtraInfoText = _ExtraInfoText.text;
+    [userDefaults setObject:ExtraInfoText forKey:@"ExtraInfo"];
 }
 
 - (IBAction)ReturnButtonExtraInfoPressed:(id)sender {
