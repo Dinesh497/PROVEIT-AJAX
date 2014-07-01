@@ -49,7 +49,10 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
+<<<<<<< HEAD
     
+=======
+>>>>>>> FETCH_HEAD
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
@@ -218,6 +221,7 @@
 - (IBAction)PlayerAdded:(id)sender {
     
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
+    _NameNewPlayerTextfield.text = @"";
     
     if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
