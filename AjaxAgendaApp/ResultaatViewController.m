@@ -40,6 +40,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self dbConnectie];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger HeaderHeightSize = 29;
     
@@ -183,9 +185,15 @@
     [dateFormatter setLocale:[NSLocale currentLocale]];
     
     NSString *theDateString = [dateFormatter stringFromDate:theDate];
-    _datum = theDateString;
     [_dateLabel setText:theDateString];
     
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    
+    dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"YYYY-MM-dd"];
+    [dateFormatter2 setLocale:[NSLocale currentLocale]];
+    
+    _datum = [dateFormatter2 stringFromDate:theDate];
     
     // Time
     NSDate *beginTime   = [defaults objectForKey:@"BeginTime"];
@@ -227,7 +235,7 @@
     if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
         
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into trainingen (id, datum, begin_tijd, eind_tijd, veld, soort_training, subcat_veld, extra_info, spelers) values ('%d', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@')",
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into trainingen (id, datum, begin_tijd, eind_tijd, veld, soort_training, subcat_veld, extra_info, spelers) values ('%d', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@')",
                                         number, _datum, _begin_tijd, _eind_tijd, _veld, _soort_training, _subcat_veld,
                                         _extra_info, _spelersString] UTF8String], NULL, NULL, NULL);
         

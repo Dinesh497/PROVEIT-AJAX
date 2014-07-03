@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet DSLCalendarView *calendarView;
 @property (readwrite, nonatomic) NSMutableArray *Trainingen;
 @property NSMutableArray *selectedAppointment;
+@property NSDateFormatter *dateFormatter;
 
 @end
 
@@ -23,6 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    [_dateFormatter setLocale:[NSLocale currentLocale]];
+    
     _TrainingenTableView.dataSource = self;
     _TrainingenTableView.delegate =  self;
     
@@ -120,7 +126,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In traingen array zitten: %@",_Trainingen);
+    NSLog(@"In trainingen array zitten: %@",_Trainingen);
     [_TrainingenTableView reloadData];
 }
 
@@ -184,8 +190,11 @@
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
         NSString *selectedDate = [NSString stringWithFormat:@"%ld-%ld-%ld", (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
-        NSLog(@"%@",selectedDate);
         
+        NSDate *convertDate = [_dateFormatter dateFromString:selectedDate];
+        selectedDate = [_dateFormatter stringFromDate:convertDate];
+        
+        NSLog(@"%@",selectedDate);
         
         //Maakt een userDefault voor de selectedDate
         [[NSUserDefaults standardUserDefaults] setObject:selectedDate forKey:@"selectedDate"];
