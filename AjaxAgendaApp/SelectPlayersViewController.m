@@ -383,10 +383,10 @@
         if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
         
             // The player is already selected
-            cell.accessoryType = UITableViewCellAccessoryNone;
-            NSString *selectingPlayer = cell.textLabel.text;
-            NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
-            [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
+            // cell.accessoryType = UITableViewCellAccessoryNone;
+            // NSString *selectingPlayer = cell.textLabel.text;
+            // NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
+            // [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
         }else{
         
             // The player is not selected
