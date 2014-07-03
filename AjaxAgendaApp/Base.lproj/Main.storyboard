@@ -1600,7 +1600,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="VoegToe:" destination="fyj-ia-k4T" eventType="touchUpInside" id="ELm-Nv-Rpx"/>
+                                <action selector="VoegToeButtonPressed:" destination="fyj-ia-k4T" eventType="touchUpInside" id="2P9-Vf-9NL"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee8-rx-Waz">
