@@ -212,4 +212,12 @@
 }
 */
 
+- (IBAction)VoegToeButtonPressed:(id)sender {
+    
+}
+
+- (IBAction)CancelButtonPressed:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

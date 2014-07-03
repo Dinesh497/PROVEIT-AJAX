@@ -233,10 +233,13 @@
     
     if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (team, name) values ('%@', '%@')", _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, NULL);
+        
+        int number = [self GetArticlesCount] + 1;
+        
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (team, name) values ('%@', '%@')", _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, NULL);
         sqlite3_finalize(compiledStatement);
         
-        NSLog(@"%@ wordt toegevoegd", NameNewPlayer);
+        NSLog(@"%@ wordt toegevoegd op %d", NameNewPlayer, number);
     }
     sqlite3_close(_ajaxtrainingDB);
     

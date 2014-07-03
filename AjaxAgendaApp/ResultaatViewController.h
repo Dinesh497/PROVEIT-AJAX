@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+- (IBAction)VoegToeButtonPressed:(id)sender;
+- (IBAction)CancelButtonPressed:(id)sender;
 
 @end
