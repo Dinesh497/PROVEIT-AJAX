@@ -33,6 +33,10 @@
     
     // Training Button
     _TrainingButton.layer.cornerRadius = 10;
+    
+    // Tijdweergave Button
+    _TijdweergaveButton.layer.cornerRadius = 10;
+    
 }
 
 - (void)didReceiveMemoryWarning
