@@ -219,6 +219,7 @@
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
     _NameNewPlayerTextfield.text = @"";
     
+    /*
     if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
         char* errmsg;
@@ -226,6 +227,16 @@
         NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
         sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (id, name, team) values ('%d', '%@', '%@')", number, _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, &errmsg);
         sqlite3_finalize(compiledStatement);
+    }
+    sqlite3_close(_ajaxtrainingDB);
+     */
+    
+    if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
+        static sqlite3_stmt *compiledStatement;
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (team, name) values ('%@', '%@')", _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, NULL);
+        sqlite3_finalize(compiledStatement);
+        
+        NSLog(@"%@ wordt toegevoegd", NameNewPlayer);
     }
     sqlite3_close(_ajaxtrainingDB);
     
@@ -359,7 +370,7 @@
         }
     }
     
-    NSLog(@"where is the DB %@", _dbPath);
+    // NSLog(@"where is the DB %@", _dbPath);
     
     
 }
