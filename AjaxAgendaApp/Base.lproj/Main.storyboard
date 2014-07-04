@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -819,7 +819,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUd-41-jAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="1138"/>
+            <point key="canvasLocation" x="605" y="1184"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HjQ-W1-bI3">
@@ -838,7 +838,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NY-w9-pit" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="1138"/>
+            <point key="canvasLocation" x="1151" y="1184"/>
         </scene>
         <!--Switch And Add Players View Controller - Teams-->
         <scene sceneID="0bh-rR-93C">
@@ -882,15 +882,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayersCell" textLabel="3gp-oW-8n1" style="IBUITableViewCellStyleDefault" id="KLH-P9-V5I">
+                                            <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayersCell" textLabel="3gp-oW-8n1" style="IBUITableViewCellStyleDefault" id="KLH-P9-V5I">
                                                 <rect key="frame" x="0.0" y="66" width="260" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLH-P9-V5I" id="P7O-Og-jzB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="227" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Players" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3gp-oW-8n1">
-                                                            <rect key="frame" x="15" y="0.0" width="230" height="43"/>
+                                                            <rect key="frame" x="15" y="0.0" width="210" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -898,6 +898,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="wYf-8I-dbW" kind="push" id="iwc-3q-5aC"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectTeamCell" textLabel="axh-dK-BVR" style="IBUITableViewCellStyleDefault" id="73j-FF-Uav">
                                                 <rect key="frame" x="0.0" y="110" width="260" height="44"/>
@@ -1022,6 +1025,50 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E4-Qi-JWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1841" y="1138"/>
+        </scene>
+        <!--Trainingen View Controller - Trainingen-->
+        <scene sceneID="jhe-NJ-JeQ">
+            <objects>
+                <viewController id="wYf-8I-dbW" customClass="TrainingenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7JR-HD-iIW"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdg-qx-IT2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qcw-vt-UhD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1008.png" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-xN-aZ2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CzU-hP-zHQ">
+                                <rect key="frame" x="30" y="79" width="260" height="405"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-V5-UXa">
+                                        <rect key="frame" x="20" y="20" width="220" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Trainingen" id="Rn6-2d-OoH"/>
+                    <connections>
+                        <outlet property="Frame" destination="CzU-hP-zHQ" id="lTy-kn-apy"/>
+                        <outlet property="PlayerLabel" destination="IJM-V5-UXa" id="N89-qQ-dbV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Why-7b-1DM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272" y="1138"/>
         </scene>
         <!--Training Soort View Controller - Categorieën-->
         <scene sceneID="8Pq-F3-OfO">

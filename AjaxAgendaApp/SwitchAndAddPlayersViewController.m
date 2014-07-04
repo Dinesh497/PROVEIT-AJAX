@@ -140,6 +140,11 @@
     if (cell.tag == 1) {
         // Player cell selected
         
+        NSString *selectedPlayer = cell.textLabel.text;
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:selectedPlayer forKey:@"Playertrainingen"];
+        
     }
     if (cell.tag == 2) {
         // choose team cell selected
