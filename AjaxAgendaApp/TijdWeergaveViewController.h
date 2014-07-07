@@ -10,5 +10,7 @@
 
 @interface TijdWeergaveViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TijdweergaveTable;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *Gereed;
+
 
 @end

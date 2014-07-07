@@ -90,6 +90,7 @@
 		D498FFD6192CA50B00E7D7F0 /* training.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD4192CA50B00E7D7F0 /* training.png */; };
 		D498FFD8192CA58400E7D7F0 /* veldButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD7192CA58400E7D7F0 /* veldButton.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
+		D4CC01AC1967037F0009258E /* TrainingenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC01AB1967037F0009258E /* TrainingenViewController.m */; };
 		D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,8 @@
 		D498FFD7192CA58400E7D7F0 /* veldButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veldButton.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
+		D4CC01AA1967037F0009258E /* TrainingenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingenViewController.h; path = ../TrainingenViewController.h; sourceTree = "<group>"; };
+		D4CC01AB1967037F0009258E /* TrainingenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingenViewController.m; path = ../TrainingenViewController.m; sourceTree = "<group>"; };
 		D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultaatViewController.h; sourceTree = "<group>"; };
 		D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultaatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,6 +332,8 @@
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
 				D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */,
 				D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */,
+				D4CC01AA1967037F0009258E /* TrainingenViewController.h */,
+				D4CC01AB1967037F0009258E /* TrainingenViewController.m */,
 				131F91541922946300DB0E37 /* AgendaViewController.h */,
 				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				1319A44A1935CE8C008FE102 /* AgendaDetailViewController.h */,
@@ -594,6 +599,7 @@
 				131F917719229A1900DB0E37 /* DSLCalendarDayCalloutView.m in Sources */,
 				131F917D19229A1900DB0E37 /* DSLCalendarRange.m in Sources */,
 				D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */,
+				D4CC01AC1967037F0009258E /* TrainingenViewController.m in Sources */,
 				131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */,
 				D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
