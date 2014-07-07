@@ -156,7 +156,7 @@
 		1BC0D85618F835B300789C6C /* AjaxAgendaApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AjaxAgendaApp-Prefix.pch"; sourceTree = "<group>"; };
 		1BC0D85718F835B300789C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BC0D85818F835B300789C6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1BC0D85B18F835B300789C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BC0D85B18F835B300789C6C /* Base */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BC0D85D18F835B300789C6C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1BC0D85E18F835B300789C6C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1BC0D86018F835B300789C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
