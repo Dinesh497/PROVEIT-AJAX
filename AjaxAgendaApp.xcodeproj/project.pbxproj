@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1319A44C1935CE8C008FE102 /* AgendaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A44B1935CE8C008FE102 /* AgendaDetailViewController.m */; };
 		131C04EA192A08FF0027200A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131C04E9192A08FF0027200A /* EventKit.framework */; };
 		131F91561922946300DB0E37 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F91551922946300DB0E37 /* AgendaViewController.m */; };
 		131F917719229A1900DB0E37 /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F915919229A1900DB0E37 /* DSLCalendarDayCalloutView.m */; };
@@ -54,6 +53,7 @@
 		D42856D41902CFB300077467 /* SelectPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42856D31902CFB300077467 /* SelectPlayersViewController.m */; };
 		D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */; };
 		D475A1651934961600863ED2 /* spelerswijzigen.png in Resources */ = {isa = PBXBuildFile; fileRef = D475A1641934961600863ED2 /* spelerswijzigen.png */; };
+		D47B71C4196ACFAA0085AB6C /* AgendaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47B71C3196ACFAA0085AB6C /* AgendaDetailViewController.m */; };
 		D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */; };
 		D47D36A81920D2A3001BBDBC /* afwerken.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369B1920D2A3001BBDBC /* afwerken.png */; };
 		D47D36A91920D2A3001BBDBC /* anders.png in Resources */ = {isa = PBXBuildFile; fileRef = D47D369C1920D2A3001BBDBC /* anders.png */; };
@@ -104,8 +104,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1319A44A1935CE8C008FE102 /* AgendaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgendaDetailViewController.h; path = ../AgendaDetailViewController.h; sourceTree = "<group>"; };
-		1319A44B1935CE8C008FE102 /* AgendaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgendaDetailViewController.m; path = ../AgendaDetailViewController.m; sourceTree = "<group>"; };
 		131C04E9192A08FF0027200A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		131F91541922946300DB0E37 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaViewController.h; sourceTree = "<group>"; };
 		131F91551922946300DB0E37 /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
@@ -167,6 +165,8 @@
 		D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchAndAddPlayersViewController.h; sourceTree = "<group>"; };
 		D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchAndAddPlayersViewController.m; sourceTree = "<group>"; };
 		D475A1641934961600863ED2 /* spelerswijzigen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spelerswijzigen.png; sourceTree = "<group>"; };
+		D47B71C2196ACFAA0085AB6C /* AgendaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaDetailViewController.h; sourceTree = "<group>"; };
+		D47B71C3196ACFAA0085AB6C /* AgendaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaDetailViewController.m; sourceTree = "<group>"; };
 		D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingSoortViewController.h; sourceTree = "<group>"; };
 		D47D36951920C3C6001BBDBC /* TrainingSoortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingSoortViewController.m; sourceTree = "<group>"; };
 		D47D369B1920D2A3001BBDBC /* afwerken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afwerken.png; sourceTree = "<group>"; };
@@ -333,8 +333,8 @@
 				D4CC01AB1967037F0009258E /* TrainingenViewController.m */,
 				131F91541922946300DB0E37 /* AgendaViewController.h */,
 				131F91551922946300DB0E37 /* AgendaViewController.m */,
-				1319A44A1935CE8C008FE102 /* AgendaDetailViewController.h */,
-				1319A44B1935CE8C008FE102 /* AgendaDetailViewController.m */,
+				D47B71C2196ACFAA0085AB6C /* AgendaDetailViewController.h */,
+				D47B71C3196ACFAA0085AB6C /* AgendaDetailViewController.m */,
 				D487280B18FB28E4005CD739 /* TrainingInfoViewController.h */,
 				D487280C18FB28E4005CD739 /* TrainingInfoViewController.m */,
 				D47D36941920C3C6001BBDBC /* TrainingSoortViewController.h */,
@@ -600,11 +600,11 @@
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
 				D487280D18FB28E4005CD739 /* TrainingInfoViewController.m in Sources */,
 				131F917919229A1900DB0E37 /* DSLCalendarDayView.m in Sources */,
+				D47B71C4196ACFAA0085AB6C /* AgendaDetailViewController.m in Sources */,
 				131F91561922946300DB0E37 /* AgendaViewController.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
 				D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */,
 				D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */,
-				1319A44C1935CE8C008FE102 /* AgendaDetailViewController.m in Sources */,
 				131F917C19229A1900DB0E37 /* DSLCalendarMonthView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
