@@ -50,6 +50,7 @@
     [_categoryLabel setText:Category];
     
     _soort_training = Category;
+    
     // Spelers text view
     
     UITextView *SpelersText = [[UITextView alloc] init];
