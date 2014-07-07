@@ -15,8 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIView *frame;
 @property (weak, nonatomic) IBOutlet UIView *Resultaten;
 @property (weak, nonatomic) IBOutlet UIView *Resultaten2;
-@property (weak, nonatomic) IBOutlet UITextView *spelers;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spelersHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;

@@ -50,23 +50,30 @@
     [_categoryLabel setText:Category];
     
     _soort_training = Category;
+    // Spelers text view
     
-    // Players
+    UITextView *SpelersText = [[UITextView alloc] init];
+    [SpelersText setSelectable:NO];
+    [SpelersText setScrollEnabled:NO];
+    [SpelersText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
+    CGSize spelersSize;
+    
     NSMutableArray *PlayersArray = [defaults objectForKey:@"PlayersArray"];
     NSString *PlayersString = [PlayersArray componentsJoinedByString: @"\n"];
-    [_spelers setText:PlayersString];
+    [SpelersText setText:PlayersString];
     
     _spelersString = PlayersString;
     
+    CGRect spelersframe = SpelersText.frame;
+    spelersframe.size.height = SpelersText.contentSize.height;
+    SpelersText.frame = spelersframe;
     
-    // Spelers text view
+    spelersSize = [SpelersText sizeThatFits:SpelersText.frame.size];
     
-    CGRect spelerframe = _spelers.frame;
-    spelerframe.size.height = _spelers.contentSize.height;
-    _spelers.frame = spelerframe;
+    [_Resultaten addSubview:SpelersText];
     
-    CGSize spelersSize = [_spelers sizeThatFits:_spelers.frame.size];
-    _spelersHeightConstraint.constant = spelersSize.height;
+    [SpelersText setFrame:CGRectMake(20, 194, 220, spelersSize.height)];
     
     
     // Oefeningen
@@ -76,6 +83,7 @@
     
     UITextView *OefeningenText = [[UITextView alloc] init];
     [OefeningenText setSelectable:NO];
+    [OefeningenText setScrollEnabled:NO];
     [OefeningenText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     
     CGSize oefeningenSize;
@@ -90,7 +98,7 @@
         
         CGRect oefeningenframe = OefeningenText.frame;
         oefeningenframe.size.height = OefeningenText.contentSize.height;
-        OefeningenText.frame = spelerframe;
+        OefeningenText.frame = oefeningenframe;
         
         oefeningenSize = [OefeningenText sizeThatFits:OefeningenText.frame.size];
         
@@ -114,6 +122,7 @@
     
     UITextView *ExtraInfoText = [[UITextView alloc] init];
     [ExtraInfoText setSelectable:NO];
+    [ExtraInfoText setScrollEnabled:NO];
     [ExtraInfoText setFont:[UIFont fontWithName:@"System" size:14.0]];
     [ExtraInfoText setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     

@@ -1550,8 +1550,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="endTime" destination="8LD-kB-d3q" id="qQh-no-Yqd"/>
                         <outlet property="frame" destination="i20-ss-a7B" id="aKg-AK-Scm"/>
                         <outlet property="locationLabel" destination="hph-Fu-61C" id="0ha-JN-Sjh"/>
-                        <outlet property="spelers" destination="MSd-ik-r4k" id="bVI-UP-Kaz"/>
-                        <outlet property="spelersHeightConstraint" destination="9Ti-Sc-9HQ" id="UKd-Px-T7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LS-N9-SEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1559,17 +1557,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <rect key="frame" x="0.0" y="0.0" width="260" height="376"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Geen" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSd-ik-r4k">
-                            <rect key="frame" x="20" y="194" width="220" height="36"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="220" id="5T1-Dq-zpF"/>
-                                <constraint firstAttribute="height" constant="36" id="9Ti-Sc-9HQ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categorie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44d-m6-veq">
                             <rect key="frame" x="20" y="20" width="280" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
