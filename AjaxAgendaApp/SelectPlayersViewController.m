@@ -72,7 +72,7 @@
 
 - (void) dbConnectie {
 
-   /* NSArray *dirPaths;
+    NSArray *dirPaths;
     NSString *docsDir;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -107,43 +107,13 @@
             _status.text = @"Failed to open/create database";
             }
     }
-    */
-    
-    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
-    NSFileManager *fm = [NSFileManager defaultManager];
-    
-    // Check if the database is existed.
-    if(![fm fileExistsAtPath:_dbPath])
-    {
-        // If database is not existed, copy from the database template in the bundle
-        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
-        NSError* error = nil;
-        [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
-        NSLog(@"DB is copied.");
-        if(error){
-            NSLog(@"can't copy db.");
-        }
-    }
-}
-
-- (id)init {
-    if ((self = [super init])) {
-        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString* dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
-        
-        if (sqlite3_open([dbPath UTF8String], &_ajaxtrainingDB) != SQLITE_OK) {
-            NSLog(@"Failed to open database!");
-        }
-    }
-    return self;
 }
 
 // Fill the arrays
 
 - (void) fillArrays {
 
-    const char *dbpath = [_dbPath UTF8String];
+    const char *dbpath = [_databasePath UTF8String];
     _Players =[[NSMutableArray alloc] init];
 
     int rows = [self GetArticlesCount];
@@ -166,7 +136,6 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    [_Players sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In players array zitten: %@",_Players);
     
     
@@ -174,7 +143,7 @@
 
 - (void) fillTeamArrays {
     
-    const char *dbpath = [_dbPath UTF8String];
+    const char *dbpath = [_databasePath UTF8String];
     _Teams =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -204,13 +173,12 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    [_Teams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In Teams array zitten: %@",_Teams);
 }
 
 - (void) fillSelectedTeamArraywithTeamName:(NSString*)TeamName {
     
-    const char *dbpath = [_dbPath UTF8String];
+    const char *dbpath = [_databasePath UTF8String];
     _SelectedTeam =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -234,14 +202,13 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    [_SelectedTeam sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In selectingTeam array zitten: %@",_SelectedTeam);
 }
 
 - (int) GetArticlesCount
 {
     int count = 0;
-    if (sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char* sqlStatement = "SELECT COUNT(*) FROM players";
         sqlite3_stmt *statement;
@@ -386,10 +353,10 @@
         if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
         
             // The player is already selected
-            // cell.accessoryType = UITableViewCellAccessoryNone;
-            // NSString *selectingPlayer = cell.textLabel.text;
-            // NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
-            // [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            NSString *selectingPlayer = cell.textLabel.text;
+            NSInteger indexOfPlayer = [_SelectedPlayers indexOfObject:selectingPlayer];
+            [_SelectedPlayers removeObjectAtIndex:indexOfPlayer];
         }else{
         
             // The player is not selected

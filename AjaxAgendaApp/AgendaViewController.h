@@ -11,7 +11,7 @@
 
 @interface AgendaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSString *dbPath;
+@property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *ajaxtrainingDB;
 @property (weak, nonatomic) IBOutlet UITableView *TrainingenTableView;
 

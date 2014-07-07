@@ -33,7 +33,6 @@
 		131F918B19229A1900DB0E37 /* DSLCalendarDaySelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F917319229A1900DB0E37 /* DSLCalendarDaySelection.png */; };
 		131F918C19229A1900DB0E37 /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 131F917419229A1900DB0E37 /* DSLCalendarDaySelection@2x.png */; };
 		131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */; };
-		134DAB9419643863006779C4 /* WeergaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134DAB9319643863006779C4 /* WeergaveViewController.m */; };
 		13C9E940195C41A700D1AAE6 /* TijdWeergaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C9E93F195C41A700D1AAE6 /* TijdWeergaveViewController.m */; };
 		1B965C091962E72600E755C8 /* ajaxtraining.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1B965C081962E72600E755C8 /* ajaxtraining.sqlite */; };
 		1BC0D84918F835B300789C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0D84818F835B300789C6C /* Foundation.framework */; };
@@ -91,7 +90,6 @@
 		D498FFD6192CA50B00E7D7F0 /* training.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD4192CA50B00E7D7F0 /* training.png */; };
 		D498FFD8192CA58400E7D7F0 /* veldButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D498FFD7192CA58400E7D7F0 /* veldButton.png */; };
 		D4B8754F19004044009FF0C2 /* OefeningenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8754E19004044009FF0C2 /* OefeningenViewController.m */; };
-		D4CC01AC1967037F0009258E /* TrainingenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC01AB1967037F0009258E /* TrainingenViewController.m */; };
 		D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +139,6 @@
 		131F917419229A1900DB0E37 /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
 		131F917519229A1900DB0E37 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
 		131F917619229A1900DB0E37 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
-		134DAB9219643863006779C4 /* WeergaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeergaveViewController.h; sourceTree = "<group>"; };
-		134DAB9319643863006779C4 /* WeergaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeergaveViewController.m; sourceTree = "<group>"; };
 		13C9E93E195C41A700D1AAE6 /* TijdWeergaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TijdWeergaveViewController.h; sourceTree = "<group>"; };
 		13C9E93F195C41A700D1AAE6 /* TijdWeergaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TijdWeergaveViewController.m; sourceTree = "<group>"; };
 		1B965C081962E72600E755C8 /* ajaxtraining.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ajaxtraining.sqlite; sourceTree = "<group>"; };
@@ -156,7 +152,7 @@
 		1BC0D85618F835B300789C6C /* AjaxAgendaApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AjaxAgendaApp-Prefix.pch"; sourceTree = "<group>"; };
 		1BC0D85718F835B300789C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BC0D85818F835B300789C6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1BC0D85B18F835B300789C6C /* Base */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BC0D85B18F835B300789C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BC0D85D18F835B300789C6C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1BC0D85E18F835B300789C6C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1BC0D86018F835B300789C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -212,8 +208,6 @@
 		D498FFD7192CA58400E7D7F0 /* veldButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veldButton.png; sourceTree = "<group>"; };
 		D4B8754D19004044009FF0C2 /* OefeningenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OefeningenViewController.h; sourceTree = "<group>"; };
 		D4B8754E19004044009FF0C2 /* OefeningenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OefeningenViewController.m; sourceTree = "<group>"; };
-		D4CC01AA1967037F0009258E /* TrainingenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingenViewController.h; path = ../TrainingenViewController.h; sourceTree = "<group>"; };
-		D4CC01AB1967037F0009258E /* TrainingenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingenViewController.m; path = ../TrainingenViewController.m; sourceTree = "<group>"; };
 		D4E3FEC5191535D400C7DFF8 /* ResultaatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultaatViewController.h; sourceTree = "<group>"; };
 		D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultaatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -335,8 +329,6 @@
 				D491866B18FA9BFB00B70233 /* MenuViewController.m */,
 				D464C10919333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.h */,
 				D464C10A19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m */,
-				D4CC01AA1967037F0009258E /* TrainingenViewController.h */,
-				D4CC01AB1967037F0009258E /* TrainingenViewController.m */,
 				131F91541922946300DB0E37 /* AgendaViewController.h */,
 				131F91551922946300DB0E37 /* AgendaViewController.m */,
 				1319A44A1935CE8C008FE102 /* AgendaDetailViewController.h */,
@@ -353,8 +345,6 @@
 				D4E3FEC6191535D400C7DFF8 /* ResultaatViewController.m */,
 				13C9E93E195C41A700D1AAE6 /* TijdWeergaveViewController.h */,
 				13C9E93F195C41A700D1AAE6 /* TijdWeergaveViewController.m */,
-				134DAB9219643863006779C4 /* WeergaveViewController.h */,
-				134DAB9319643863006779C4 /* WeergaveViewController.m */,
 				1BC0D86018F835B300789C6C /* Images.xcassets */,
 				1BC0D84F18F835B300789C6C /* Supporting Files */,
 			);
@@ -604,7 +594,6 @@
 				131F917719229A1900DB0E37 /* DSLCalendarDayCalloutView.m in Sources */,
 				131F917D19229A1900DB0E37 /* DSLCalendarRange.m in Sources */,
 				D464C10B19333ABD00E0ECB3 /* SwitchAndAddPlayersViewController.m in Sources */,
-				D4CC01AC1967037F0009258E /* TrainingenViewController.m in Sources */,
 				131F918D19229A1900DB0E37 /* NSDate+DSLCalendarView.m in Sources */,
 				D47D36961920C3C6001BBDBC /* TrainingSoortViewController.m in Sources */,
 				1BC0D85918F835B300789C6C /* AppDelegate.m in Sources */,
@@ -612,7 +601,6 @@
 				131F917919229A1900DB0E37 /* DSLCalendarDayView.m in Sources */,
 				131F91561922946300DB0E37 /* AgendaViewController.m in Sources */,
 				1BC0D85518F835B300789C6C /* main.m in Sources */,
-				134DAB9419643863006779C4 /* WeergaveViewController.m in Sources */,
 				13C9E940195C41A700D1AAE6 /* TijdWeergaveViewController.m in Sources */,
 				D4E3FEC7191535D400C7DFF8 /* ResultaatViewController.m in Sources */,
 				D491866C18FA9BFB00B70233 /* MenuViewController.m in Sources */,
