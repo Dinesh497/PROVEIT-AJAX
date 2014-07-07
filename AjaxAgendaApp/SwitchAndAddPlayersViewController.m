@@ -49,7 +49,6 @@
     
     [self dbConnectie];
     [self fillTeamArrays];
-
     
     _PlayersTableView.delegate   = self;
     _PlayersTableView.dataSource = self;
@@ -141,6 +140,11 @@
     if (cell.tag == 1) {
         // Player cell selected
         
+        NSString *selectedPlayer = cell.textLabel.text;
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:selectedPlayer forKey:@"Playertrainingen"];
+        
     }
     if (cell.tag == 2) {
         // choose team cell selected
@@ -220,17 +224,15 @@
     NSString *NameNewPlayer = _NameNewPlayerTextfield.text;
     _NameNewPlayerTextfield.text = @"";
     
+    int number = [self GetArticlesCount] + 1;
+    
     if(sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
-        char* errmsg;
-        int number = [self GetArticlesCount] + 1;
-        NSLog(@"%@ wordt toegevoegd op positie %d", NameNewPlayer, number);
         
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT into players (name, team, ID) values ('%@', '%@', '%d')", NameNewPlayer, _selectedTeam, number] UTF8String], NULL, NULL, &errmsg);
-
-        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"INSERT INTO players (name, team) values ('%@', '%@')", NameNewPlayer, _selectedTeam] UTF8String], NULL, NULL, &errmsg);
-
+        sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (id, team, name) values ('%d','%@', '%@')", number, _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, NULL);
         sqlite3_finalize(compiledStatement);
+        
+        NSLog(@"%@ wordt toegevoegd op %d", NameNewPlayer, number);
     }
     sqlite3_close(_ajaxtrainingDB);
     
@@ -311,42 +313,6 @@
 
 - (void) dbConnectie {
     
-   // NSString *docsDir;
-   // NSArray *dirPaths;
-    
-  //  dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-  //  docsDir = dirPaths[0];
-    
-   // _databasePath = [[NSBundle mainBundle]
-     //                pathForResource:@"ajaxtraining1" ofType:@"db" ];
-    
-    // NSLog(@" pak ik wel de juiste DB %@", _databasePath);
-    
-   // NSFileManager *filemgr = [NSFileManager defaultManager];
-    
-    /*if ([filemgr fileExistsAtPath:_databasePath] == NO)
-    {
-        const char *dbpath = [_databasePath UTF8String];
-     
-       if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
-        {
-            char *errMsg;
-            const char *sql_stmt =
-            " CREATE TABLE IF NOT EXISTS PLAYERS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TEAM TEXT, NAME TEXT, TEXT1 TEXT, TEXT2 TEXT, TEXT3 TEXT, TEXT4 TEXT)";
-            
-            if (sqlite3_exec(_ajaxtrainingDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
-            {
-                NSLog(@"Failed to create table");
-            }
-            sqlite3_close(_ajaxtrainingDB);
-        }
-        else
-        {
-            NSLog(@"Failed to open/create database");
-        }
-    }*/
-    
     NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -363,7 +329,6 @@
             NSLog(@"can't copy db.");
         }
     }
-    
     
 }
 
@@ -410,7 +375,9 @@
             }
         }
         sqlite3_close(_ajaxtrainingDB);
+    
     }
+    [_Teams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In Teams array zitten: %@",_Teams);
 }
 
@@ -439,6 +406,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
+    [_PlayersSelectedTeam sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In selectingTeam array zitten: %@",_PlayersSelectedTeam);
 }
 

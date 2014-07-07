@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet DSLCalendarView *calendarView;
 @property (readwrite, nonatomic) NSMutableArray *Trainingen;
 @property NSMutableArray *selectedAppointment;
+@property NSDateFormatter *dateFormatter;
 
 @end
 
@@ -23,6 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    [_dateFormatter setLocale:[NSLocale currentLocale]];
+    
     _TrainingenTableView.dataSource = self;
     _TrainingenTableView.delegate =  self;
     
@@ -37,7 +43,7 @@
 
 - (void) dbConnectie {
     
-    NSString *docsDir;
+   /* NSString *docsDir;
     NSArray *dirPaths;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -70,6 +76,25 @@
             NSLog(@"Failed to open/create database");
         }
     }
+    */
+    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _dbPath = [docPath stringByAppendingPathComponent:@"ajaxtraining.sqlite"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    // Check if the database is existed.
+    if(![fm fileExistsAtPath:_dbPath])
+    {
+        // If database is not existed, copy from the database template in the bundle
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
+        NSError* error = nil;
+        [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
+        NSLog(@"DB is copied.");
+        if(error){
+            NSLog(@"can't copy db.");
+        }
+    }
+
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -78,7 +103,7 @@
 
 - (void) fillArrays:(NSString *)selectedDate {
     
-    const char *dbpath = [_databasePath UTF8String];
+    const char *dbpath = [_dbPath UTF8String];
     _Trainingen =[[NSMutableArray alloc] init];
     
     int rows = [self GetArticlesCount];
@@ -101,7 +126,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In traingen array zitten: %@",_Trainingen);
+    NSLog(@"In trainingen array zitten: %@",_Trainingen);
     [_TrainingenTableView reloadData];
 }
 
@@ -109,7 +134,7 @@
 
 {
     int count = 0;
-    if (sqlite3_open([_databasePath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
+    if (sqlite3_open([_dbPath UTF8String], &_ajaxtrainingDB) == SQLITE_OK)
     {
         const char* sqlStatement = "SELECT COUNT(*) FROM trainingen";
         sqlite3_stmt *statement;
@@ -165,8 +190,11 @@
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
         NSString *selectedDate = [NSString stringWithFormat:@"%ld-%ld-%ld", (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
-        NSLog(@"%@",selectedDate);
         
+        NSDate *convertDate = [_dateFormatter dateFromString:selectedDate];
+        selectedDate = [_dateFormatter stringFromDate:convertDate];
+        
+        NSLog(@"%@",selectedDate);
         
         //Maakt een userDefault voor de selectedDate
         [[NSUserDefaults standardUserDefaults] setObject:selectedDate forKey:@"selectedDate"];

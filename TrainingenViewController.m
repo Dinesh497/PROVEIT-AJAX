@@ -1,18 +1,18 @@
 //
-//  MenuViewController.m
+//  TrainingenViewController.m
 //  AjaxAgendaApp
 //
-//  Created by Ralph Oud on 13-04-14.
+//  Created by Ralph Oud on 04-07-14.
 //  Copyright (c) 2014 Prove IT. All rights reserved.
 //
 
-#import "MenuViewController.h"
+#import "TrainingenViewController.h"
 
-@interface MenuViewController ()
+@interface TrainingenViewController ()
 
 @end
 
-@implementation MenuViewController
+@implementation TrainingenViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,14 +28,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Agenda Button
-    _AgendaButton.layer.cornerRadius = 10;
+    _Frame.layer.cornerRadius = 10;
     
-    // Training Button
-    _TrainingButton.layer.cornerRadius = 10;
-    
-    // Tijdweergave Button
-    _TijdweergaveButton.layer.cornerRadius = 10;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *selectedPlayer = [userDefaults objectForKey:@"Playertrainingen"];
+    _PlayerLabel.text = selectedPlayer;
     
 }
 

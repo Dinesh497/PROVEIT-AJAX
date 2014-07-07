@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *AgendaButton;
 @property (weak, nonatomic) IBOutlet UIButton *TrainingButton;
+@property (weak, nonatomic) IBOutlet UIButton *TijdweergaveButton;
 
 @end
