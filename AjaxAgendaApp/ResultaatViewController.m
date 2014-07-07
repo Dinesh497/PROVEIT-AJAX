@@ -113,8 +113,6 @@
         [OefeningenText    removeFromSuperview];
     }
     
-    
-    
     // Extra info oefeningen
     
     UILabel *ExtraInfoHeader = [[UILabel alloc] init];
