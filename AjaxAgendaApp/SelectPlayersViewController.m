@@ -166,6 +166,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
+    [_Players sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In players array zitten: %@",_Players);
     
     
@@ -203,6 +204,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
+    [_Teams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In Teams array zitten: %@",_Teams);
 }
 
@@ -232,6 +234,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
+    [_SelectedTeam sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSLog(@"In selectingTeam array zitten: %@",_SelectedTeam);
 }
 
