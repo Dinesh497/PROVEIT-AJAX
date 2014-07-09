@@ -68,7 +68,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In username array zitten: %@",_Usernames);
+    // NSLog(@"In username array zitten: %@",_Usernames);
     
 }
 
@@ -97,7 +97,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In password array zitten: %@",_passwords);
+    // NSLog(@"In password array zitten: %@",_passwords);
 }
 
 - (int) GetArticlesCount
@@ -196,7 +196,7 @@
         }
         sqlite3_close(_ajaxtrainingDB);
     }
-    NSLog(@"In password array zitten: %@",_passwords);
+    // NSLog(@"In password array zitten: %@",_passwords);
 
     return Password;
 }

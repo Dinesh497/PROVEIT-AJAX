@@ -232,7 +232,7 @@
         sqlite3_exec(_ajaxtrainingDB, [[NSString stringWithFormat:@"insert into players (id, team, name) values ('%d','%@', '%@')", number, _selectedTeam, NameNewPlayer] UTF8String], NULL, NULL, NULL);
         sqlite3_finalize(compiledStatement);
         
-        NSLog(@"%@ wordt toegevoegd op %d", NameNewPlayer, number);
+        // NSLog(@"%@ wordt toegevoegd op %d", NameNewPlayer, number);
     }
     sqlite3_close(_ajaxtrainingDB);
     
@@ -291,14 +291,14 @@
         const char *querya1_stmt = [queryplayersa1_sql UTF8String];
         if(sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &updateStmt, NULL) == SQLITE_OK)
             NSLog(@"Error while creating update statement. %s", sqlite3_errmsg(_ajaxtrainingDB));
-            NSLog(@"wat doe ik nou eigenlijk %@", team);
+            // NSLog(@"wat doe ik nou eigenlijk %@", team);
     }
     
     char* errmsg;
     sqlite3_exec(_ajaxtrainingDB, "COMMIT", NULL, NULL, &errmsg);
     
     if(SQLITE_DONE != sqlite3_step(updateStmt))
-        NSLog(@"Error while updating. %s", sqlite3_errmsg(_ajaxtrainingDB));
+        // NSLog(@"Error while updating. %s", sqlite3_errmsg(_ajaxtrainingDB));
     sqlite3_finalize(updateStmt);
     sqlite3_close(_ajaxtrainingDB);
     
@@ -324,7 +324,7 @@
         NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"ajaxtraining" ofType:@"sqlite"];
         NSError* error = nil;
         [fm copyItemAtPath:dbTemplatePath toPath:_dbPath error:&error];
-        NSLog(@"DB is copied.");
+        // NSLog(@"DB is copied.");
         if(error){
             NSLog(@"can't copy db.");
         }
@@ -378,7 +378,7 @@
     
     }
     [_Teams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    NSLog(@"In Teams array zitten: %@",_Teams);
+    // NSLog(@"In Teams array zitten: %@",_Teams);
 }
 
 - (void) fillSelectedTeamArraywithTeamName:(NSString*)TeamName {
@@ -407,7 +407,7 @@
         sqlite3_close(_ajaxtrainingDB);
     }
     [_PlayersSelectedTeam sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    NSLog(@"In selectingTeam array zitten: %@",_PlayersSelectedTeam);
+    // NSLog(@"In selectingTeam array zitten: %@",_PlayersSelectedTeam);
 }
 
 - (int) GetArticlesCount

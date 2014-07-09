@@ -144,7 +144,7 @@
                 
                 _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
                 _datePicker.datePickerMode = UIDatePickerModeDate;
-                // [_datePicker setLocale:[NSLocale currentLocale]];
+                [_datePicker setLocale:[NSLocale currentLocale]];
                 
                 // Geef datePicker de juiste waarde
                 [_datePicker setDate:_Date animated:NO];

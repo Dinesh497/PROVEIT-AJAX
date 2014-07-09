@@ -16,6 +16,7 @@
 @property NSDate            *EndDate;
 
 @property NSInteger         DatepickerLocation;
+@property UIDatePicker      *datePicker;
 
 @end
 
@@ -48,6 +49,10 @@
     _BeginDate              = _currentDate;
     _EndDate                = [_currentDate dateByAddingTimeInterval:60*60*24];
     _DatepickerLocation     = 0;
+    
+    _datePicker =                   [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
+    _datePicker.datePickerMode =    UIDatePickerModeDate;
+    [_datePicker setLocale:[NSLocale currentLocale]];
     
 }
 
@@ -87,6 +92,10 @@
             // Datepicker bij begin datum
             cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
             
+            [_datePicker setDate:_BeginDate animated:YES];
+            [_datePicker addTarget:self action:@selector(BeginValueChanged) forControlEvents:UIControlEventValueChanged];
+            [cell.contentView addSubview:_datePicker];
+            
         } else{
             // Geen Datepicker bij begin datum
             cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
@@ -106,6 +115,10 @@
         } else{
             // Datepicker bij eind datum
             cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
+            
+            [_datePicker setDate:_EndDate animated:YES];
+            [_datePicker addTarget:self action:@selector(EindValueChanged) forControlEvents:UIControlEventValueChanged];
+            [cell.contentView addSubview:_datePicker];
         }
     }
     
@@ -213,6 +226,34 @@
             return 44;
         }
     }
+}
+
+//----------------------------------------------------------------------------------------------------------
+// Date picker
+//----------------------------------------------------------------------------------------------------------
+
+-(void) BeginValueChanged{
+    [_TimeTableview beginUpdates];
+    
+    _BeginDate = _datePicker.date;
+    NSString *dateString = [_dateFormatter stringFromDate:_datePicker.date];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [_TimeTableview cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    _EndDate                = [_BeginDate dateByAddingTimeInterval:60*60*24];
+    
+    [_TimeTableview endUpdates];
+}
+
+-(void) EindValueChanged{
+    [_TimeTableview beginUpdates];
+    
+    _EndDate = _datePicker.date;
+    NSString *dateString = [_dateFormatter stringFromDate:_datePicker.date];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    [_TimeTableview cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    [_TimeTableview endUpdates];
 }
 
 //----------------------------------------------------------------------------------------------------------
