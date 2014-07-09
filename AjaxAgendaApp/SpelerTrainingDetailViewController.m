@@ -1,20 +1,18 @@
 //
-//  TrainingenViewController.m
+//  SpelerTrainingDetailViewController.m
 //  AjaxAgendaApp
 //
-//  Created by Ralph Oud on 04-07-14.
+//  Created by Dinesh Bhagwandin on 09-07-14.
 //  Copyright (c) 2014 Prove IT. All rights reserved.
 //
 
-#import "TrainingenViewController.h"
+#import "SpelerTrainingDetailViewController.h"
 
-@interface TrainingenViewController ()
-
-
+@interface SpelerTrainingDetailViewController ()
 
 @end
 
-@implementation TrainingenViewController
+@implementation SpelerTrainingDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,16 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // Do any additional setup after loading the view.
-    
 }
-
-
-
-//----------------------------------------------------------------------------------------------------------
-// Xcode
-//----------------------------------------------------------------------------------------------------------
 
 - (void)didReceiveMemoryWarning
 {
