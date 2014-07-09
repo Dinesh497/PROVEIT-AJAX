@@ -96,8 +96,17 @@
     }
     
     if (indexPath.row == 2) {
-        // Datepicker bij eind datum
-        cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
+        
+        if (_DatepickerLocation == 1) {
+            // Datepicker bij begin datum
+            cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
+            cell.textLabel.text         = @"Eind datum";
+            cell.detailTextLabel.text = [_dateFormatter stringFromDate:_EndDate];
+            
+        } else{
+            // Datepicker bij eind datum
+            cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
+        }
     }
     
     return cell;
@@ -106,17 +115,65 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
-        // Begin datum geselecteerd
-        
-    }
-    
-    if (indexPath.row == 1) {
-        // Eind datum geselecteerd
-        
-    }
+    UITableViewCell *cell = [_TimeTableview cellForRowAtIndexPath:indexPath];
     
     [_TimeTableview deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (cell.tag == 1) {
+        // Time cell
+        
+        [_TimeTableview beginUpdates];
+        
+        NSArray *indexPaths;
+        // NSArray *deleteIndexPaths =@[[NSIndexPath indexPathForRow:_DatepickerLocation inSection:0]];
+        
+        if (indexPath.row == 0) {
+            // Begin datum geselecteerd
+            
+            if (_DatepickerLocation == 1) {
+                // Verwijder datepicker
+                indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [_TimeTableview deleteRowsAtIndexPaths:indexPaths
+                                      withRowAnimation:UITableViewRowAnimationFade];
+                _DatepickerLocation = 0;
+                
+            } else{
+                // Voeg datepicker toe
+                indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [_TimeTableview insertRowsAtIndexPaths:indexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
+                _DatepickerLocation = 1;
+            }
+        } else{
+            // Eind datum geselecteerd
+            
+            if (_DatepickerLocation == 2) {
+                // Verwijder datepicker
+                
+                
+                _DatepickerLocation = 0;
+            } else{
+                // Voeg datepicker toe
+                
+                _DatepickerLocation = 2;
+            }
+        }
+        
+        [_TimeTableview endUpdates];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_DatepickerLocation == 0){
+        return 44;
+    } else {
+        if (_DatepickerLocation == indexPath.row) {
+            return 162;
+        } else{
+            return 44;
+        }
+    }
 }
 
 //----------------------------------------------------------------------------------------------------------
