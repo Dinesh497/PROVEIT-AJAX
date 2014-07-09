@@ -37,7 +37,10 @@
 // Tableview
 //----------------------------------------------------------------------------------------------------------
 
-
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"Playertrainingen"];
+}
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
@@ -46,6 +49,11 @@
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [_TimeTableview deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 //----------------------------------------------------------------------------------------------------------
