@@ -1,20 +1,18 @@
 //
-//  TrainingenViewController.m
+//  SelectTrainingTimeViewController.m
 //  AjaxAgendaApp
 //
-//  Created by Ralph Oud on 04-07-14.
+//  Created by Ralph Oud on 09-07-14.
 //  Copyright (c) 2014 Prove IT. All rights reserved.
 //
 
-#import "TrainingenViewController.h"
+#import "SelectTrainingTimeViewController.h"
 
-@interface TrainingenViewController ()
-
-
+@interface SelectTrainingTimeViewController ()
 
 @end
 
-@implementation TrainingenViewController
+@implementation SelectTrainingTimeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +28,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Do any additional setup after loading the view.
-    
+    [_TimeTableview setDelegate:    self];
+    [_TimeTableview setDataSource:  self];
+    _TimeTableview.layer.cornerRadius = 10;
 }
 
+//----------------------------------------------------------------------------------------------------------
+// Tableview
+//----------------------------------------------------------------------------------------------------------
 
+
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
+    return cell;
+}
 
 //----------------------------------------------------------------------------------------------------------
 // Xcode

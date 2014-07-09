@@ -11,6 +11,7 @@
 @interface TrainingenViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 @property (weak, nonatomic) IBOutlet UILabel *PlayerLabel;
+@property (weak, nonatomic) IBOutlet UITableView *TimeTableview;
 
 
 
