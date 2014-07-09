@@ -58,7 +58,7 @@
     [_timeFormatter setDateFormat:@"HH:mm"];
     [_timeFormatter setLocale:[NSLocale currentLocale]];
     _dateFormatter = [[NSDateFormatter alloc] init];
-    [_dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    [_dateFormatter setDateFormat:@"MM-dd-YYYY"];
     [_dateFormatter setLocale:[NSLocale currentLocale]];
 
     // Set date

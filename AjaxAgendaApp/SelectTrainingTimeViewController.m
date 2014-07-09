@@ -10,6 +10,13 @@
 
 @interface SelectTrainingTimeViewController ()
 
+@property NSDateFormatter   *dateFormatter;
+@property NSDate            *currentDate;
+@property NSDate            *BeginDate;
+@property NSDate            *EndDate;
+
+@property NSInteger         DatepickerLocation;
+
 @end
 
 @implementation SelectTrainingTimeViewController
@@ -31,6 +38,17 @@
     [_TimeTableview setDelegate:    self];
     [_TimeTableview setDataSource:  self];
     _TimeTableview.layer.cornerRadius = 10;
+    
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [_dateFormatter setDateFormat:  @"MM-dd-YYYY"];
+    [_dateFormatter setLocale:      [NSLocale currentLocale]];
+    
+    _currentDate            = [NSDate date];
+    _BeginDate              = _currentDate;
+    _EndDate                = [_currentDate dateByAddingTimeInterval:60*60*24];
+    _DatepickerLocation     = 0;
+    
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -38,20 +56,65 @@
 //----------------------------------------------------------------------------------------------------------
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:@"Playertrainingen"];
+    
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    
+    if (_DatepickerLocation == 0) {
+        return 2;
+    } else {
+        return 3;
+    }
+    
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
+    
+    UITableViewCell *cell;
+    
+    if (indexPath.row == 0) {
+        cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
+        cell.textLabel.text         = @"Begin datum";
+        cell.detailTextLabel.text   = [_dateFormatter stringFromDate:_BeginDate];
+    }
+    
+    if (indexPath.row == 1) {
+        if (_DatepickerLocation == 1) {
+            // Datepicker bij begin datum
+            cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
+            
+        } else{
+            // Geen Datepicker bij begin datum
+            cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
+            cell.textLabel.text         = @"Eind datum";
+            cell.detailTextLabel.text = [_dateFormatter stringFromDate:_EndDate];
+        }
+    }
+    
+    if (indexPath.row == 2) {
+        // Datepicker bij eind datum
+        cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"DatepickerCell"];
+    }
+    
     return cell;
+    
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0) {
+        // Begin datum geselecteerd
+        
+    }
+    
+    if (indexPath.row == 1) {
+        // Eind datum geselecteerd
+        
+    }
     
     [_TimeTableview deselectRowAtIndexPath:indexPath animated:YES];
 }
