@@ -78,7 +78,7 @@
     
     if (indexPath.row == 0) {
         cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
-        cell.textLabel.text         = @"Begin datum";
+        cell.textLabel.text         = @"Vanaf";
         cell.detailTextLabel.text   = [_dateFormatter stringFromDate:_BeginDate];
     }
     
@@ -90,7 +90,7 @@
         } else{
             // Geen Datepicker bij begin datum
             cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
-            cell.textLabel.text         = @"Eind datum";
+            cell.textLabel.text         = @"Einde";
             cell.detailTextLabel.text = [_dateFormatter stringFromDate:_EndDate];
         }
     }
@@ -100,7 +100,7 @@
         if (_DatepickerLocation == 1) {
             // Datepicker bij begin datum
             cell = [_TimeTableview dequeueReusableCellWithIdentifier:@"TimeCell"];
-            cell.textLabel.text         = @"Eind datum";
+            cell.textLabel.text         = @"Einde";
             cell.detailTextLabel.text = [_dateFormatter stringFromDate:_EndDate];
             
         } else{
@@ -125,7 +125,7 @@
         [_TimeTableview beginUpdates];
         
         NSArray *indexPaths;
-        // NSArray *deleteIndexPaths =@[[NSIndexPath indexPathForRow:_DatepickerLocation inSection:0]];
+        NSArray *deleteIndexPaths =@[[NSIndexPath indexPathForRow:_DatepickerLocation inSection:0]];
         
         if (indexPath.row == 0) {
             // Begin datum geselecteerd
@@ -138,24 +138,63 @@
                 _DatepickerLocation = 0;
                 
             } else{
-                // Voeg datepicker toe
-                indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
-                [_TimeTableview insertRowsAtIndexPaths:indexPaths
+                if (_DatepickerLocation == 2) {
+                    // Verplaats de datepicker
+                    
+                    if(indexPath.row > _DatepickerLocation){
+                        indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+                        _DatepickerLocation = indexPath.row;
+                    } else{
+                        indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                        _DatepickerLocation = indexPath.row + 1;
+                    }
+                    
+                    [_TimeTableview deleteRowsAtIndexPaths:deleteIndexPaths
+                                              withRowAnimation:UITableViewRowAnimationFade];
+                    [_TimeTableview insertRowsAtIndexPaths:indexPaths
+                                              withRowAnimation:UITableViewRowAnimationFade];
+                    _DatepickerLocation = 1;
+                } else{
+                    // Voeg datepicker toe
+                    indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                    [_TimeTableview insertRowsAtIndexPaths:indexPaths
                                           withRowAnimation:UITableViewRowAnimationFade];
-                _DatepickerLocation = 1;
+                    _DatepickerLocation = 1;
+                }
             }
         } else{
             // Eind datum geselecteerd
             
             if (_DatepickerLocation == 2) {
                 // Verwijder datepicker
-                
-                
+                indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [_TimeTableview deleteRowsAtIndexPaths:indexPaths
+                                      withRowAnimation:UITableViewRowAnimationFade];
                 _DatepickerLocation = 0;
             } else{
-                // Voeg datepicker toe
-                
-                _DatepickerLocation = 2;
+                if (_DatepickerLocation == 1) {
+                    // Verplaats de datepicker
+                    
+                    if(indexPath.row > _DatepickerLocation){
+                        indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+                        _DatepickerLocation = indexPath.row;
+                    } else{
+                        indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                        _DatepickerLocation = indexPath.row + 1;
+                    }
+            
+                    [_TimeTableview deleteRowsAtIndexPaths:deleteIndexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
+                    [_TimeTableview insertRowsAtIndexPaths:indexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
+                    _DatepickerLocation = 2;
+                } else{
+                    // Voeg datepicker toe
+                    indexPaths = @[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                    [_TimeTableview insertRowsAtIndexPaths:indexPaths
+                                          withRowAnimation:UITableViewRowAnimationFade];
+                    _DatepickerLocation = 2;
+                }
             }
         }
         
