@@ -52,8 +52,6 @@
     
     _datePicker =                   [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
     _datePicker.datePickerMode =    UIDatePickerModeDate;
-    [_datePicker setLocale:[NSLocale currentLocale]];
-    
 }
 
 //----------------------------------------------------------------------------------------------------------
@@ -240,7 +238,12 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [_TimeTableview cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
     
-    _EndDate                = [_BeginDate dateByAddingTimeInterval:60*60*24];
+    if( [_BeginDate timeIntervalSinceDate:_EndDate] > 0 ) {
+        _EndDate                = [_BeginDate dateByAddingTimeInterval:60*60*24];
+        NSString *dateString2 = [_dateFormatter stringFromDate:_EndDate];
+        NSIndexPath *indexPath2 = [NSIndexPath indexPathForRow:2 inSection:0];
+        [_TimeTableview cellForRowAtIndexPath:indexPath2].detailTextLabel.text = dateString2;
+    }
     
     [_TimeTableview endUpdates];
 }
@@ -252,6 +255,13 @@
     NSString *dateString = [_dateFormatter stringFromDate:_datePicker.date];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [_TimeTableview cellForRowAtIndexPath:indexPath].detailTextLabel.text = dateString;
+    
+    if( [_EndDate timeIntervalSinceDate:_BeginDate] < 0 ) {
+        _BeginDate                = [_EndDate dateByAddingTimeInterval:-60*60*24];
+        NSString *dateString2 = [_dateFormatter stringFromDate:_BeginDate];
+        NSIndexPath *indexPath2 = [NSIndexPath indexPathForRow:0 inSection:0];
+        [_TimeTableview cellForRowAtIndexPath:indexPath2].detailTextLabel.text = dateString2;
+    }
     
     [_TimeTableview endUpdates];
 }
