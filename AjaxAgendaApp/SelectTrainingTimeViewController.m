@@ -18,6 +18,8 @@
 @property NSInteger         DatepickerLocation;
 @property UIDatePicker      *datePicker;
 
+@property NSUserDefaults    *defaults;
+
 @end
 
 @implementation SelectTrainingTimeViewController
@@ -40,6 +42,8 @@
     [_TimeTableview setDataSource:  self];
     _TimeTableview.layer.cornerRadius = 10;
     
+    _defaults = [NSUserDefaults standardUserDefaults];
+    
     _dateFormatter = [[NSDateFormatter alloc] init];
     
     [_dateFormatter setDateFormat:  @"MM-dd-YYYY"];
@@ -49,6 +53,9 @@
     _BeginDate              = _currentDate;
     _EndDate                = [_currentDate dateByAddingTimeInterval:60*60*24];
     _DatepickerLocation     = 0;
+    
+    [_defaults setObject:_BeginDate  forKey:@"BeginDatePlayer"];
+    [_defaults setObject:_EndDate    forKey:@"EndDatePlayer"];
     
     _datePicker =                   [[UIDatePicker alloc] initWithFrame:CGRectMake(-30, -30, 200, 162)];
     _datePicker.datePickerMode =    UIDatePickerModeDate;
@@ -246,6 +253,9 @@
     }
     
     [_TimeTableview endUpdates];
+    
+    [_defaults setObject:_BeginDate  forKey:@"BeginDatePlayer"];
+    [_defaults setObject:_EndDate    forKey:@"EndDatePlayer"];
 }
 
 -(void) EindValueChanged{
@@ -264,6 +274,9 @@
     }
     
     [_TimeTableview endUpdates];
+    
+    [_defaults setObject:_BeginDate  forKey:@"BeginDatePlayer"];
+    [_defaults setObject:_EndDate    forKey:@"EndDatePlayer"];
 }
 
 //----------------------------------------------------------------------------------------------------------

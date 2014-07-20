@@ -1004,6 +1004,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Training detail" id="NgT-sU-ayf"/>
+                    <connections>
+                        <outlet property="Frame" destination="L56-jF-NAl" id="bbQ-nA-HsH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHn-xG-fGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
