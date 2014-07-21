@@ -20,6 +20,8 @@
 
 @property NSMutableArray                *Trainingen;
 @property NSMutableArray                *CorrectDates;
+@property NSMutableArray                *PlayersFromDates;
+@property NSMutableArray                *TrainingDates;
 
 @property NSDateFormatter               *dateFormatter;
 
@@ -49,13 +51,11 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _Player     = [defaults objectForKey:@"Playertrainingen"];
-    _BeginDate  = [defaults objectForKey:@"BeginDatePlayer"];
-    _EndDate    = [defaults objectForKey:@"EndDatePlayer"];
+    _BeginDate  = [[defaults objectForKey:@"BeginDatePlayer"]   dateByAddingTimeInterval: -60*60*24];
+    _EndDate    = [[defaults objectForKey:@"EndDatePlayer"]     dateByAddingTimeInterval:  60*60*24];
     
-    NSString *beginDateString = [_dateFormatter stringFromDate:_BeginDate];
-    NSLog(@"Begin datum: %@",beginDateString);
-    NSString *endDateString =   [_dateFormatter stringFromDate:_EndDate];
-    NSLog(@"Eind datum:  %@",endDateString);
+    _PlayersFromDates =[[NSMutableArray alloc] init];
+    _TrainingDates =[[NSMutableArray alloc] init];
     
     [self dbConnectie];
     [self fillArrays];
@@ -132,20 +132,51 @@
     
     [_Trainingen sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
-    NSLog(@"In trainingen array zitten: %@",_Trainingen);
+    _CorrectDates =[[NSMutableArray alloc] init];
     
     for (int index = 0; index < [_Trainingen count];  index++) {
-        NSString    *Stringdate     = [_Trainingen objectAtIndex:index];
-        NSLog(@"yoyo: %@", Stringdate);
-        NSDate      *Date           = [_dateFormatter dateFromString:Stringdate];
         
-        if ([Date timeIntervalSinceDate:_BeginDate] <= 0) {
+        NSString            *Stringdate      = [_Trainingen objectAtIndex:index];
+        NSDate              *Date            = [_dateFormatter dateFromString:Stringdate];
+        NSComparisonResult  resultBeginDate  = [_BeginDate compare:Date];
+        NSComparisonResult  resultEndDate    = [_EndDate compare:Date];
+        
+        if ( (resultBeginDate==NSOrderedSame || resultBeginDate==NSOrderedAscending) && (resultEndDate==NSOrderedSame || resultEndDate==NSOrderedDescending)) {
             [_CorrectDates addObject:Stringdate];
         }
         
     }
     
     NSLog(@"In CorrectDates array zitten: %@",_CorrectDates);
+    
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        for (int index = 0; index < [_CorrectDates count]; index++) {
+            
+            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select spelers from trainingen where datum = '%@'", [_CorrectDates objectAtIndex:index]];
+            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+            sqlite3_stmt *statement;
+            
+            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                if (sqlite3_step(statement) == SQLITE_ROW){
+                    NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                    [_PlayersFromDates addObject:name];
+                }
+                sqlite3_finalize(statement);
+            }
+        }
+        sqlite3_close(_ajaxtrainingDB);
+    }
+    
+    NSLog(@"In PlayersFromDate array zitten: %@", _PlayersFromDates);
+    
+    for (int index = 0; index < [_PlayersFromDates count]; index++) {
+        
+        if ([[_PlayersFromDates objectAtIndex:index] rangeOfString:_Player].location != NSNotFound ) {
+            [_TrainingDates addObject:[_CorrectDates objectAtIndex:index]];
+        }
+        
+    }
     
 }
 
