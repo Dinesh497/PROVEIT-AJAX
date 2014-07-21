@@ -175,9 +175,9 @@
         if ([[_PlayersFromDates objectAtIndex:index] rangeOfString:_Player].location != NSNotFound ) {
             [_TrainingDates addObject:[_CorrectDates objectAtIndex:index]];
         }
-        
     }
     
+    NSLog(@"In TrainingDates array zitten: %@", _TrainingDates);
 }
 
 - (int) GetArticlesCount
