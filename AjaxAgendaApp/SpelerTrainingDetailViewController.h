@@ -12,4 +12,9 @@
 @interface SpelerTrainingDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *Frame;
 
+@property (weak, nonatomic) IBOutlet UIView *ScrollFrame;
+
+@property (weak, nonatomic) IBOutlet UILabel *PlayerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *TotalLabel;
+
 @end

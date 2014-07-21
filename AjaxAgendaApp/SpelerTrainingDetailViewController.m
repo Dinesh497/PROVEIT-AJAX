@@ -25,6 +25,9 @@
 @property NSMutableArray                *FinalIdDates;
 
 @property NSDateFormatter               *dateFormatter;
+@property NSDateFormatter               *timeFormatter;
+
+@property int                           Totaal;
 
 @end
 
@@ -46,6 +49,10 @@
     
     _Frame.layer.cornerRadius = 10;
     
+    _timeFormatter = [[NSDateFormatter alloc] init];
+    [_timeFormatter setDateFormat:@"HH:mm"];
+    [_timeFormatter setLocale:[NSLocale currentLocale]];
+    
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateFormat:@"YYYY-MM-dd"];
     [_dateFormatter setLocale:[NSLocale currentLocale]];
@@ -59,11 +66,111 @@
     _IdCorrectDates =[[NSMutableArray alloc] init];
     _FinalIdDates =[[NSMutableArray alloc] init];
     
+    _Totaal = 0;
+    
     [self dbConnectie];
     [self fillArrays];
+    [self CreateScrollview];
+    [self SetTotalAndName];
     
 }
 
+-(void) SetTotalAndName{
+    _PlayerLabel.text   = _Player;
+    _TotalLabel.text    = [NSString stringWithFormat:@"Totaal: %d min", _Totaal];
+}
+
+-(void) CreateScrollview{
+    
+    int distance = 0;
+    
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 1, 260, 305)];
+    [scroll setScrollEnabled:YES];
+    
+    const char *dbpath = [_dbPath UTF8String];
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    
+    for (int index = 0; index < [_FinalIdDates count]; index++) {
+        
+        distance = 81 * index;
+    
+        NSString *trainingDateText  = [[NSString alloc] init];
+        
+        NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select datum from trainingen where id = '%@'", [_FinalIdDates objectAtIndex:index]];
+        const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+        sqlite3_stmt *statement;
+                
+        if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+            if (sqlite3_step(statement) == SQLITE_ROW){
+                trainingDateText = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+            }
+            sqlite3_finalize(statement);
+        }
+        
+        NSString *beginResult   = [[NSString alloc] init];
+        NSString *endResult     = [[NSString alloc] init];
+        
+        NSString *queryplayersa2_sql = [NSString stringWithFormat:@"Select begin_tijd from trainingen where id = '%@'", [_FinalIdDates objectAtIndex:index]];
+        const char *querya2_stmt = [queryplayersa2_sql UTF8String];
+        
+        if (sqlite3_prepare_v2(_ajaxtrainingDB, querya2_stmt, -1, &statement, NULL) == SQLITE_OK){
+            if (sqlite3_step(statement) == SQLITE_ROW){
+                beginResult  = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+            }
+            sqlite3_finalize(statement);
+        }
+        
+        NSString *queryplayersa3_sql = [NSString stringWithFormat:@"Select eind_tijd from trainingen where id = '%@'", [_FinalIdDates objectAtIndex:index]];
+        const char *querya3_stmt = [queryplayersa3_sql UTF8String];
+        
+        if (sqlite3_prepare_v2(_ajaxtrainingDB, querya3_stmt, -1, &statement, NULL) == SQLITE_OK){
+            if (sqlite3_step(statement) == SQLITE_ROW){
+                endResult = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+            }
+            sqlite3_finalize(statement);
+        }
+        
+        NSLog(@"Begin: %@ - Eind: %@", beginResult, endResult);
+        
+        NSDate *BeginDate   = [_timeFormatter dateFromString:beginResult];
+        NSDate *EndDate     = [_timeFormatter dateFromString:endResult];
+        
+        float calculatedTrainingMin = [EndDate timeIntervalSinceDate:BeginDate] / 60;
+        
+        int trainingMinText         = calculatedTrainingMin;
+        float trainingProgressValue = calculatedTrainingMin / 300;
+        
+        UIView          *trainingView       = [[UIView alloc] initWithFrame:CGRectMake          (0, distance, 260, 80)];
+        trainingView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        
+        UILabel         *trainingDate       = [[UILabel alloc] initWithFrame:CGRectMake         (20, 10, 220, 21)];
+        trainingDate.text = trainingDateText;
+        
+        UIProgressView  *trainingProgress   = [[UIProgressView alloc] initWithFrame:CGRectMake  (20, 30, 220, 02)];
+        [trainingProgress setProgress:trainingProgressValue];
+        [trainingProgress setProgressTintColor:[UIColor redColor]];
+        
+        UILabel         *trainingMin        = [[UILabel alloc] initWithFrame:CGRectMake         (20, 40, 220, 21)];
+        [trainingMin setTextColor:[UIColor lightGrayColor]];
+        trainingMin.textAlignment = NSTextAlignmentCenter;
+        trainingMin.text = [NSString stringWithFormat:@"%d min", trainingMinText];
+        
+        [trainingView addSubview:trainingDate];
+        [trainingView addSubview:trainingProgress];
+        [trainingView addSubview:trainingMin];
+        
+        [scroll addSubview:trainingView];
+        
+        _Totaal += trainingMinText;
+    }
+    
+    sqlite3_close(_ajaxtrainingDB);
+    
+    scroll.backgroundColor = [UIColor lightGrayColor];
+    scroll.contentSize = CGSizeMake(260, distance + 81);
+    
+    [_ScrollFrame addSubview:scroll];
+}
 
 
 
@@ -172,7 +279,7 @@
         sqlite3_close(_ajaxtrainingDB);
     }
     
-    NSLog(@"In IdCorrectDates array zitten: %@", _IdCorrectDates);
+    // NSLog(@"In IdCorrectDates array zitten: %@", _IdCorrectDates);
     
     if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
@@ -195,7 +302,7 @@
         sqlite3_close(_ajaxtrainingDB);
     }
     
-    NSLog(@"In Players array zitten: %@", _PlayersFromDates);
+    // NSLog(@"In Players array zitten: %@", _PlayersFromDates);
     
     for (int index = 0; index < [_PlayersFromDates count]; index++) {
         
@@ -204,7 +311,7 @@
         }
     }
     
-    NSLog(@"In TrainingDates array zitten: %@", _FinalIdDates);
+    // NSLog(@"In TrainingDates array zitten: %@", _FinalIdDates);
 }
 
 - (int) GetArticlesCount
