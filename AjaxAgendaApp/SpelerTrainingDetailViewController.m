@@ -20,8 +20,9 @@
 
 @property NSMutableArray                *Trainingen;
 @property NSMutableArray                *CorrectDates;
+@property NSMutableArray                *IdCorrectDates;
 @property NSMutableArray                *PlayersFromDates;
-@property NSMutableArray                *TrainingDates;
+@property NSMutableArray                *FinalIdDates;
 
 @property NSDateFormatter               *dateFormatter;
 
@@ -55,7 +56,8 @@
     _EndDate    = [[defaults objectForKey:@"EndDatePlayer"]     dateByAddingTimeInterval:  60*60*24];
     
     _PlayersFromDates =[[NSMutableArray alloc] init];
-    _TrainingDates =[[NSMutableArray alloc] init];
+    _IdCorrectDates =[[NSMutableArray alloc] init];
+    _FinalIdDates =[[NSMutableArray alloc] init];
     
     [self dbConnectie];
     [self fillArrays];
@@ -147,37 +149,62 @@
         
     }
     
-    NSLog(@"In CorrectDates array zitten: %@",_CorrectDates);
+    // NSLog(@"In CorrectDates array zitten: %@",_CorrectDates);
     
     if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
     {
         for (int index = 0; index < [_CorrectDates count]; index++) {
+                for (int index2 = 1; index2 <= rows; index2++) {
+                NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select id from trainingen where datum = '%@' and id = '%d'", [_CorrectDates objectAtIndex:index], index2];
+                const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+                sqlite3_stmt *statement;
             
-            NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select spelers from trainingen where datum = '%@'", [_CorrectDates objectAtIndex:index]];
-            const char *querya1_stmt = [queryplayersa1_sql UTF8String];
-            sqlite3_stmt *statement;
-            
-            if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
-                if (sqlite3_step(statement) == SQLITE_ROW){
-                    NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-                    [_PlayersFromDates addObject:name];
+                if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                    if (sqlite3_step(statement) == SQLITE_ROW){
+                        NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                        [_IdCorrectDates addObject:name];
+                    }
+                    sqlite3_finalize(statement);
                 }
-                sqlite3_finalize(statement);
             }
+            
         }
         sqlite3_close(_ajaxtrainingDB);
     }
     
-    NSLog(@"In PlayersFromDate array zitten: %@", _PlayersFromDates);
+    NSLog(@"In IdCorrectDates array zitten: %@", _IdCorrectDates);
+    
+    if (sqlite3_open(dbpath, &_ajaxtrainingDB) == SQLITE_OK)
+    {
+        for (int index = 0; index < [_IdCorrectDates count]; index++) {
+            
+                NSString *queryplayersa1_sql = [NSString stringWithFormat:@"Select spelers from trainingen where id = '%@'",[_IdCorrectDates objectAtIndex:index]];
+                const char *querya1_stmt = [queryplayersa1_sql UTF8String];
+                sqlite3_stmt *statement;
+                
+                if (sqlite3_prepare_v2(_ajaxtrainingDB, querya1_stmt, -1, &statement, NULL) == SQLITE_OK){
+                    if (sqlite3_step(statement) == SQLITE_ROW){
+                        NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+                        [_PlayersFromDates addObject:name];
+                    }
+                    sqlite3_finalize(statement);
+                
+            }
+            
+        }
+        sqlite3_close(_ajaxtrainingDB);
+    }
+    
+    NSLog(@"In Players array zitten: %@", _PlayersFromDates);
     
     for (int index = 0; index < [_PlayersFromDates count]; index++) {
         
         if ([[_PlayersFromDates objectAtIndex:index] rangeOfString:_Player].location != NSNotFound ) {
-            [_TrainingDates addObject:[_CorrectDates objectAtIndex:index]];
+            [_FinalIdDates addObject:[_IdCorrectDates objectAtIndex:index]];
         }
     }
     
-    NSLog(@"In TrainingDates array zitten: %@", _TrainingDates);
+    NSLog(@"In TrainingDates array zitten: %@", _FinalIdDates);
 }
 
 - (int) GetArticlesCount
