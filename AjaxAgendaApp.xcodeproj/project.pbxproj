@@ -490,6 +490,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Prove IT";
 				TargetAttributes = {
+					1BC0D84418F835B300789C6C = {
+						DevelopmentTeam = 8H3YYVYJ7H;
+					};
 					1BC0D86518F835B300789C6C = {
 						TestTargetID = 1BC0D84418F835B300789C6C;
 					};
@@ -737,10 +740,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -751,10 +758,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AjaxAgendaApp/AjaxAgendaApp-Prefix.pch";
 				INFOPLIST_FILE = "AjaxAgendaApp/AjaxAgendaApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
